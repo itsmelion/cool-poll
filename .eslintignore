@@ -1,0 +1,6 @@
+*.native.tsx
+*.native.ts
+*.ios.tsx
+*.ios.ts
+*.android.tsx
+*.android.ts
