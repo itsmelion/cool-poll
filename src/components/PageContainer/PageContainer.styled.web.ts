@@ -13,17 +13,13 @@ export const Main = chakra("main", {
 
 export const Backdrop = chakra("div", {
   baseStyle: {
+    backgroundSize: "cover",
+    backgroundPosition: "center",
     display: "flex",
     flexDirection: "column",
-    flex: "1 1 0",
-    backgroundSize: "cover",
-    height: "100vh",
-    overflow: "auto",
+    flex: "1 1 100%",
+    h: "100%",
     alignItems: "center",
     justifyContent: "center",
-    padding: "1.5rem",
-    boxSizing: "border-box",
-    fontFamily: "Heebo, sans-serif",
-    fontWeight: 300,
   },
 });

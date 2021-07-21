@@ -1,9 +1,8 @@
-// import components from "./components";
 import { ThemeConfig, ThemeDirection } from "@chakra-ui/react";
 
-import { colors } from "./foundations/colors";
-import { typography } from "./foundations/typography";
+import { colors } from "./colors";
 import { global } from "./global";
+import { typography } from "./typography";
 
 const direction = "ltr" as ThemeDirection;
 
@@ -17,7 +16,6 @@ export const theme = {
   direction,
   colors,
   ...typography,
-  // components,
   styles: global,
   config,
 };

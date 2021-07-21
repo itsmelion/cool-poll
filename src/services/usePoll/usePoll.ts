@@ -28,6 +28,8 @@ const initialState: PollState = {
   poll: {},
 };
 
+export const pollInitialState = initialState;
+
 const reducer = (state = initialState, newState: PollState): PollState =>
   Object.assign({}, state, newState);
 

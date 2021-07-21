@@ -22,6 +22,9 @@ export function inputAttrByType(type: string) {
     case "multiple_choice":
       return short_text;
 
+    case "statement":
+      return short_text;
+
     default:
       return short_text;
   }

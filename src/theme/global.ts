@@ -17,5 +17,11 @@ export const global: Styles = {
       borderColor: mode("gray.200", "whiteAlpha.300")(props),
       wordWrap: "break-word",
     },
+    "html, body, #root": {
+      display: "flex",
+      flexDirection: "column",
+      flex: "0 1 100%",
+      h: "100%",
+    },
   }),
 };

@@ -13,8 +13,8 @@ export const typography = {
     "none": 1,
     "shorter": 1.25,
     "short": 1.375,
-    "base": 1.5,
-    "tall": 1.625,
+    "base": 1.4,
+    "tall": 1.6,
     "taller": "2",
     "3": ".75rem",
     "4": "1rem",
@@ -60,20 +60,12 @@ export const typography = {
     "7xl": "4.5rem",
     "8xl": "6rem",
     "9xl": "8rem",
+
+    "h1": "2.6rem",
+    "h2": "2.1rem",
+    "h3": "1.75rem",
+    "h4": "1.5rem",
+    "h5": "1.25rem",
+    "h6": "1.15rem",
   },
 };
-
-/**
- * @deprecated
- * You can derive the Typography type from the DefaultChakraTheme
- *
- * type Typography = Pick<
- *   DefaultChakraTheme,
- *   | "letterSpacings"
- *   | "lineHeights"
- *   | "fontWeights"
- *   | "fonts"
- *   | "fontSizes"
- *  >
- */
-export type Typography = typeof typography;

@@ -10,7 +10,7 @@ export const List: React.FC<Props> = ({ options }) => {
   return (
     <ol>
       {options.map((item) => (
-        <Option key={item.id} title={`Male ${item}`} />
+        <Option key={item.id} title={item.label} />
       ))}
     </ol>
   );

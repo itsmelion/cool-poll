@@ -9,5 +9,7 @@ export const View = chakra("section", {
     height: "100%",
     width: "100%",
     position: "relative",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
