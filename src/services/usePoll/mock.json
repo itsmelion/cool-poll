@@ -1,0 +1,1168 @@
+{
+  "id": "TipF0y",
+  "title": "Trivia Quiz",
+  "variables": {
+    "score": 0
+  },
+  "theme": {
+    "href": "https://api.typeform.com/themes/cgFYYu"
+  },
+  "settings": {
+    "language": "en",
+    "is_public": true,
+    "progress_bar": "percentage",
+    "show_progress_bar": true,
+    "show_typeform_branding": true,
+    "meta": {
+      "allow_indexing": true
+    }
+  },
+  "welcome_screens": [
+    {
+      "ref": "6207721cd9162b79",
+      "title": "If you get a high score, you probably spend _way_ too much time on Wikipedia.",
+      "properties": {
+        "show_button": true,
+        "description": "There's 12 questions and a break for refreshments in the middle.\n(You'll have to provide your own snacks, sorry.)",
+        "button_text": "Let's begin, shall we?"
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/BvzPkwdzSw"
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "ref": "ba8d",
+      "title": "*Nice, {{field:d553b711e0abca62}}, that's {{var:score}}/12 answers right!*\nYour prize is the knowledge that you probably know the most obscure facts out of anyone in the room. Especially if you're alone. Then you definitely do.",
+      "properties": {
+        "show_button": true,
+        "share_icons": true,
+        "button_mode": "reload",
+        "button_text": "Again"
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/R9USBsYQnL"
+      }
+    },
+    {
+      "ref": "3383",
+      "title": "*Pretty good, {{field:d553b711e0abca62}}, that's {{var:score}}/12 answers right!*\nYou're welcome at our quiz table any day...",
+      "properties": {
+        "show_button": true,
+        "share_icons": true,
+        "button_mode": "reload",
+        "button_text": "Again"
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/dfB8U2992t"
+      }
+    },
+    {
+      "ref": "984a",
+      "title": "*{{field:d553b711e0abca62}}, you got {{var:score}}/12 answers correct.*\nOn the plus side, that probably means you don't spend too much time learning obscure facts just so you can be good at trivia quizzes ;)",
+      "properties": {
+        "show_button": true,
+        "share_icons": true,
+        "button_mode": "reload",
+        "button_text": "Try again"
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/gkyURnkma7"
+      }
+    }
+  ],
+  "fields": [
+    {
+      "id": "pdHf2Myba80w",
+      "title": "What's your name, Clever One?",
+      "ref": "d553b711e0abca62",
+      "properties": {
+        "description": "(Just your first one is fine.)"
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "short_text"
+    },
+    {
+      "id": "yixLeRySFCe0",
+      "title": "Okay, {{field:d553b711e0abca62}}, let's see if you can beat our beardy quizmaster...",
+      "ref": "832654fcb9251a75",
+      "properties": {
+        "hide_marks": false,
+        "button_text": "I'm ready, ask away!"
+      },
+      "type": "statement"
+    },
+    {
+      "id": "lgG58TOg2411",
+      "title": "Which famous con artist's life is the film *Catch Me If You Can* based on?",
+      "ref": "d3f1c7713c0c0f23",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "Uy0xD8sQvO5t",
+            "ref": "6819e178fd767fdf",
+            "label": "Gregor MacGregor"
+          },
+          {
+            "id": "IQwkC2LGGuYw",
+            "ref": "5706355fa94711a8",
+            "label": "Frank Abagnale"
+          },
+          {
+            "id": "VuAJMGbqT4p9",
+            "ref": "bcdb07a9cc9c7fe9",
+            "label": "Bernard Madoff"
+          },
+          {
+            "id": "z8TwSSQ0NZtV",
+            "ref": "1732d77351f7d543",
+            "label": "Charles Ponzi"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/yeKeGmzQHqJz"
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "uXhR38Whio7M",
+      "title": "How many stars does the US flag have?",
+      "ref": "4bb06afc83572a6a",
+      "validations": {
+        "required": false
+      },
+      "type": "number"
+    },
+    {
+      "id": "U7ZY4sElW0gE",
+      "title": "Which of these is the *Albanian* flag?",
+      "ref": "e63eeccbc76da168",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "supersized": false,
+        "show_labels": false,
+        "choices": [
+          {
+            "id": "TP7m0vkH9yv0",
+            "ref": "dadb7ff128189835",
+            "label": "Albania",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/zMtM5f2pMR4B"
+            }
+          },
+          {
+            "id": "GW3swQjIyVL4",
+            "ref": "4827a49ef6d0b22c",
+            "label": "San Marino",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/Wze2xk9Xumxp"
+            }
+          },
+          {
+            "id": "dtQQLXaByk9d",
+            "ref": "1a371c741dff80ca",
+            "label": "South Korea",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/ujvPYQpDxi5p"
+            }
+          },
+          {
+            "id": "qtPOQFba2qLc",
+            "ref": "451d3ebfc845d9a5",
+            "label": "Andorra",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/Sz5QPFnkXsDM"
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "picture_choice"
+    },
+    {
+      "id": "hJGGkpfrRAIz",
+      "title": "Who painted *The Persistence of Memory*?",
+      "ref": "c781b55fd8cc28e7",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "KrjoJOGnut9q",
+            "ref": "a335d8c92f2f65cb",
+            "label": "Salvador Dali"
+          },
+          {
+            "id": "ImRDIJwl6WLw",
+            "ref": "99f03bd65d51cf99",
+            "label": "Grant Wood"
+          },
+          {
+            "id": "TsNKxRs0UmjV",
+            "ref": "d940a48a5d0b311e",
+            "label": "Edvard Munch"
+          },
+          {
+            "id": "idQTnNwd5yVb",
+            "ref": "e7db2b3b9d292e6e",
+            "label": "Andrea Bocelli"
+          },
+          {
+            "id": "GMC18CyDyn5a",
+            "ref": "19d55dcdcd9532cf",
+            "label": "Frida Kahlo"
+          },
+          {
+            "id": "V0IZCmO5afHH",
+            "ref": "5d0d12d4d271a701",
+            "label": "René Magritte"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/RBvL6k5KiCrq"
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "R4vNq5u8wii7",
+      "title": "What is *JK Rowling*'s first name?",
+      "ref": "436edb81a84dedc5",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "YqjNNthf2auG",
+            "ref": "8b9f4a424b17952a",
+            "label": "Joanne"
+          },
+          {
+            "id": "yUanAx5IO7Iy",
+            "ref": "2c5b2b4270aa6a31",
+            "label": "Jennifer"
+          },
+          {
+            "id": "QIufzNRll9RJ",
+            "ref": "3d52484e2efcaa33",
+            "label": "Jane"
+          },
+          {
+            "id": "ovgBZw2hej76",
+            "ref": "d3bf6c13477c410c",
+            "label": "Jacqueline"
+          },
+          {
+            "id": "TIArzC5wRPS6",
+            "ref": "8d8a4f043bf51f03",
+            "label": "Jody"
+          },
+          {
+            "id": "a6KV0Tu1xfja",
+            "ref": "6c2dee6a01119a18",
+            "label": "Julie"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/98kdNQ8FU5SL"
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "wsMw9HqewYzG",
+      "title": "How many hearts does an *Octopus* have?",
+      "ref": "0900501383aeffa4",
+      "properties": {
+        "steps": 6,
+        "shape": "heart"
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "rating"
+    },
+    {
+      "id": "D95MT6MtHMP7",
+      "title": "Well, you're halfway through with {{var:score}}/6 answers right. You deserve _at least_ two slices of cake for that impressive effort...",
+      "ref": "e595741eb35fb4cf",
+      "properties": {
+        "hide_marks": false,
+        "button_text": "Om nom nom"
+      },
+      "type": "statement"
+    },
+    {
+      "id": "hCsw4HeM0ozT",
+      "title": "Well, you're halfway through, with {{var:score}}/6 answers right. Let's be honest, you need to pick up your random fact game, {{field:d553b711e0abca62}}. We hear green tea is good for stimulating the mind...",
+      "ref": "1e1826511f2ee299",
+      "properties": {
+        "hide_marks": false,
+        "button_text": "Sluuurrp"
+      },
+      "type": "statement"
+    },
+    {
+      "id": "AL5vynNxY3oR",
+      "title": "In which country would you find the *Cardamom Mountains*?",
+      "ref": "ad839d6ef8eac956",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "qUaYvscxoqnq",
+            "ref": "506c62ad301c0b1f",
+            "label": "India"
+          },
+          {
+            "id": "WegXFiQxpJ2Z",
+            "ref": "f63fe13e005831b7",
+            "label": "Mongolia"
+          },
+          {
+            "id": "g3boCj6MGmKA",
+            "ref": "f842f50d4cde29ca",
+            "label": "Cambodia"
+          },
+          {
+            "id": "LuYainpn4Bvk",
+            "ref": "f5c17317f7c8b084",
+            "label": "Laos"
+          },
+          {
+            "id": "IzjH0yFEyqOl",
+            "ref": "c382812ec587cdc6",
+            "label": "Nepal"
+          },
+          {
+            "id": "zDKfufg45sK9",
+            "ref": "b2cde74cf854eebc",
+            "label": "Pakistan"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "Zug08HJtt2eu",
+      "title": "Which UK city had the nickname \"*Cottonopolis*\" in the 19th century?",
+      "ref": "401648e306e162aa",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "supersized": true,
+        "show_labels": true,
+        "choices": [
+          {
+            "id": "sIIMphXMBYZh",
+            "ref": "f9ff0605120a755d",
+            "label": "Manchester",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/pxzd6LXL2j3C"
+            }
+          },
+          {
+            "id": "xvOca30GgJTJ",
+            "ref": "909fd5c731978eb9",
+            "label": "Darlington",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/QkdHxTUbTp7r"
+            }
+          },
+          {
+            "id": "IFI6y1PY8KZd",
+            "ref": "531152beb6c536d9",
+            "label": "Cardigan",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/h4cSrz79FHKY"
+            }
+          },
+          {
+            "id": "iBHPzrH9EbRN",
+            "ref": "cfe8d2943531c994",
+            "label": "Birmingham",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/mLZs8grgN9hQ"
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "picture_choice"
+    },
+    {
+      "id": "hzu1pmzByd3i",
+      "title": "How many keys does a *grand piano* typically have?",
+      "ref": "2b5eef2ce8197b06",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "BCkCt8lr1s5d",
+            "ref": "f02abe85969dfd68",
+            "label": "88"
+          },
+          {
+            "id": "i2vxRjPLQUe8",
+            "ref": "4363aa3586733978",
+            "label": "92"
+          },
+          {
+            "id": "tj8cN8ENoP11",
+            "ref": "ae66505dd8870675",
+            "label": "66"
+          },
+          {
+            "id": "KNSi7hxUGHXq",
+            "ref": "825ff58207b4f29f",
+            "label": "77"
+          },
+          {
+            "id": "AHCTrfqlA4U6",
+            "ref": "e359b0da96ea5ace",
+            "label": "61"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://images.typeform.com/images/4UVGKZzE5ui2"
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "JSByVFSBwmLX",
+      "title": "In aviation, what does *ACC* stand for?",
+      "ref": "6234b7d8702a9257",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "LOSdagQLmmhY",
+            "ref": "68b4725681871522",
+            "label": "Active Clearance Control"
+          },
+          {
+            "id": "KpzeafTAsSjM",
+            "ref": "a35f208b5ef8551d",
+            "label": "Air Crew Council"
+          },
+          {
+            "id": "lpKLvDlAd27f",
+            "ref": "df488446a9fc376e",
+            "label": "Approach Control Computer"
+          },
+          {
+            "id": "pvO8OL9q1zpp",
+            "ref": "84e6993daff70c4c",
+            "label": "Airworthiness Check Certificate"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "ZU8CnyXCfect",
+      "title": "What is someone with *Anuptaphobia* afraid of?",
+      "ref": "f8d5222b0401f69f",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "supersized": true,
+        "show_labels": true,
+        "choices": [
+          {
+            "id": "KI5ehTZwY1JG",
+            "ref": "8e0027a4f9f3c50c",
+            "label": "Tiny bats",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/MHpvgSyFAqun"
+            }
+          },
+          {
+            "id": "bl3Gu6h0j2V5",
+            "ref": "57c1cad4e4ec37b6",
+            "label": "Staying single",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/BrBtCkzEgnLk"
+            }
+          },
+          {
+            "id": "rigvPbfxpBZ6",
+            "ref": "b08547ae93557217",
+            "label": "Getting married",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/ZSVFtkJXghcf"
+            }
+          },
+          {
+            "id": "Jy5Kt9aU0MtG",
+            "ref": "1a4b58356b923a84",
+            "label": "Dirty basins",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/jVnvSQXMjWNU"
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "picture_choice"
+    },
+    {
+      "id": "Z9xGl2EnES0E",
+      "title": "What flag does the crew raise when their ship is *about to leave port*?",
+      "ref": "e0d1ca34069e1f8f",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "supersized": false,
+        "show_labels": false,
+        "choices": [
+          {
+            "id": "BAe5ZRovRR1b",
+            "ref": "dac653b66059c0a1",
+            "label": "Blue Peter flag",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/MYx2wm2gaF5e"
+            }
+          },
+          {
+            "id": "ABrwuybPQqP7",
+            "ref": "2ccdbd3f22a79927",
+            "label": "Bravo flag",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/GZEBD8CP3QC4"
+            }
+          },
+          {
+            "id": "ZNk8UFuna7xf",
+            "ref": "5541e860822ba51e",
+            "label": "Jolly Roger flag",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/wmtXk78vbUEL"
+            }
+          },
+          {
+            "id": "lLqEmhI0u9oE",
+            "ref": "06b90b338d779905",
+            "label": "Japanese flag",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/sgHpsc9LKPUa"
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "picture_choice"
+    }
+  ],
+  "logic": [
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "d3f1c7713c0c0f23"
+              },
+              {
+                "type": "choice",
+                "value": "5706355fa94711a8"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "d3f1c7713c0c0f23"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "4bb06afc83572a6a"
+              },
+              {
+                "type": "constant",
+                "value": 50
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "4bb06afc83572a6a"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e63eeccbc76da168"
+              },
+              {
+                "type": "choice",
+                "value": "dadb7ff128189835"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "e63eeccbc76da168"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "c781b55fd8cc28e7"
+              },
+              {
+                "type": "choice",
+                "value": "a335d8c92f2f65cb"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "c781b55fd8cc28e7"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "436edb81a84dedc5"
+              },
+              {
+                "type": "choice",
+                "value": "8b9f4a424b17952a"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "436edb81a84dedc5"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "0900501383aeffa4"
+              },
+              {
+                "type": "constant",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "e595741eb35fb4cf"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "1e1826511f2ee299"
+            }
+          },
+          "condition": {
+            "op": "lower_than",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 4
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "0900501383aeffa4"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "ad839d6ef8eac956"
+              },
+              {
+                "type": "choice",
+                "value": "f842f50d4cde29ca"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "ad839d6ef8eac956"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "401648e306e162aa"
+              },
+              {
+                "type": "choice",
+                "value": "f9ff0605120a755d"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "401648e306e162aa"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "2b5eef2ce8197b06"
+              },
+              {
+                "type": "choice",
+                "value": "f02abe85969dfd68"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "2b5eef2ce8197b06"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "6234b7d8702a9257"
+              },
+              {
+                "type": "choice",
+                "value": "68b4725681871522"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "6234b7d8702a9257"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f8d5222b0401f69f"
+              },
+              {
+                "type": "choice",
+                "value": "57c1cad4e4ec37b6"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "f8d5222b0401f69f"
+    },
+    {
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e0d1ca34069e1f8f"
+              },
+              {
+                "type": "choice",
+                "value": "dac653b66059c0a1"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "ba8d"
+            }
+          },
+          "condition": {
+            "op": "greater_than",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 8
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "3383"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 6
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "984a"
+            }
+          },
+          "condition": {
+            "op": "lower_than",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 6
+              }
+            ]
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "e0d1ca34069e1f8f"
+    },
+    {
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "ad839d6ef8eac956"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "e595741eb35fb4cf"
+    },
+    {
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "ad839d6ef8eac956"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ],
+      "type": "field",
+      "ref": "1e1826511f2ee299"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+import type { IFont } from "./font";
+
 export type schemeColorSet = { dark: string; light: string };
 
 export interface ThemeColors {
@@ -10,5 +12,6 @@ export interface ResolvedSchemeColorSet {
 
 export interface Theme {
   isDark: boolean;
+  font: IFont;
   colors: ResolvedSchemeColorSet;
 }
