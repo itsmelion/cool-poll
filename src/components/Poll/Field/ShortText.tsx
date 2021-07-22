@@ -1,7 +1,9 @@
 import { InputItem } from "./Item.styles.web";
 
-type Props = Record<string, never>;
+type Props = {
+  htmlProps: unknown;
+};
 
-export function ShortText(props: Props): JSX.Element {
-  return <InputItem {...props} />;
+export function ShortText({ htmlProps, ...props }: Props): JSX.Element {
+  return <InputItem {...htmlProps} {...props} />;
 }

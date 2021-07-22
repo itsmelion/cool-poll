@@ -1,30 +1,22 @@
-import { Button } from "@chakra-ui/react";
-import { useLayoutEffect } from "react";
+import { useKeyPressEvent } from "react-use";
 
 import { usePoll } from "services";
-import mock from "services/usePoll/mock.json";
 
-import * as Poll from "../Poll";
+import { Question } from "./Question";
 import { View } from "./QuestionStack.styled.web";
 
 export const QuestionStack: React.FC = (props) => {
-  const [{ activeQuestion, poll }, setPoll] = usePoll();
+  const { poll, next, previous } = usePoll();
 
-  useLayoutEffect(() => {
-    setPoll({ activeQuestion: mock.fields[0].id });
-  }, [setPoll]);
+  useKeyPressEvent("Enter", next);
+  useKeyPressEvent("p", previous);
+
+  if (!poll) return null;
 
   return (
     <View {...props}>
-      {poll?.fields?.map((question) => (
-        <Poll.View active={activeQuestion === question.id} key={question.id}>
-          <Poll.Heading title={question.title} />
-          <Poll.List options={question.properties?.choices ?? []} />
-
-          {question.properties?.button_text && (
-            <Button>{question.properties?.button_text}</Button>
-          )}
-        </Poll.View>
+      {poll.fields.map((question) => (
+        <Question key={question.id} question={question} />
       ))}
     </View>
   );

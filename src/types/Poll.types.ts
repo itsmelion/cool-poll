@@ -1,3 +1,5 @@
+import type { fieldType } from "./field.types";
+
 export interface RootObject {
   id: string;
   title: string;
@@ -59,7 +61,7 @@ export interface Field {
   ref: string;
   properties?: Properties3;
   validations?: Validations;
-  type: string;
+  type: fieldType;
   attachment?: Attachment;
 }
 

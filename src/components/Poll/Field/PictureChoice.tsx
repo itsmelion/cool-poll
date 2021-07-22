@@ -4,6 +4,6 @@ type Props = {
   htmlProps: React.HTMLProps<HTMLInputElement>;
 };
 
-export function Radio(props: Props): JSX.Element {
+export function PictureChoice(props: Props): JSX.Element {
   return <InputItem {...props} />;
 }

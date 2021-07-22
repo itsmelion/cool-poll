@@ -1,14 +1,19 @@
+import { fieldType } from "types";
+
 const short_text = {
   type: "text",
-  maxLenght: 255,
+  maxLength: 255,
+  autoFocus: true,
 };
 
 const long_text = {
   type: "text",
   maxLenght: 9999,
+  autoFocus: true,
 };
 
-export function inputAttrByType(type: string) {
+/** Resolves appropriate aria and other useful field specific props for a better UX */
+export function inputAttrByType(type: fieldType): Record<string, unknown> {
   switch (type) {
     case "short_text":
       return short_text;

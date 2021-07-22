@@ -1,2 +1,2 @@
 // Hooks
-export { usePoll, PollContext, pollInitialState } from "./usePoll/usePoll";
+export { usePoll, PollContext } from "./usePoll/usePoll";
