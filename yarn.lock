@@ -1806,10 +1806,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dephion/eslint-config@0.1.15":
-  version "0.1.15"
-  resolved "https://npm.dephion.com/@dephion%2feslint-config/-/eslint-config-0.1.15.tgz#76bd743049d1cd3024f9ca001128078f2702858a"
-  integrity sha512-0xg/px7EZqEgtalsKX0mKgj/NCN2M1Iht/kG8tIZpCRhbh2uFzn43T4j30F22bmmTTa95NZ6CSO/xH59IrGIIg==
+"@dephion/eslint-config@0.1.17":
+  version "0.1.17"
+  resolved "https://npm.dephion.com/@dephion%2feslint-config/-/eslint-config-0.1.17.tgz#98ed1c7e1c79e704ae3ce6eb95fe9ae03d9cdb9f"
+  integrity sha512-2C7sdIiivch8VflwVV+93FPH0f/1BuxJXdHJXsd3SQlGsLNGAl2k3RzCjY1JENp1TTvE6ZGqUYtkFElyW5V1cg==
   dependencies:
     "@trivago/prettier-plugin-sort-imports" "^2.0.2"
     "@typescript-eslint/eslint-plugin" "^4"
