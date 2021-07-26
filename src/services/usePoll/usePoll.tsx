@@ -4,7 +4,6 @@ import type {
   Action,
   Condition,
   PollState,
-  CurrentQuestion,
   PollReducer,
   PollDispatcher,
   Field,
