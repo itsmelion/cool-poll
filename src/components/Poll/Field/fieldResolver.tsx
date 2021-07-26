@@ -7,7 +7,8 @@ import { Radio } from "./Radio";
 import { ShortText } from "./ShortText";
 import { inputAttrByType } from "./inputAttrByType";
 
-export function fieldResolver(type: fieldType, properties: unknown): JSX.Element {
+export function fieldResolver(type?: fieldType): JSX.Element | null {
+  if (!type) return null;
   const htmlProps = inputAttrByType(type);
 
   switch (type) {

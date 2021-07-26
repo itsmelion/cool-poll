@@ -9,14 +9,13 @@ import { fieldResolver } from "../Poll/Field/fieldResolver";
 type Props = { question: Field };
 
 export function Question({ question }: Props): JSX.Element {
-  const Field = fieldResolver(question.type, question.properties);
-  const { score, activeQuestion } = usePoll();
+  const Field = fieldResolver(question.type);
+  const { activeQuestion } = usePoll();
 
   return (
-    <Poll.View active={activeQuestion === question.id} key={question.id}>
+    <Poll.View active={activeQuestion === question.ref} key={question.id}>
       <Poll.Heading title={question.title} />
       <Poll.Description title={question.properties?.description} />
-      <Poll.Description title={`${score}`} />
 
       {Field}
 

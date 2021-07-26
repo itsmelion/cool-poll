@@ -2,6 +2,7 @@ import { ChakraProvider as ThemeProvider, extendTheme } from "@chakra-ui/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { theme as defaultTheme } from "theme/theme";
+import { Form } from "types";
 
 import { PollContext } from "services";
 import mock from "services/usePoll/mock.json";
@@ -16,8 +17,8 @@ function App() {
       <PageContainer>
         <PollContext
           value={{
-            activeQuestion: mock.fields[0].id,
-            poll: mock,
+            activeQuestion: mock.fields[0].ref,
+            poll: mock as Form,
           }}>
           <QuestionStack />
         </PollContext>
