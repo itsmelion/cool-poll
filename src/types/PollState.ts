@@ -1,3 +1,5 @@
+import { useCounter } from "react-use";
+
 import type { Form, Field } from "./typeform.types";
 
 export type FieldResponse =
@@ -21,10 +23,8 @@ export type PollDispatcher = React.Dispatch<PollReducer>;
 export interface PollState {
   activeQuestion?: string;
   score?: number;
+  scoreHandlers: ReturnType<typeof useCounter>[1] | null;
   price?: number;
-  skip: () => void;
-  previous: () => void;
-  next: (r: FieldResponse) => void;
   poll?: Form;
   currentQuestion: CurrentQuestion;
   setPoll: PollDispatcher;

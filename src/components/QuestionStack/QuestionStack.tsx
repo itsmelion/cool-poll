@@ -1,12 +1,13 @@
 import { useKeyPressEvent } from "react-use";
 
-import { usePoll } from "services";
+import { usePoll, usePollActions } from "services";
 
 import { Question } from "./Question";
 import { View } from "./QuestionStack.styled.web";
 
 export const QuestionStack: React.FC = (props) => {
-  const { poll, next } = usePoll();
+  const { poll } = usePoll();
+  const { next } = usePollActions();
 
   useKeyPressEvent("Enter", () => next("5706355fa94711a8"));
 
