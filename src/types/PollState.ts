@@ -8,7 +8,7 @@ export type FieldResponse =
   | undefined
   | (string | number | undefined)[];
 
-export type CurrentQuestion = Pick<Field, "id" | "ref" | "type"> & {
+export type CurrentQuestion = Field & {
   response?: FieldResponse;
 };
 

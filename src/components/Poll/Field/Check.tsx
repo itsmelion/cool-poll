@@ -1,9 +1,22 @@
-import { InputItem } from "./Item.styles.web";
+import type { CheckboxProps } from "@chakra-ui/react";
+
+import { usePoll } from "services";
+
+import { Wrapper, Checkbox } from "./Item.styles.web";
 
 type Props = {
-  htmlProps: React.HTMLProps<HTMLInputElement>;
+  htmlProps: CheckboxProps;
 };
 
 export function Check(props: Props): JSX.Element {
-  return <InputItem {...props} />;
+  const { currentQuestion } = usePoll();
+  const { properties } = currentQuestion;
+
+  return (
+    <Wrapper>
+      {properties?.choices?.map(({ ref, label }) => (
+        <Checkbox key={ref}>{label}</Checkbox>
+      ))}
+    </Wrapper>
+  );
 }

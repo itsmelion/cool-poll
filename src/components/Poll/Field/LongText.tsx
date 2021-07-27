@@ -1,9 +1,11 @@
-import { InputItem } from "./Item.styles.web";
+import { TextareaProps } from "@chakra-ui/react";
+
+import { TextArea } from "./Item.styles.web";
 
 type Props = {
-  htmlProps: React.HTMLProps<HTMLInputElement>;
+  htmlProps: TextareaProps;
 };
 
-export function LongText(props: Props): JSX.Element {
-  return <InputItem {...props} />;
+export function LongText({ htmlProps, ...props }: Props): JSX.Element {
+  return <TextArea {...htmlProps} {...props} />;
 }

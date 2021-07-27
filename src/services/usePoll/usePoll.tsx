@@ -52,11 +52,7 @@ const reducer = (
       return {
         ...state,
         activeQuestion: (payload as Field).ref,
-        currentQuestion: {
-          type: (payload as Field).type,
-          ref: (payload as Field).ref,
-          id: (payload as Field).id,
-        },
+        currentQuestion: payload as Field,
       };
     case "data":
       return Object.assign(state, payload);
