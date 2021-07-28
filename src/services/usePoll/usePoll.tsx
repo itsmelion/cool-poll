@@ -15,7 +15,6 @@ const initialState: PollState = {
   poll: undefined,
   currentQuestion: {
     ref: "",
-    response: [],
     id: "",
   },
   setPoll: () => undefined,
@@ -56,6 +55,7 @@ const reducer = (
       };
     case "data":
       return Object.assign(state, payload);
+    case "respond":
     default:
       return state;
   }

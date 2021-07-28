@@ -1,11 +1,9 @@
-import type { InputProps } from "@chakra-ui/react";
-
 import { InputItem } from "./Item.styles.web";
+import type { QuestionFieldProps } from "./QuestionField.types";
 
-type Props = {
-  htmlProps: InputProps;
-};
-
-export function NumericField({ htmlProps, ...props }: Props): JSX.Element {
+export function NumericField({
+  htmlProps,
+  ...props
+}: QuestionFieldProps): JSX.Element {
   return <InputItem {...htmlProps} {...props} />;
 }

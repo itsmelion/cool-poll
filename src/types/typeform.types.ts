@@ -149,11 +149,11 @@ export interface Field {
   /**
    * The unique ID for the question.
    */
-  id?: string;
+  id: string;
   /**
    * Readable name you can use to reference the field.
    */
-  ref?: string;
+  ref: string;
   /**
    * Unique name you assign to the field on this form.
    */

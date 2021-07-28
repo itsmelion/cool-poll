@@ -78,28 +78,6 @@
   ],
   "fields": [
     {
-      "id": "pdHf2Myba80w",
-      "title": "What's your name, Clever One?",
-      "ref": "d553b711e0abca62",
-      "properties": {
-        "description": "(Just your first one is fine.)"
-      },
-      "validations": {
-        "required": true
-      },
-      "type": "short_text"
-    },
-    {
-      "id": "yixLeRySFCe0",
-      "title": "Okay, {{field:d553b711e0abca62}}, let's see if you can beat our beardy quizmaster...",
-      "ref": "832654fcb9251a75",
-      "properties": {
-        "hide_marks": false,
-        "button_text": "I'm ready, ask away!"
-      },
-      "type": "statement"
-    },
-    {
       "id": "lgG58TOg2411",
       "title": "Which famous con artist's life is the film *Catch Me If You Can* based on?",
       "ref": "d3f1c7713c0c0f23",
@@ -132,13 +110,35 @@
         ]
       },
       "validations": {
-        "required": false
+        "required": true
       },
       "attachment": {
         "type": "image",
         "href": "https://images.typeform.com/images/yeKeGmzQHqJz"
       },
       "type": "multiple_choice"
+    },
+    {
+      "id": "pdHf2Myba80w",
+      "title": "What's your name, Clever One?",
+      "ref": "d553b711e0abca62",
+      "properties": {
+        "description": "(Just your first one is fine.)"
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "short_text"
+    },
+    {
+      "id": "yixLeRySFCe0",
+      "title": "Okay, {{field:d553b711e0abca62}}, let's see if you can beat our beardy quizmaster...",
+      "ref": "832654fcb9251a75",
+      "properties": {
+        "hide_marks": false,
+        "button_text": "I'm ready, ask away!"
+      },
+      "type": "statement"
     },
     {
       "id": "uXhR38Whio7M",

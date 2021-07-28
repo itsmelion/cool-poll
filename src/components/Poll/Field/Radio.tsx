@@ -1,12 +1,13 @@
-import { RadioGroup, VStack, Radio as ChakraRadio } from "@chakra-ui/react";
+import {
+  RadioGroup,
+  VStack,
+  Radio as ChakraRadio,
+  RadioProps,
+} from "@chakra-ui/react";
 
-// import { InputItem } from "./Item.styles.web";
+import type { QuestionFieldProps } from "./QuestionField.types";
 
-type Props = {
-  htmlProps: React.HTMLProps<HTMLInputElement>;
-};
-
-export function Radio(props: Props): JSX.Element {
+export function Radio(props: QuestionFieldProps<RadioProps>): JSX.Element {
   return (
     <RadioGroup defaultValue="1">
       <VStack>

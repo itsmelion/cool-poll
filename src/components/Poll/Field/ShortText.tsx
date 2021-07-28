@@ -1,11 +1,21 @@
-import type { InputProps } from "@chakra-ui/react";
+import { useFormContext } from "react-hook-form";
+
+import { usePoll } from "services";
 
 import { InputItem } from "./Item.styles.web";
+import { QuestionFieldProps } from "./QuestionField.types";
 
-type Props = {
-  htmlProps: InputProps;
-};
+export function ShortText({ htmlProps, ...props }: QuestionFieldProps): JSX.Element {
+  const { currentQuestion } = usePoll();
+  const { register } = useFormContext();
 
-export function ShortText({ htmlProps, ...props }: Props): JSX.Element {
-  return <InputItem {...htmlProps} {...props} />;
+  return (
+    <InputItem
+      {...htmlProps}
+      {...props}
+      {...register(currentQuestion.ref, {
+        required: currentQuestion.validations?.required && "Can't skip this one",
+      })}
+    />
+  );
 }

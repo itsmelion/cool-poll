@@ -11,7 +11,7 @@ export function isConditionMet(
   switch (condition.op) {
     case "equal":
     case "is":
-      return value === response;
+      return Array.isArray(response) ? response.includes(value) : value === response;
 
     case "is_not":
     case "not_equal":

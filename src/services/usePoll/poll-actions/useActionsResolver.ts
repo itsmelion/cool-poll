@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { FieldResponse, Action } from "types";
 
 import { usePoll } from "../usePoll";
@@ -11,7 +11,7 @@ export function useActionsResolver(): (r: FieldResponse) => void {
   const { logic = [] } = poll;
   const nextQuestion = useNextQuestion();
 
-  const resolveAction = useCallback(
+  const resolveAction = useMemo(
     () => (action: Action) => {
       switch (action.action) {
         case "jump":
@@ -30,17 +30,18 @@ export function useActionsResolver(): (r: FieldResponse) => void {
   return useCallback(
     (r: FieldResponse) => {
       const questionLogic = logic.find(({ ref }) => ref === activeQuestion);
+      let isJump = false;
 
       if (questionLogic) {
-        for (const action of questionLogic?.actions ?? []) {
+        questionLogic?.actions?.forEach((action) => {
+          if (action?.action === "jump") isJump = true;
           if (!action?.condition) return;
           if (!isConditionMet(action.condition, r)) return;
-          const runAction = resolveAction();
-          runAction(action);
-        }
+          resolveAction(action);
+        });
       }
 
-      nextQuestion();
+      !isJump && nextQuestion();
     },
     [logic, activeQuestion, nextQuestion, resolveAction],
   );

@@ -4,6 +4,7 @@ import { Container } from "./View.styles.web";
 
 interface PollViewProps {
   active: boolean;
+  onSubmit: () => void;
 }
 
 const MotionContainer = motion(Container);
