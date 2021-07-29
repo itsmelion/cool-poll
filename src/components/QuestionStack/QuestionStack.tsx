@@ -11,15 +11,19 @@ export const QuestionStack: React.FC = (props) => {
   const formMethods = useForm({ mode: "onSubmit" });
   const { set } = usePollResponses();
   const { next } = usePollActions();
-  const { handleSubmit } = formMethods;
+  const { handleSubmit, clearErrors } = formMethods;
 
   const onSubmit = handleSubmit((data) => {
     Object.entries(data).forEach(([k, v]) => {
       set(k, v);
+      clearErrors();
       next(v);
     });
   });
-  useKeyPressEvent("Enter", () => onSubmit());
+  useKeyPressEvent("Enter", (e) => {
+    e.stopPropagation();
+    onSubmit();
+  });
 
   if (!poll) return null;
 

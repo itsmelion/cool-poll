@@ -1,6 +1,6 @@
-import { chakra } from "@chakra-ui/react";
+import { chakra, FormLabel } from "@chakra-ui/react";
 
-export const H1 = chakra("h1", {
+export const H1 = chakra(FormLabel, {
   baseStyle: {
     fontSize: "h1",
     fontWeight: 200,

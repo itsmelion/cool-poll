@@ -4,12 +4,10 @@ import { FieldResponse, Action } from "types";
 import { usePoll } from "../usePoll";
 import { jumpToAction, addAction, subtractAction } from "./actions";
 import { isConditionMet } from "./isConditionMet";
-import { useNextQuestion } from "./useNextQuestion";
 
-export function useActionsResolver(): (r: FieldResponse) => void {
+export function useActionsResolver(): (r: FieldResponse) => boolean {
   const { activeQuestion, poll = {}, setPoll: dispatch } = usePoll();
   const { logic = [] } = poll;
-  const nextQuestion = useNextQuestion();
 
   const resolveAction = useMemo(
     () => (action: Action) => {
@@ -28,12 +26,12 @@ export function useActionsResolver(): (r: FieldResponse) => void {
   );
 
   return useCallback(
-    (r: FieldResponse) => {
+    (r: FieldResponse): boolean => {
       const questionLogic = logic.find(({ ref }) => ref === activeQuestion);
       let isJump = false;
 
       if (questionLogic) {
-        questionLogic?.actions?.forEach((action) => {
+        questionLogic.actions?.forEach((action) => {
           if (action?.action === "jump") isJump = true;
           if (!action?.condition) return;
           if (!isConditionMet(action.condition, r)) return;
@@ -41,8 +39,8 @@ export function useActionsResolver(): (r: FieldResponse) => void {
         });
       }
 
-      !isJump && nextQuestion();
+      return isJump;
     },
-    [logic, activeQuestion, nextQuestion, resolveAction],
+    [logic, activeQuestion, resolveAction],
   );
 }

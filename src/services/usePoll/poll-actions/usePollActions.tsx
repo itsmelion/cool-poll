@@ -1,8 +1,8 @@
-import { createContext, useContext, ReactChild } from "react";
+import { createContext, useContext, ReactChild, useCallback } from "react";
 import type { FieldResponse } from "types";
 
-import { usePoll } from "../usePoll";
 import { useActionsResolver } from "./useActionsResolver";
+import { useNextQuestion } from "./useNextQuestion";
 
 interface PollActions {
   activeQuestion: string;
@@ -28,13 +28,16 @@ export const usePollActions = (): PollActions => useContext(Context);
 
 export const PollActionsContext = (props: Props): JSX.Element => {
   const { children } = props;
-  const { poll } = usePoll();
   const resolveActions = useActionsResolver();
+  const nextQuestion = useNextQuestion();
 
-  const next = (r: FieldResponse) => {
-    if (!poll) return;
-    resolveActions(r);
-  };
+  const next = useCallback(
+    (r: FieldResponse) => {
+      const isJump = resolveActions(r);
+      if (!isJump) nextQuestion();
+    },
+    [resolveActions, nextQuestion],
+  );
 
   return (
     <Context.Provider
