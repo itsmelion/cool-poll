@@ -22,7 +22,7 @@ export type PollReducer =
 export type PollDispatcher = React.Dispatch<PollReducer>;
 
 export interface PollState {
-  activeQuestion?: string;
+  activeQuestion: string;
   score?: number;
   scoreHandlers: ReturnType<typeof useCounter>[1] | null;
   price?: number;

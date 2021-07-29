@@ -9,5 +9,8 @@ export const Container = chakra("form", {
     position: "absolute",
     margin: "auto",
     backgroundColor: mode("gray.800", "whiteAlpha.900")(props),
+    color: "inherit",
+    maxHeight: "100%",
+    overflowY: "auto",
   }),
 });

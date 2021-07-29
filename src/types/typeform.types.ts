@@ -161,7 +161,7 @@ export interface Field {
   /**
    * The type of field.
    */
-  type?: Type | string;
+  type: Type | string;
   /**
    * Properties of a field.
    */

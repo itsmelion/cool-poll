@@ -7,19 +7,18 @@ import { Question } from "./Question";
 import { View } from "./QuestionStack.styled.web";
 
 export const QuestionStack: React.FC = (props) => {
-  const { poll } = usePoll();
+  const { poll, activeQuestion } = usePoll();
   const formMethods = useForm({ mode: "onSubmit" });
-  const { set } = usePollResponses();
+  const { setAll } = usePollResponses();
   const { next } = usePollActions();
   const { handleSubmit, clearErrors } = formMethods;
 
   const onSubmit = handleSubmit((data) => {
-    Object.entries(data).forEach(([k, v]) => {
-      set(k, v);
-      clearErrors();
-      next(v);
-    });
+    setAll(data);
+    clearErrors();
+    next(data[activeQuestion]);
   });
+
   useKeyPressEvent("Enter", (e) => {
     e.stopPropagation();
     onSubmit();

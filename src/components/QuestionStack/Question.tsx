@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
+import { memo } from "react";
 import { useFormContext } from "react-hook-form";
 import { Field } from "types";
 
@@ -7,12 +8,11 @@ import { usePoll, usePollResponses } from "services";
 import { ErrorMessage } from "components";
 
 import * as Poll from "../Poll";
-import { useFieldResolver } from "../Poll/Field/fieldResolver";
+import { useFieldResolver as field } from "../Poll/Field/fieldResolver";
 
 type Props = { question: Field; onSubmit: () => void };
 
-export function Question({ question, onSubmit }: Props): JSX.Element {
-  const Field = useFieldResolver(question.type);
+function Q({ question, onSubmit }: Props): JSX.Element {
   const { activeQuestion, currentQuestion } = usePoll();
   const { formState } = useFormContext();
   const { responses } = usePollResponses();
@@ -28,7 +28,7 @@ export function Question({ question, onSubmit }: Props): JSX.Element {
         <Poll.Heading title={question.title} />
         <Poll.Description title={question.properties?.description} />
 
-        <Field />
+        {field(question.type)}
 
         <ErrorMessage errors={formState.errors} name={currentQuestion.ref} />
       </FormControl>
@@ -45,3 +45,5 @@ export function Question({ question, onSubmit }: Props): JSX.Element {
     </Poll.View>
   );
 }
+
+export const Question = memo(Q);

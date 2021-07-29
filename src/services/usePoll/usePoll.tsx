@@ -14,6 +14,7 @@ const initialState: PollState = {
   price: 0,
   poll: undefined,
   currentQuestion: {
+    type: "",
     ref: "",
     id: "",
   },
@@ -45,8 +46,6 @@ const reducer = (
   state = initialState,
   { type: actionType, payload }: PollReducer,
 ): PollState => {
-  console.log(actionType);
-
   switch (actionType) {
     case "next":
     case "previous":

@@ -9,13 +9,9 @@ export function ShortText({ htmlProps, ...props }: QuestionFieldProps): JSX.Elem
   const { currentQuestion } = usePoll();
   const { register } = useFormContext();
 
-  return (
-    <InputItem
-      {...htmlProps}
-      {...props}
-      {...register(currentQuestion.ref, {
-        required: currentQuestion.validations?.required && "Can't skip this one",
-      })}
-    />
-  );
+  const reg = register(currentQuestion.ref, {
+    required: currentQuestion.validations?.required && "Can't skip this one",
+  });
+
+  return <InputItem {...htmlProps} {...props} {...reg} />;
 }
