@@ -5,7 +5,7 @@ export function isConditionMet(
   condition: Condition,
   response: FieldResponse,
 ): boolean {
-  const value = condition?.vars?.[1].value;
+  const value = condition?.vars?.[1]?.value;
   if (!value) return false;
 
   switch (condition.op) {

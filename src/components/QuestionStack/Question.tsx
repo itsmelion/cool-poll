@@ -28,7 +28,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
         <Poll.Heading title={question.title} />
         <Poll.Description title={question.properties?.description} />
 
-        {field(question.type)}
+        {field(question)}
 
         <ErrorMessage errors={formState.errors} name={currentQuestion.ref} />
       </FormControl>

@@ -1,16 +1,17 @@
 import { useFormContext } from "react-hook-form";
 
-import { usePoll } from "services";
-
 import { InputItem } from "./Item.styles.web";
 import { QuestionFieldProps } from "./QuestionField.types";
 
-export function ShortText({ htmlProps, ...props }: QuestionFieldProps): JSX.Element {
-  const { currentQuestion } = usePoll();
+export function ShortText({
+  htmlProps,
+  field,
+  ...props
+}: QuestionFieldProps): JSX.Element {
   const { register } = useFormContext();
 
-  const reg = register(currentQuestion.ref, {
-    required: currentQuestion.validations?.required && "Can't skip this one",
+  const reg = register(field.ref, {
+    required: field.validations?.required && "Can't skip this one",
   });
 
   return <InputItem {...htmlProps} {...props} {...reg} />;

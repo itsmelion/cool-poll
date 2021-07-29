@@ -1959,6 +1959,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@habtic/validations@^0.2.22":
+  version "0.2.22"
+  resolved "https://npm.dephion.com/@habtic%2fvalidations/-/validations-0.2.22.tgz#bc87ece94697ce4263bd67ebb3b4b012eb93e8bc"
+  integrity sha512-m+eedD8RlRAIhmtm1JppY9+1079Y3m4WmtjoL1eWyIDGdQIgkbxGl7Nfc3/yQWP98VFNw7Ad2fib+Iy9i1Iu1w==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"

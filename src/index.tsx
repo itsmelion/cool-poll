@@ -7,7 +7,7 @@ import { Form, Field } from "types";
 import { PollActionsContext, PollContext, PollResponsesContext } from "services";
 import mock from "services/usePoll/mock.json";
 
-import { QuestionStack, PageContainer } from "components";
+import { TheQuiz, PageContainer } from "components";
 
 const theme = extendTheme(defaultTheme);
 
@@ -23,7 +23,7 @@ function App() {
           }}>
           <PollResponsesContext>
             <PollActionsContext>
-              <QuestionStack />
+              <TheQuiz />
             </PollActionsContext>
           </PollResponsesContext>
         </PollContext>

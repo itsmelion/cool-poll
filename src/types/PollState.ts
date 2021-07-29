@@ -12,12 +12,13 @@ export type CurrentQuestion = Field & {
   response?: FieldResponse;
 };
 
-export type stateActions = "next" | "previous" | "data" | "respond";
+export type stateActions = "next" | "previous" | "data" | "respond" | "thankyou";
 export type PollReducer =
   | { type: "next"; payload?: Field }
   | { type: "previous"; payload?: Field }
   | { type: "data"; payload?: Partial<PollState> }
-  | { type: "respond"; payload?: FieldResponse };
+  | { type: "respond"; payload?: FieldResponse }
+  | { type: "thankyou"; payload?: unknown };
 
 export type PollDispatcher = React.Dispatch<PollReducer>;
 

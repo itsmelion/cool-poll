@@ -1,6 +1,8 @@
 import { InputProps, TextareaProps } from "@chakra-ui/react";
 import { fieldType } from "types";
 
+import { preventNonNumericValues } from "@habtic/validations";
+
 const short_text: InputProps = {
   type: "text",
   maxLength: 255,
@@ -15,6 +17,7 @@ const long_text: TextareaProps = {
 const numeric: InputProps = {
   type: "number",
   autoFocus: true,
+  onKeyDown: preventNonNumericValues,
 };
 
 type R = Record<string, unknown>;

@@ -15,6 +15,6 @@ export function useNextQuestion(): () => void {
     if (nextQuestion) setPoll({ type: "next", payload: nextQuestion });
 
     /* TODO: is Final question? submit & thankyoupage */
-    if (currentIndex === fields.length - 1) return;
+    if (currentIndex === fields.length - 1) setPoll({ type: "thankyou" });
   }, [setPoll, fields, activeQuestion]);
 }

@@ -27,6 +27,7 @@ export function useActionsResolver(): (r: FieldResponse) => boolean {
 
   return useCallback(
     (r: FieldResponse): boolean => {
+      if (!r) return false;
       const questionLogic = logic.find(({ ref }) => ref === activeQuestion);
       let isJump = false;
 

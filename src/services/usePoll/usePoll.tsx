@@ -56,6 +56,16 @@ const reducer = (
       };
     case "data":
       return Object.assign(state, payload);
+    case "thankyou":
+      return {
+        ...state,
+        activeQuestion: "thankyou",
+        currentQuestion: {
+          type: "",
+          ref: "",
+          id: "",
+        },
+      };
     case "respond":
     default:
       return state;
