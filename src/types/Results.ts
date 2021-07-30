@@ -32,6 +32,7 @@ export interface Question {
   ref: string;
   type: fieldType;
   title: string;
+  repliesCount: number;
   variables: Variables;
   choices: QuestionChoice[];
 }

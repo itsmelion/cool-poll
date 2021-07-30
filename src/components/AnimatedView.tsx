@@ -12,7 +12,7 @@ const MotionContainer = motion(Card);
 export const View: React.FC<PollViewProps> = ({ active, ...props }) => {
   return (
     <AnimatePresence>
-      {active && <MotionContainer {...props} {...animations} />}
+      {active && <MotionContainer {...props} {...animations} as="form" />}
     </AnimatePresence>
   );
 };

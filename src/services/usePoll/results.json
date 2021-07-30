@@ -2,24 +2,25 @@
   "title": "Gefeliciteerd, you win nothing!",
   "meta": {
     "user": {
-      "wrong": 0,
-      "correct": 0,
-      "score": 0,
-      "price": 0,
-      "total": 0
+      "wrong": 2,
+      "correct": 3,
+      "score": 12,
+      "price": 222,
+      "total": 69
     },
     "global": {
-      "wrong": 0,
-      "correct": 0,
-      "score": 0,
-      "totalSubmissions": 0,
-      "responseRate": 0
+      "wrong": 3,
+      "correct": 7,
+      "score": 21,
+      "totalSubmissions": 69,
+      "responseRate": 89
     }
   },
   "questions": [
     {
       "ref": "REF1",
       "type": "multiple_choice",
+      "repliesCount": 56,
       "title": "Whats your pipi?",
       "variables": {
         "score": 31,
@@ -29,7 +30,7 @@
         {
           "field": {
             "ref": "text",
-            "label": "YMCA"
+            "label": "The prologue explains that the book is 'largely concerned with hobbits', telling of their origins in a migration from the east, their habits such as smoking 'pipe-weed', and of how their homeland the Shire is organised. It explains how the narrative follows on from The Hobbit, in which the hobbit Bilbo Baggins finds the One Ring, which had been in the possession of Gollum."
           },
           "correct": true,
           "isChosen": false,
@@ -40,6 +41,7 @@
     {
       "ref": "REF2",
       "type": "multiple_choice",
+      "repliesCount": 56,
       "title": "Whats your fav colour?",
       "variables": {
         "score": 31,
@@ -69,6 +71,7 @@
     {
       "ref": "REF2",
       "type": "multiple_choice",
+      "repliesCount": 56,
       "title": "Whats your best place to live?",
       "variables": {
         "score": 31,

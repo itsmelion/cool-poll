@@ -13,6 +13,7 @@ export const Card = chakra("section", {
     color: "inherit",
     maxHeight: "100%",
     overflowY: "auto",
+    w: "100%",
   }),
 });
 
