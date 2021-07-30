@@ -3,7 +3,7 @@ import { memo } from "react";
 import { useFormContext } from "react-hook-form";
 import { Field } from "types";
 
-import { usePoll, usePollResponses } from "services";
+import { usePoll } from "services";
 
 import { ErrorMessage } from "components";
 
@@ -15,7 +15,6 @@ type Props = { question: Field; onSubmit: () => void };
 function Q({ question, onSubmit }: Props): JSX.Element {
   const { activeQuestion, currentQuestion } = usePoll();
   const { formState } = useFormContext();
-  const { responses } = usePollResponses();
 
   return (
     <Poll.View
@@ -40,8 +39,6 @@ function Q({ question, onSubmit }: Props): JSX.Element {
         <Text>press</Text>
         <Text fontWeight={500}>Enter ↵</Text>
       </ButtonGroup>
-
-      <pre>{JSON.stringify(responses, null, 2)}</pre>
     </Poll.View>
   );
 }

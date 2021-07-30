@@ -1,0 +1,108 @@
+{
+  "title": "Gefeliciteerd, you win nothing!",
+  "meta": {
+    "user": {
+      "wrong": 0,
+      "correct": 0,
+      "score": 0,
+      "price": 0,
+      "total": 0
+    },
+    "global": {
+      "wrong": 0,
+      "correct": 0,
+      "score": 0,
+      "totalSubmissions": 0,
+      "responseRate": 0
+    }
+  },
+  "questions": [
+    {
+      "ref": "REF1",
+      "type": "multiple_choice",
+      "title": "Whats your pipi?",
+      "variables": {
+        "score": 31,
+        "price": 0
+      },
+      "choices": [
+        {
+          "field": {
+            "ref": "text",
+            "label": "YMCA"
+          },
+          "correct": true,
+          "isChosen": false,
+          "chosenCount": 69
+        }
+      ]
+    },
+    {
+      "ref": "REF2",
+      "type": "multiple_choice",
+      "title": "Whats your fav colour?",
+      "variables": {
+        "score": 31,
+        "price": 0
+      },
+      "choices": [
+        {
+          "field": {
+            "ref": "text",
+            "label": "black"
+          },
+          "correct": false,
+          "isChosen": false,
+          "chosenCount": 69
+        },
+        {
+          "field": {
+            "ref": "text",
+            "label": "black, OBVIOUS!"
+          },
+          "correct": true,
+          "isChosen": true,
+          "chosenCount": 69
+        }
+      ]
+    },
+    {
+      "ref": "REF2",
+      "type": "multiple_choice",
+      "title": "Whats your best place to live?",
+      "variables": {
+        "score": 31,
+        "price": 0
+      },
+      "choices": [
+        {
+          "field": {
+            "ref": "text",
+            "label": "Japan"
+          },
+          "correct": false,
+          "isChosen": false,
+          "chosenCount": 69
+        },
+        {
+          "field": {
+            "ref": "text",
+            "label": "Limburg"
+          },
+          "correct": true,
+          "isChosen": false,
+          "chosenCount": 69
+        },
+        {
+          "field": {
+            "ref": "text",
+            "label": "Holland"
+          },
+          "correct": false,
+          "isChosen": true,
+          "chosenCount": 69
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Container } from "./View.styles.web";
+import { Card } from "./Card";
 
 interface PollViewProps {
   active: boolean;
   onSubmit: () => void;
 }
 
-const MotionContainer = motion(Container);
+const MotionContainer = motion(Card);
 
 export const View: React.FC<PollViewProps> = ({ active, ...props }) => {
   return (

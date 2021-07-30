@@ -9,3 +9,5 @@ export type {
   PollDispatcher,
   FieldResponse,
 } from "./PollState";
+
+export * as Results from "./Results";

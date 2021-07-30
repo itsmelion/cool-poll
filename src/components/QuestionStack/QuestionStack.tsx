@@ -3,8 +3,8 @@ import { useKeyPressEvent } from "react-use";
 
 import { usePoll, usePollActions, usePollResponses } from "services";
 
+import { Center } from "../Card";
 import { Question } from "./Question";
-import { View } from "./QuestionStack.styled.web";
 
 export const QuestionStack: React.FC = (props) => {
   const { poll, activeQuestion } = usePoll();
@@ -27,12 +27,12 @@ export const QuestionStack: React.FC = (props) => {
   if (!poll) return null;
 
   return (
-    <View {...props}>
+    <Center {...props}>
       <FormProvider {...formMethods}>
         {poll.fields?.map((question) => (
           <Question key={question.id} onSubmit={onSubmit} question={question} />
         ))}
       </FormProvider>
-    </View>
+    </Center>
   );
 };
