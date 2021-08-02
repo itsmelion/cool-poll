@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Card } from "./Card";
@@ -10,9 +11,12 @@ interface PollViewProps {
 const MotionContainer = motion(Card);
 
 export const View: React.FC<PollViewProps> = ({ active, ...props }) => {
+  const cardBg = useColorModeValue("gray.50", "gray.800");
   return (
     <AnimatePresence>
-      {active && <MotionContainer {...props} {...animations} as="form" />}
+      {active && (
+        <MotionContainer {...props} {...animations} as="form" bgColor={cardBg} />
+      )}
     </AnimatePresence>
   );
 };

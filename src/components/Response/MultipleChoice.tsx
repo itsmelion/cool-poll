@@ -5,10 +5,10 @@ import { Results } from "types";
 import { Choice, View } from "./Result.styles";
 
 export function MultipleChoice({ field }: { field: Results.Question }): JSX.Element {
-  const correctSelectionBg = useColorModeValue("green.700", "green.300");
-  const wrongSelectionBg = useColorModeValue("red.300", "red.700");
+  const correctSelectionBg = useColorModeValue("green.600", "green.300");
+  const wrongSelectionBg = useColorModeValue("red.400", "red.700");
   const neutralSelectionBg = useColorModeValue("gray.200", "gray.600");
-
+  const containerBg = useColorModeValue("gray.100", "gray.700");
   const choiceBgColor = (choice: Results.QuestionChoice): string => {
     if (choice.isChosen) {
       return choice.correct ? correctSelectionBg : wrongSelectionBg;
@@ -17,7 +17,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
   };
 
   return (
-    <View>
+    <View bgColor={containerBg}>
       <Text isTruncated mb="0.5em" mx="0.5em" w="100%">
         {field.title}
       </Text>
@@ -32,7 +32,11 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
               <Box as={FaCheckCircle} color="green.500" mt="-.2em" />
             )}
 
-            <Text isTruncated mx="0.5em" w="100%">
+            <Text
+              fontWeight={choice.correct ? 600 : "normal"}
+              isTruncated
+              mx="0.5em"
+              w="100%">
               {choice.field.label}
             </Text>
 

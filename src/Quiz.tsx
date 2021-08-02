@@ -13,7 +13,7 @@ interface PollProps {
   wrapper: boolean;
   onSubmit?: Response.OnSubmit;
 }
-export const Poll = memo(({ poll, wrapper, onSubmit }: PollProps) => {
+export const Quiz = memo(({ poll, wrapper, onSubmit }: PollProps) => {
   if (!poll) return null;
 
   return (
@@ -33,4 +33,4 @@ export const Poll = memo(({ poll, wrapper, onSubmit }: PollProps) => {
   );
 });
 
-Poll.displayName = "Poll";
+Quiz.displayName = "Quiz";

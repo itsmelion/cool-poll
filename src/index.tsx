@@ -5,11 +5,11 @@ import { Form, Results } from "types";
 import mock from "services/usePoll/mock.json";
 import results from "services/usePoll/results.json";
 
-import { Poll } from "./Poll";
+import { Quiz } from "./Quiz";
 
 ReactDOM.render(
   <StrictMode>
-    <Poll
+    <Quiz
       onSubmit={(respond) => {
         alert("WOW!");
         console.info(respond);
