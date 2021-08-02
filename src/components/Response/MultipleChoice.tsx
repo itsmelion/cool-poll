@@ -22,7 +22,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
         {field.title}
       </Text>
 
-      <VStack>
+      <VStack as="ol">
         {field.choices.map((choice) => (
           <Choice
             bgColor={choiceBgColor(choice)}

@@ -24,7 +24,7 @@ export interface Metadata {
 
 export interface Results {
   title: string;
-  metadata: Metadata;
+  meta: Metadata;
   questions: Question[];
 }
 
@@ -46,3 +46,5 @@ export interface QuestionChoice {
   isChosen: boolean;
   chosenCount: number;
 }
+
+export type NullableResults = Results | null;

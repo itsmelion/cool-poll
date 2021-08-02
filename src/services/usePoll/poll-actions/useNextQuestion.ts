@@ -1,10 +1,19 @@
 import { useCallback } from "react";
 
 import { usePoll } from "../usePoll";
+import { usePollResponses } from "../usePollResponses";
 
 export function useNextQuestion(): () => void {
-  const { poll, activeQuestion, setPoll } = usePoll();
+  const { poll, activeQuestion, setPoll, onSubmit } = usePoll();
+  const { responses, setResults } = usePollResponses();
   const { fields } = poll || {};
+
+  const goToThankYouPage = useCallback(() => {
+    onSubmit?.(responses).then((r) => {
+      setPoll({ type: "thankyou" });
+      return setResults(r);
+    });
+  }, [onSubmit, responses, setPoll, setResults]);
 
   return useCallback(() => {
     if (!fields || !Array.isArray(fields)) return;
@@ -15,6 +24,6 @@ export function useNextQuestion(): () => void {
     if (nextQuestion) setPoll({ type: "next", payload: nextQuestion });
 
     /* TODO: is Final question? submit & thankyoupage */
-    if (currentIndex === fields.length - 1) setPoll({ type: "thankyou" });
-  }, [setPoll, fields, activeQuestion]);
+    if (currentIndex === fields.length - 1) goToThankYouPage();
+  }, [setPoll, fields, activeQuestion, goToThankYouPage]);
 }

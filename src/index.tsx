@@ -1,40 +1,25 @@
-import { ChakraProvider as ThemeProvider, extendTheme } from "@chakra-ui/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { theme as defaultTheme } from "theme/theme";
-import { Form, Field } from "types";
+import { Form, Results } from "types";
 
-import { PollActionsContext, PollContext, PollResponsesContext } from "services";
 import mock from "services/usePoll/mock.json";
+import results from "services/usePoll/results.json";
 
-import { TheQuiz, PageContainer } from "components";
-
-const theme = extendTheme(defaultTheme);
-
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <PageContainer>
-        <PollContext
-          value={{
-            activeQuestion: mock.fields[0].ref,
-            currentQuestion: mock.fields[0] as Field,
-            poll: mock as Form,
-          }}>
-          <PollResponsesContext>
-            <PollActionsContext>
-              <TheQuiz />
-            </PollActionsContext>
-          </PollResponsesContext>
-        </PollContext>
-      </PageContainer>
-    </ThemeProvider>
-  );
-}
+import { Poll } from "./Poll";
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <Poll
+      onSubmit={(respond) => {
+        alert("WOW!");
+        console.info(respond);
+        return new Promise<Results.Results>((resolve, reject) => {
+          resolve(results);
+        });
+      }}
+      poll={mock as Form}
+      wrapper
+    />
   </StrictMode>,
   document.getElementById("root"),
 );

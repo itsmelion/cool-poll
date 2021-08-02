@@ -11,3 +11,4 @@ export type {
 } from "./PollState";
 
 export * as Results from "./Results";
+export * as Response from "./Responses";

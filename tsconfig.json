@@ -23,7 +23,8 @@
   },
   "include": [
     "src",
-    "react-app-env.d.ts"
+    "react-app-env.d.ts",
+    "index.ts"
   ],
   "exclude": [
     "**/*.{native|ios|android}.{tsx,ts}",

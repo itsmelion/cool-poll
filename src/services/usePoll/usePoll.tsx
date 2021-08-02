@@ -1,10 +1,14 @@
 import { createContext, useContext, ReactChild, useReducer } from "react";
 import { useCounter } from "react-use";
-import type { PollState, PollReducer, Field } from "types";
+import type { PollState, PollReducer, Field, Response } from "types";
+
+import { PollActionsContext } from "./poll-actions/usePollActions";
+import { PollResponsesContext } from "./usePollResponses";
 
 interface Props {
   children: ReactChild;
   value?: Partial<PollState>;
+  onSubmit?: Response.OnSubmit;
 }
 
 const initialState: PollState = {
@@ -25,7 +29,7 @@ const Context = createContext<PollState>(initialState);
 export const usePoll = (): PollState => useContext(Context);
 
 export const PollContext = (props: Props): JSX.Element => {
-  const { children, value } = props;
+  const { children, value, onSubmit } = props;
   const [currentScore, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
 
@@ -36,8 +40,11 @@ export const PollContext = (props: Props): JSX.Element => {
         score: currentScore,
         scoreHandlers,
         setPoll,
+        onSubmit,
       }}>
-      {children}
+      <PollActionsContext>
+        <PollResponsesContext>{children}</PollResponsesContext>
+      </PollActionsContext>
     </Context.Provider>
   );
 };

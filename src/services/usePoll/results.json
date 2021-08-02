@@ -29,7 +29,7 @@
       "choices": [
         {
           "field": {
-            "ref": "text",
+            "ref": "text1",
             "label": "The prologue explains that the book is 'largely concerned with hobbits', telling of their origins in a migration from the east, their habits such as smoking 'pipe-weed', and of how their homeland the Shire is organised. It explains how the narrative follows on from The Hobbit, in which the hobbit Bilbo Baggins finds the One Ring, which had been in the possession of Gollum."
           },
           "correct": true,
@@ -50,7 +50,7 @@
       "choices": [
         {
           "field": {
-            "ref": "text",
+            "ref": "text1",
             "label": "black"
           },
           "correct": false,
@@ -59,7 +59,7 @@
         },
         {
           "field": {
-            "ref": "text",
+            "ref": "text2",
             "label": "black, OBVIOUS!"
           },
           "correct": true,
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "ref": "REF2",
+      "ref": "REF3",
       "type": "multiple_choice",
       "repliesCount": 56,
       "title": "Whats your best place to live?",
@@ -80,7 +80,7 @@
       "choices": [
         {
           "field": {
-            "ref": "text",
+            "ref": "text1",
             "label": "Japan"
           },
           "correct": false,
@@ -89,7 +89,7 @@
         },
         {
           "field": {
-            "ref": "text",
+            "ref": "text2",
             "label": "Limburg"
           },
           "correct": true,
@@ -98,7 +98,7 @@
         },
         {
           "field": {
-            "ref": "text",
+            "ref": "text3",
             "label": "Holland"
           },
           "correct": false,

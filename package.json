@@ -19,9 +19,15 @@
   },
   "devDependencies": {
     "@dephion/eslint-config": "0.1.18",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-image": "^2.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@types/react": "17.0.15",
     "@types/react-dom": "17.0.9",
     "react-scripts": "4.0.3",
+    "rollup": "^2.55.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "4.3.5"
   },
   "optionalDependencies": {
@@ -30,6 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prepublishOnly": "rollup -c",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
     "lint:ci": "eslint src/**/*.{js,jsx,ts,tsx}"

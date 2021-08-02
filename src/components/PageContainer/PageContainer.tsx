@@ -5,9 +5,11 @@ import { Backdrop, Main } from "./PageContainer.styled.web";
 import bgDark from "./backdrop-dark.jpg";
 import bgLight from "./backdrop-light.jpg";
 
-type ComponentType = React.FC<React.ComponentPropsWithoutRef<"main">>;
+interface ComponentType extends React.ComponentPropsWithoutRef<"main"> {
+  wrapper?: boolean;
+}
 
-export const PageContainer: ComponentType = (props) => {
+export const PageContainer = ({ wrapper, ...props }: ComponentType): JSX.Element => {
   const bgColor = useColorModeValue("#ef9aff", "#220552");
   const { colorMode } = useColorMode();
   const [bgImage, setBgReady] = useState<string>();
@@ -20,6 +22,9 @@ export const PageContainer: ComponentType = (props) => {
     bgImg.src = src;
     bgImg.onload = () => setTimeout(() => setBgReady(`url(${src})`), 50);
   }, [isDark]);
+
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  if (!wrapper) return <>{props.children}</>;
 
   return (
     <Backdrop bgColor={bgColor} bgImage={bgImage}>
