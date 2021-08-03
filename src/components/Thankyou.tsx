@@ -1,7 +1,6 @@
 import { Text, Spinner } from "@chakra-ui/react";
 
 import { usePoll } from "../services";
-import type { Results } from "../types";
 import { View } from "./AnimatedView";
 import { Center } from "./Card";
 import { Metadata } from "./Metadata";
@@ -18,12 +17,10 @@ export function ThankYou(): JSX.Element | null {
             <Text fontSize="2xl" mb={6} textAlign="center">
               {results.title}
             </Text>
+
             <ol>
               {results.questions.map((question) => (
-                <MultipleChoice
-                  field={question as Results.Question}
-                  key={question.ref}
-                />
+                <MultipleChoice field={question} key={question.ref} />
               ))}
             </ol>
             <Metadata data={results.meta} />

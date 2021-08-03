@@ -1,5 +1,5 @@
 import type { FieldResponse } from "./PollState";
-import type { Results } from "./Results";
+import type { NullableResults } from "./Results";
 
 export type Responses = Record<string, FieldResponse> | Record<string, never>;
 export interface PollResponses extends Actions<Responses> {
@@ -18,4 +18,4 @@ export interface Actions<T extends Record<string, unknown>>
   get: <K extends keyof T>(key: K) => T[K];
 }
 
-export type OnSubmit = (responses: Responses) => Promise<Results | null>;
+export type OnSubmit = (responses: Responses) => Promise<NullableResults>;

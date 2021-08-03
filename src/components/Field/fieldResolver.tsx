@@ -1,4 +1,4 @@
-import type { Field } from "../../../types";
+import type { Field } from "../../types";
 import { Check } from "./Check";
 import { LongText } from "./LongText";
 import { NumericField } from "./NumericField";
@@ -13,8 +13,11 @@ export function useFieldResolver(field: Field): JSX.Element | null {
     case "long_text":
       return <LongText field={field} htmlProps={htmlProps} />;
 
-    case "multiple_choice":
-      return <Check field={field} htmlProps={htmlProps} />;
+    case "multiple_choice": {
+      if (field.properties?.allow_multiple_selection)
+        return <Check field={field} htmlProps={htmlProps} />;
+      return <Radio field={field} htmlProps={htmlProps} />;
+    }
 
     case "number":
       return <NumericField field={field} htmlProps={htmlProps} />;

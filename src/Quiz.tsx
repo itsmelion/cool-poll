@@ -10,7 +10,7 @@ const theme = extendTheme(defaultTheme);
 
 interface PollProps {
   poll: Form;
-  wrapper: boolean;
+  wrapper?: boolean;
   submit?: Response.OnSubmit;
 }
 

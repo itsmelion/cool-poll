@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useCounter } from "react-use";
 
 import type { OnSubmit } from "./Responses";
-import type { Results } from "./Results";
+import type { NullableResults } from "./Results";
 import type { Form, Field } from "./typeform.types";
 
 export type FieldResponse =
@@ -34,6 +34,6 @@ export interface PollState {
   currentQuestion: CurrentQuestion;
   setPoll: PollDispatcher;
   submit?: OnSubmit;
-  results: Results | null;
-  setResults: Dispatch<SetStateAction<Results | null>>;
+  results: NullableResults;
+  setResults: Dispatch<SetStateAction<NullableResults>>;
 }

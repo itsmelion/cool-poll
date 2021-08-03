@@ -32,7 +32,7 @@ export const PollContext = (props: Props): JSX.Element => {
   const { children, value, submit } = props;
   const [currentScore, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
-  const [results, setResults] = useState<Results.Results | null>(null);
+  const [results, setResults] = useState<Results.NullableResults>(null);
 
   return (
     <Context.Provider
