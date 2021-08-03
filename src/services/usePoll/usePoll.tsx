@@ -2,9 +2,6 @@ import { createContext, useContext, ReactChild, useReducer, useState } from "rea
 import { useCounter } from "react-use";
 import type { PollState, PollReducer, Field, Response, Results } from "types";
 
-import { PollActionsContext } from "./poll-actions/usePollActions";
-import { PollResponsesContext } from "./usePollResponses";
-
 interface Props {
   children: ReactChild;
   value?: Partial<PollState>;
@@ -47,9 +44,7 @@ export const PollContext = (props: Props): JSX.Element => {
         results,
         setResults,
       }}>
-      <PollActionsContext>
-        <PollResponsesContext>{children}</PollResponsesContext>
-      </PollActionsContext>
+      {children}
     </Context.Provider>
   );
 };

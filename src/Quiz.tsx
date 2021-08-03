@@ -3,7 +3,7 @@ import { memo } from "react";
 import { theme as defaultTheme } from "theme/theme";
 import { Form, Response } from "types";
 
-import { PollContext } from "services";
+import { PollProvider } from "services";
 
 import { TheQuiz, PageContainer } from "components";
 
@@ -21,7 +21,7 @@ export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
   return (
     <ThemeProvider theme={theme}>
       <PageContainer wrapper={wrapper}>
-        <PollContext
+        <PollProvider
           submit={submit}
           value={{
             activeQuestion: poll.fields?.[0].ref,
@@ -29,7 +29,7 @@ export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
             poll,
           }}>
           <TheQuiz />
-        </PollContext>
+        </PollProvider>
       </PageContainer>
     </ThemeProvider>
   );

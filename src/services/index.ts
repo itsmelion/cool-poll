@@ -1,8 +1,6 @@
 // Hooks
-export { usePoll, PollContext } from "./usePoll/usePoll";
-export {
-  usePollActions,
-  PollActionsContext,
-} from "./usePoll/poll-actions/usePollActions";
+export { usePoll } from "./usePoll/usePoll";
+export { usePollActions } from "./usePoll/poll-actions/usePollActions";
+export { usePollResponses } from "./usePoll/usePollResponses";
 
-export { usePollResponses, PollResponsesContext } from "./usePoll/usePollResponses";
+export { PollProvider } from "./Contexts";

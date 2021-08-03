@@ -5,8 +5,7 @@ import { Field } from "types";
 
 import { usePoll } from "services";
 
-import { ErrorMessage } from "components";
-
+import { ErrorMessage } from "../ErrorMessage";
 import * as Poll from "../Poll";
 import { useFieldResolver as field } from "../Poll/Field/fieldResolver";
 
