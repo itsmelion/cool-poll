@@ -1,7 +1,10 @@
 {
+  "outDir": "./dist",
   "compilerOptions": {
-    "baseUrl": "src",
+    "noEmit": true,
+    "baseUrl": "./src",
     "target": "es5",
+    "module": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -25,15 +28,17 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "noEmit": false,
     "isolatedModules": true,
   },
   "include": [
     "src",
-    "react-app-env.d.ts",
-    "index.ts"
+    "index.ts",
   ],
   "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "src/index.tsx",
     "**/*.{native|ios|android}.{tsx,ts}",
     "**/*.native.tsx",
     "**/*.native.ts",
