@@ -1,7 +1,10 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.2.6-0",
+  "version": "0.2.7-0",
   "private": false,
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
