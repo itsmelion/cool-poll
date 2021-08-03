@@ -1,10 +1,9 @@
 import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
 import { memo } from "react";
 import { useFormContext } from "react-hook-form";
-import { Field } from "types";
 
-import { usePoll } from "services";
-
+import { usePoll } from "../../services";
+import type { Field } from "../../types";
 import { ErrorMessage } from "../ErrorMessage";
 import * as Poll from "../Poll";
 import { useFieldResolver as field } from "../Poll/Field/fieldResolver";

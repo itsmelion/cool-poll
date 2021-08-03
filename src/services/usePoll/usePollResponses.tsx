@@ -1,6 +1,7 @@
 import { createContext, useContext, ReactChild } from "react";
 import { useMap } from "react-use";
-import { Response } from "types";
+
+import type { Response } from "../../types";
 
 interface Props {
   children: ReactChild;

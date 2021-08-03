@@ -1,8 +1,7 @@
 import { Text, Spinner } from "@chakra-ui/react";
-import { Results } from "types";
 
-import { usePoll } from "services";
-
+import { usePoll } from "../services";
+import type { Results } from "../types";
 import { View } from "./AnimatedView";
 import { Center } from "./Card";
 import { Metadata } from "./Metadata";

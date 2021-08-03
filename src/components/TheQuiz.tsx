@@ -1,5 +1,4 @@
-import { usePoll } from "services";
-
+import { usePoll } from "../services";
 import { QuestionStack } from "./QuestionStack/QuestionStack";
 import { ThankYou } from "./Thankyou";
 

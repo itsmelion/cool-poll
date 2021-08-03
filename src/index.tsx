@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Quiz } from "./Quiz";
 import mock from "./services/usePoll/mock.json";
 import results from "./services/usePoll/results.json";
-import { Form } from "./types";
+import type { Form } from "./types";
 
 const submit = () => {
   alert("WOW!");

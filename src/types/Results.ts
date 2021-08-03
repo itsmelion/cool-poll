@@ -1,5 +1,5 @@
-import { Variables } from "./Poll.types";
-import { fieldType } from "./field.types";
+import type { Variables } from "./Poll.types";
+import type { fieldType } from "./field.types";
 
 export interface UserMeta {
   wrong: number;

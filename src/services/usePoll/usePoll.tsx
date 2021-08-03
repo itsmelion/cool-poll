@@ -1,6 +1,7 @@
 import { createContext, useContext, ReactChild, useReducer, useState } from "react";
 import { useCounter } from "react-use";
-import type { PollState, PollReducer, Field, Response, Results } from "types";
+
+import type { PollState, PollReducer, Field, Response, Results } from "../../types";
 
 interface Props {
   children: ReactChild;

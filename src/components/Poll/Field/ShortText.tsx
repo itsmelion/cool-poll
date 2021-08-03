@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 
 import { InputItem } from "./Item.styles.web";
-import { QuestionFieldProps } from "./QuestionField.types";
+import type { QuestionFieldProps } from "./QuestionField.types";
 
 export function ShortText({
   htmlProps,

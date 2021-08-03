@@ -1,8 +1,7 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { useKeyPressEvent } from "react-use";
 
-import { usePoll, usePollActions, usePollResponses } from "services";
-
+import { usePoll, usePollActions, usePollResponses } from "../../services";
 import { Center } from "../Card";
 import { Question } from "./Question";
 

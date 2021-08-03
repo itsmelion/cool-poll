@@ -1,6 +1,6 @@
 import { ReactChild } from "react";
-import type { PollState, Response } from "types";
 
+import type { PollState, Response } from "../types";
 import { PollActionsContext } from "./usePoll/poll-actions/usePollActions";
 import { PollContext } from "./usePoll/usePoll";
 import { PollResponsesContext } from "./usePoll/usePollResponses";

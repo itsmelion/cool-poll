@@ -1,8 +1,7 @@
 import { Radio as RadioItem, RadioGroup, RadioGroupProps } from "@chakra-ui/react";
 import { useFormContext } from "react-hook-form";
 
-import { usePoll } from "services";
-
+import { usePoll } from "../../../services";
 import { Wrapper } from "./Item.styles.web";
 import type { QuestionFieldProps } from "./QuestionField.types";
 

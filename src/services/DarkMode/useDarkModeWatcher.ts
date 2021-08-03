@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { ColorMode } from "./darkMode.types";
+import type { ColorMode } from "./darkMode.types";
 
 export function useDarkModeWatcher(): ColorMode {
   const [colorMode, setColorMode] = useState<ColorMode>(null);

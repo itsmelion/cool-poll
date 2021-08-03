@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactChild, useCallback } from "react";
-import type { FieldResponse } from "types";
 
+import type { FieldResponse } from "../../../types";
 import { useActionsResolver } from "./useActionsResolver";
 import { useNextQuestion } from "./useNextQuestion";
 

@@ -1,5 +1,6 @@
 import { Box, Table, Thead, Tr, Th, Tbody, Td } from "@chakra-ui/react";
-import { Results } from "types";
+
+import type { Results } from "../types";
 
 interface MetadataProps {
   data: Results.Metadata;

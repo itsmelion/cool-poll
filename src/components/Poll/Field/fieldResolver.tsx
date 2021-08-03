@@ -1,5 +1,4 @@
-import { Field } from "types";
-
+import type { Field } from "../../../types";
 import { Check } from "./Check";
 import { LongText } from "./LongText";
 import { NumericField } from "./NumericField";

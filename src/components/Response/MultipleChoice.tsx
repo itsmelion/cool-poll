@@ -1,7 +1,7 @@
 import { Box, VStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
-import { Results } from "types";
 
+import type { Results } from "../../types";
 import { Choice, View } from "./Result.styles";
 
 export function MultipleChoice({ field }: { field: Results.Question }): JSX.Element {

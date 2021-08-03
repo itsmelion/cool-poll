@@ -1,4 +1,4 @@
-import { PollDispatcher, Action } from "types";
+import type { PollDispatcher, Action } from "../../../types";
 
 // ACTION LOGIC
 export function addAction(action: Action, dispatch: PollDispatcher): Action {

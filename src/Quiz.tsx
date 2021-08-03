@@ -1,11 +1,10 @@
 import { ChakraProvider as ThemeProvider, extendTheme } from "@chakra-ui/react";
 import { memo } from "react";
-import { theme as defaultTheme } from "theme/theme";
-import { Form, Response } from "types";
 
-import { PollProvider } from "services";
-
-import { TheQuiz, PageContainer } from "components";
+import { TheQuiz, PageContainer } from "./components";
+import { PollProvider } from "./services";
+import { theme as defaultTheme } from "./theme/theme";
+import type { Form, Response } from "./types";
 
 const theme = extendTheme(defaultTheme);
 

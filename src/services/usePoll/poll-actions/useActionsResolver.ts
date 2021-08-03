@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
-import { FieldResponse, Action } from "types";
 
+import type { FieldResponse, Action } from "../../../types";
 import { usePoll } from "../usePoll";
 import { jumpToAction, addAction, subtractAction } from "./actions";
 import { isConditionMet } from "./isConditionMet";

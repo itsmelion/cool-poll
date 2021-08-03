@@ -1,4 +1,4 @@
-import type { Condition, FieldResponse } from "types";
+import type { Condition, FieldResponse } from "../../../types";
 
 // CONDITIONAL OPERATIONS
 export function isConditionMet(
