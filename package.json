@@ -1,6 +1,6 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.2.7-0",
+  "version": "0.2.8-0",
   "private": false,
   "files": [
     "dist"
