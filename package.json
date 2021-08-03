@@ -1,7 +1,11 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.2.8-0",
+  "version": "0.2.9-0",
   "private": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "source": "index.ts",
+  "author": "@dephion",
   "files": [
     "dist"
   ],
