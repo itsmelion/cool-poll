@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
 import { useCounter } from "react-use";
 
 import type { OnSubmit } from "./Responses";
+import type { Results } from "./Results";
 import type { Form, Field } from "./typeform.types";
 
 export type FieldResponse =
@@ -31,5 +33,7 @@ export interface PollState {
   poll?: Form;
   currentQuestion: CurrentQuestion;
   setPoll: PollDispatcher;
-  onSubmit?: OnSubmit;
+  submit?: OnSubmit;
+  results: Results | null;
+  setResults: Dispatch<SetStateAction<Results | null>>;
 }

@@ -14,8 +14,8 @@ export const QuestionStack: React.FC = (props) => {
   const { handleSubmit, clearErrors } = formMethods;
 
   const onSubmit = handleSubmit((data) => {
-    setAll(data);
     clearErrors();
+    setAll(data);
     next(data[activeQuestion]);
   });
 

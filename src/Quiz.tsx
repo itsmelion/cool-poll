@@ -8,19 +8,21 @@ import { PollContext } from "services";
 import { TheQuiz, PageContainer } from "components";
 
 const theme = extendTheme(defaultTheme);
+
 interface PollProps {
   poll: Form;
   wrapper: boolean;
-  onSubmit?: Response.OnSubmit;
+  submit?: Response.OnSubmit;
 }
-export const Quiz = memo(({ poll, wrapper, onSubmit }: PollProps) => {
+
+export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
   if (!poll) return null;
 
   return (
     <ThemeProvider theme={theme}>
       <PageContainer wrapper={wrapper}>
         <PollContext
-          onSubmit={onSubmit}
+          submit={submit}
           value={{
             activeQuestion: poll.fields?.[0].ref,
             currentQuestion: poll.fields?.[0],

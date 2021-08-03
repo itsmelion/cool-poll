@@ -1,7 +1,6 @@
 module.exports = {
   extends: ["@dephion", "react-app"],
   rules: {
-    "promise/always-return": "error",
     "import/no-extraneous-dependencies": [
       "error",
       {

@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, ReactChild } from "react";
+import { createContext, useContext, ReactChild } from "react";
 import { useMap } from "react-use";
-import { Response, Results } from "types";
+import { Response } from "types";
 
 interface Props {
   children: ReactChild;
@@ -9,8 +9,6 @@ interface Props {
 
 const initialState: Response.PollResponses = {
   responses: {},
-  results: null,
-  setResults: () => null,
   get: (key) => key,
   set: () => undefined,
   setAll: (newObj) => void 0,
@@ -24,15 +22,12 @@ export const usePollResponses = (): Response.PollResponses => useContext(Context
 export const PollResponsesContext = (props: Props): JSX.Element => {
   const { children } = props;
   const [responses, methods] = useMap<Response.Responses>({});
-  const [results, setResults] = useState<Results.NullableResults>(null);
 
   return (
     <Context.Provider
       value={{
         ...methods,
         responses,
-        results,
-        setResults,
       }}>
       {children}
     </Context.Provider>

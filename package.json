@@ -1,7 +1,7 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.0.1-alpha.0",
-  "private": true,
+  "version": "0.1.0-0",
+  "private": false,
   "peerDependencies": {
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@chakra-ui/react": "1.6.5",
     "@chakra-ui/theme-tools": "1.1.8",
-    "@habtic/validations": "^0.2.22",
+    "@habtic/validations": "0.2.22",
     "@hookform/error-message": "2.0.0",
     "framer-motion": "4.1.17",
     "lodash": "4.17.21",
@@ -20,9 +20,9 @@
     "react-use": "17.2.4"
   },
   "devDependencies": {
+    "@dephion/eslint-config": "0.1.18",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
-    "@dephion/eslint-config": "0.1.18",
     "@rollup/plugin-commonjs": "20.0.0",
     "@rollup/plugin-image": "2.1.0",
     "@rollup/plugin-node-resolve": "13.0.4",
@@ -47,6 +47,10 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
     "lint:ci": "eslint src/**/*.{js,jsx,ts,tsx}"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.dephion.com"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -59,5 +63,6 @@
       "last 1 safari version",
       "unreleased versions"
     ]
-  }
+  },
+  "license": "MIT"
 }
