@@ -1,6 +1,6 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.2.5-0",
+  "version": "0.2.6-0",
   "private": false,
   "peerDependencies": {
     "@emotion/react": "11.4.0",
