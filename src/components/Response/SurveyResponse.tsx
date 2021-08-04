@@ -1,21 +1,11 @@
-import { Box, VStack, Text, useColorModeValue } from "@chakra-ui/react";
-import { FaCheckCircle } from "react-icons/fa";
+import { VStack, Text, useColorModeValue } from "@chakra-ui/react";
 
 import type { Results } from "../../types";
 import { Choice, View } from "./Result.styles";
 
-export function MultipleChoice({ field }: { field: Results.Question }): JSX.Element {
-  const correctSelectionBg = useColorModeValue("green.600", "green.300");
-  const wrongSelectionBg = useColorModeValue("red.400", "red.700");
+export function SurveyResponse({ field }: { field: Results.Question }): JSX.Element {
   const neutralSelectionBg = useColorModeValue("gray.200", "gray.600");
   const containerBg = useColorModeValue("gray.100", "gray.700");
-
-  const choiceBgColor = (choice: Results.QuestionChoice): string => {
-    if (choice.isChosen) {
-      return choice.correct ? correctSelectionBg : wrongSelectionBg;
-    }
-    return neutralSelectionBg;
-  };
 
   return (
     <View bgColor={containerBg}>
@@ -26,13 +16,9 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
       <VStack as="ol">
         {field.choices.map((choice) => (
           <Choice
-            bgColor={choiceBgColor(choice)}
+            bgColor={neutralSelectionBg}
             fontSize={choice.isChosen ? "1.1rem" : "0.9rem"}
             key={choice.field.ref}>
-            {choice.correct && (
-              <Box as={FaCheckCircle} color="green.500" mt="-.2em" />
-            )}
-
             <Text
               fontWeight={choice.correct ? 600 : "normal"}
               isTruncated

@@ -23,6 +23,7 @@ export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
         <PollProvider
           submit={submit}
           value={{
+            mode: poll.mode,
             activeQuestion: poll.fields?.[0].ref,
             currentQuestion: poll.fields?.[0],
             poll,

@@ -8,6 +8,10 @@ export function TheQuiz(): JSX.Element {
   switch (activeQuestion) {
     case "thankyou":
       return <ThankYou />;
+
+    case "results":
+      return <ThankYou />;
+
     default:
       return <QuestionStack />;
   }

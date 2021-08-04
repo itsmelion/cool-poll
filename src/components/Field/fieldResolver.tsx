@@ -14,8 +14,7 @@ export function useFieldResolver(field: Field): JSX.Element | null {
       return <LongText field={field} htmlProps={htmlProps} />;
 
     case "multiple_choice": {
-      if (field.properties?.allow_multiple_selection)
-        return <Check field={field} htmlProps={htmlProps} />;
+      if (field.properties?.allow_multiple_selection) return <Check />;
       return <Radio field={field} htmlProps={htmlProps} />;
     }
 

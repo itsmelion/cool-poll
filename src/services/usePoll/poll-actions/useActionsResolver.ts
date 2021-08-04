@@ -6,8 +6,8 @@ import { jumpToAction, addAction, subtractAction } from "./actions";
 import { isConditionMet } from "./isConditionMet";
 
 export function useActionsResolver(): (r: FieldResponse) => boolean {
-  const { activeQuestion, poll = {}, setPoll: dispatch } = usePoll();
-  const { logic = [] } = poll;
+  const { activeQuestion, poll, setPoll: dispatch } = usePoll();
+  const { logic = [] } = poll || {};
 
   const resolveAction = useMemo(
     () => (action: Action) => {

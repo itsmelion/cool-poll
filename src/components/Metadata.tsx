@@ -9,7 +9,8 @@ interface MetadataProps {
 export function Metadata({ data }: MetadataProps): JSX.Element {
   return (
     <Box my={6}>
-      {data.user.total && (
+      {/* TODO: PUT "BADGE" IS CLOSED HERE */}
+      {!!data.user.total && (
         <Table size="sm">
           <Thead>
             <Tr>

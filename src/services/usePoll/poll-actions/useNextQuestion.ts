@@ -4,18 +4,27 @@ import { usePoll } from "../usePoll";
 import { usePollResponses } from "../usePollResponses";
 
 export function useNextQuestion(): () => void {
-  const { poll, activeQuestion, setPoll, submit: onSubmit, setResults } = usePoll();
+  const {
+    mode,
+    poll,
+    activeQuestion,
+    setPoll,
+    submit: onSubmit,
+    setResults,
+  } = usePoll();
   const { responses } = usePollResponses();
   const { fields } = poll || {};
 
   const submit = useCallback(() => {
     if (!onSubmit) return Promise.resolve(null);
-    setPoll({ type: "thankyou" });
+    const finalScreen = mode === "survey" ? "thankyou" : "results";
+
+    setPoll({ type: finalScreen });
     return onSubmit(responses).then((r) => {
       setResults(r);
       return r;
     });
-  }, [onSubmit, responses, setPoll, setResults]);
+  }, [onSubmit, responses, setPoll, setResults, mode]);
 
   return useCallback(() => {
     if (!fields || !Array.isArray(fields)) return;

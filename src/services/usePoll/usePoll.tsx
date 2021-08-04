@@ -10,6 +10,7 @@ interface Props {
 }
 
 const initialState: PollState = {
+  mode: "survey",
   activeQuestion: "",
   score: 0,
   scoreHandlers: null,
@@ -62,8 +63,10 @@ const reducer = (
         activeQuestion: (payload as Field).ref,
         currentQuestion: payload as Field,
       };
+
     case "data":
       return Object.assign(state, payload);
+
     case "thankyou":
       return {
         ...state,
@@ -74,6 +77,18 @@ const reducer = (
           id: "",
         },
       };
+
+    case "results":
+      return {
+        ...state,
+        activeQuestion: "results",
+        currentQuestion: {
+          type: "",
+          ref: "",
+          id: "",
+        },
+      };
+
     case "respond":
     default:
       return state;

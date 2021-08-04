@@ -1,5 +1,5 @@
-import type { Variables } from "./Poll.types";
 import type { fieldType } from "./field.types";
+import type { Form } from "./typeform.types";
 
 export interface UserMeta {
   wrong: number;
@@ -33,7 +33,7 @@ export interface Question {
   type: fieldType;
   title: string;
   repliesCount: number;
-  variables: Variables;
+  variables: Form["variables"];
   choices: QuestionChoice[];
 }
 

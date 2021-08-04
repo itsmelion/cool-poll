@@ -2,7 +2,7 @@ import { Box, VStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
 
 import type { Results } from "../../types";
-import { Choice, View } from "./Result.styles";
+import { Choice, View } from "../Response/Result.styles";
 
 export function MultipleChoice({ field }: { field: Results.Question }): JSX.Element {
   const correctSelectionBg = useColorModeValue("green.600", "green.300");
@@ -11,10 +11,8 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
   const containerBg = useColorModeValue("gray.100", "gray.700");
 
   const choiceBgColor = (choice: Results.QuestionChoice): string => {
-    if (choice.isChosen) {
-      return choice.correct ? correctSelectionBg : wrongSelectionBg;
-    }
-    return neutralSelectionBg;
+    if (!choice.isChosen) return neutralSelectionBg;
+    return choice.correct ? correctSelectionBg : wrongSelectionBg;
   };
 
   return (

@@ -1,5 +1,6 @@
 {
   "id": "TipF0y",
+  "mode": "survey",
   "title": "Trivia Quiz",
   "variables": {
     "score": 0
@@ -35,7 +36,7 @@
   "thankyou_screens": [
     {
       "ref": "ba8d",
-      "title": "*Nice, {{field:d553b711e0abca62}}, that's {{var:score}}/12 answers right!*\nYour prize is the knowledge that you probably know the most obscure facts out of anyone in the room. Especially if you're alone. Then you definitely do.",
+      "title": "*Nice, Mike, that's 2/12 answers right!*\nYour prize is the knowledge that you probably know the most obscure facts out of anyone in the room. Especially if you're alone. Then you definitely do.",
       "properties": {
         "show_button": true,
         "share_icons": true,
@@ -49,7 +50,7 @@
     },
     {
       "ref": "3383",
-      "title": "*Pretty good, {{field:d553b711e0abca62}}, that's {{var:score}}/12 answers right!*\nYou're welcome at our quiz table any day...",
+      "title": "*Pretty good, Mike, that's 2/12 answers right!*\nYou're welcome at our quiz table any day...",
       "properties": {
         "show_button": true,
         "share_icons": true,
@@ -63,7 +64,7 @@
     },
     {
       "ref": "984a",
-      "title": "*{{field:d553b711e0abca62}}, you got {{var:score}}/12 answers correct.*\nOn the plus side, that probably means you don't spend too much time learning obscure facts just so you can be good at trivia quizzes ;)",
+      "title": "*Mike, you got 2/12 answers correct.*\nOn the plus side, that probably means you don't spend too much time learning obscure facts just so you can be good at trivia quizzes ;)",
       "properties": {
         "show_button": true,
         "share_icons": true,
@@ -120,7 +121,7 @@
     },
     {
       "id": "hCsw4HeM0ozT",
-      "title": "Well, you're halfway through, with {{var:score}}/6 answers right. Let's be honest, you need to pick up your random fact game, {{field:d553b711e0abca62}}. We hear green tea is good for stimulating the mind...",
+      "title": "Well, you're halfway through, with 2/6 answers right. Let's be honest, you need to pick up your random fact game, Mike. We hear green tea is good for stimulating the mind...",
       "ref": "1e1826511f2ee299",
       "properties": {
         "hide_marks": false,

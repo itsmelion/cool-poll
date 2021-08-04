@@ -311,6 +311,7 @@ export interface Field {
 export type Font = "Heebo";
 
 export interface Form {
+  mode: "survey" | "quiz";
   /**
    * ID of a form.
    */

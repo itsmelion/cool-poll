@@ -2,7 +2,7 @@ import { InputProps, TextareaProps } from "@chakra-ui/react";
 
 import { preventNonNumericValues } from "@habtic/validations";
 
-import type { fieldType } from "../../../types";
+import type { fieldType } from "../../types";
 
 const short_text: InputProps = {
   type: "text",

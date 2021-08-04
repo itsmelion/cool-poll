@@ -1,11 +1,10 @@
-import { CheckboxProps, CheckboxGroup } from "@chakra-ui/react";
+import { CheckboxGroup } from "@chakra-ui/react";
 import { useFormContext } from "react-hook-form";
 
-import { usePoll } from "../../../services";
+import { usePoll } from "../../services";
 import { Wrapper, Checkbox } from "./Item.styles.web";
-import type { QuestionFieldProps } from "./QuestionField.types";
 
-export function Check(props: QuestionFieldProps<CheckboxProps>): JSX.Element {
+export function Check(): JSX.Element {
   const { currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();

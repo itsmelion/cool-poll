@@ -6,12 +6,12 @@
       "correct": 3,
       "score": 12,
       "price": 222,
-      "total": 69
+      "total": 0
     },
     "global": {
-      "wrong": 3,
-      "correct": 7,
-      "score": 21,
+      "wrong": 0,
+      "correct": 0,
+      "score": 0,
       "totalSubmissions": 69,
       "responseRate": 89
     }

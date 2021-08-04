@@ -1,45 +1,69 @@
 import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
 import { memo } from "react";
-import { useFormContext } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
+import { useKeyPressEvent } from "react-use";
 
-import { usePoll } from "../../services";
-import type { Field } from "../../types";
+import { usePoll, usePollResponses, usePollActions } from "../../services";
 import { View } from "../AnimatedView";
+import { Center } from "../Card";
 import { ErrorMessage } from "../ErrorMessage";
-import { useFieldResolver as field } from "../Field/fieldResolver";
+import { Check } from "../Field/Check";
 import { Description } from "../Heading/Description";
 import { Heading } from "../Heading/Heading";
 
-type Props = { question: Field; onSubmit: () => void };
+function Q(): JSX.Element | null {
+  const { poll, activeQuestion, currentQuestion } = usePoll();
+  const formMethods = useForm({ mode: "onSubmit" });
+  const { setAll } = usePollResponses();
+  const { next } = usePollActions();
+  const { handleSubmit, formState, clearErrors } = formMethods;
 
-function Q({ question, onSubmit }: Props): JSX.Element {
-  const { activeQuestion, currentQuestion } = usePoll();
-  const { formState } = useFormContext();
+  const onSubmit = handleSubmit((data) => {
+    clearErrors();
+    setAll(data);
+    next(data[activeQuestion]);
+  });
+
+  useKeyPressEvent("Enter", (e) => {
+    e.stopPropagation();
+    onSubmit();
+  });
+
+  if (!poll) return null;
 
   return (
-    <View
-      active={activeQuestion === question.ref}
-      key={question.id}
-      onSubmit={onSubmit}>
-      <FormControl
-        isInvalid={!formState.isValid}
-        isRequired={currentQuestion.validations?.required}>
-        <Heading title={question.title} />
-        <Description title={question.properties?.description} />
+    <Center>
+      <FormProvider {...formMethods}>
+        {poll.fields?.map((question) => (
+          <View
+            active={activeQuestion === question.ref}
+            key={question.id}
+            onSubmit={onSubmit}>
+            <FormControl
+              isInvalid={!formState.isValid}
+              isRequired={currentQuestion.validations?.required}>
+              <Heading title={question.title} />
+              <Description title={question.properties?.description} />
 
-        {field(question)}
+              <Check />
 
-        <ErrorMessage errors={formState.errors} name={currentQuestion.ref} />
-      </FormControl>
+              <ErrorMessage errors={formState.errors} name={currentQuestion.ref} />
+            </FormControl>
 
-      <ButtonGroup alignItems="center" isDisabled={formState.isSubmitting} mt="8">
-        <Button type="submit">
-          {question.properties?.button_text || "Confirm"}
-        </Button>
-        <Text>press</Text>
-        <Text fontWeight={500}>Enter ↵</Text>
-      </ButtonGroup>
-    </View>
+            <ButtonGroup
+              alignItems="center"
+              isDisabled={formState.isSubmitting}
+              mt="8">
+              <Button type="submit">
+                {question.properties?.button_text || "Confirm"}
+              </Button>
+              <Text>press</Text>
+              <Text fontWeight={500}>Enter ↵</Text>
+            </ButtonGroup>
+          </View>
+        ))}
+      </FormProvider>
+    </Center>
   );
 }
 

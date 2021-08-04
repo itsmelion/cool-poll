@@ -15,17 +15,26 @@ export type CurrentQuestion = Field & {
   response?: FieldResponse;
 };
 
-export type stateActions = "next" | "previous" | "data" | "respond" | "thankyou";
+export type stateActions =
+  | "next"
+  | "previous"
+  | "data"
+  | "respond"
+  | "thankyou"
+  | "results";
+
 export type PollReducer =
   | { type: "next"; payload?: Field }
   | { type: "previous"; payload?: Field }
   | { type: "data"; payload?: Partial<PollState> }
   | { type: "respond"; payload?: FieldResponse }
-  | { type: "thankyou"; payload?: unknown };
+  | { type: "thankyou"; payload?: unknown }
+  | { type: "results"; payload?: unknown };
 
 export type PollDispatcher = React.Dispatch<PollReducer>;
 
 export interface PollState {
+  mode: Form["mode"];
   activeQuestion: string;
   score?: number;
   scoreHandlers: ReturnType<typeof useCounter>[1] | null;

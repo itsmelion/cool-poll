@@ -4,9 +4,9 @@ import { usePoll } from "../services";
 import { View } from "./AnimatedView";
 import { Center } from "./Card";
 import { Metadata } from "./Metadata";
-import { SurveyResponse } from "./Response/SurveyResponse";
+import { MultipleChoice } from "./Response/MultipleChoice";
 
-export function ThankYou(): JSX.Element | null {
+export function ResultsPage(): JSX.Element | null {
   const { results } = usePoll();
 
   return (
@@ -20,7 +20,7 @@ export function ThankYou(): JSX.Element | null {
 
             <ol>
               {results.questions.map((question) => (
-                <SurveyResponse field={question} key={question.ref} />
+                <MultipleChoice field={question} key={question.ref} />
               ))}
             </ol>
 
