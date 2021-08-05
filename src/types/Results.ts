@@ -1,6 +1,8 @@
 import type { fieldType } from "./field.types";
 import type { Form } from "./typeform.types";
 
+export type FetchResults = () => Promise<Results>;
+
 export interface UserMeta {
   wrong: number;
   correct: number;

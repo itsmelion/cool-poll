@@ -46,4 +46,5 @@ export interface PollState {
   submit?: OnSubmit;
   results: NullableResults;
   setResults: Dispatch<SetStateAction<NullableResults>>;
+  fetchResults: () => void;
 }

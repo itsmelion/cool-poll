@@ -1,4 +1,12 @@
-import { createContext, useContext, ReactChild, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  ReactChild,
+  useReducer,
+  useState,
+  useCallback,
+  useEffect,
+} from "react";
 import { useCounter } from "react-use";
 
 import type { PollState, PollReducer, Field, Response, Results } from "../../types";
@@ -6,7 +14,8 @@ import type { PollState, PollReducer, Field, Response, Results } from "../../typ
 interface Props {
   children: ReactChild;
   value?: Partial<PollState>;
-  submit?: Response.OnSubmit;
+  submit: Response.OnSubmit;
+  fetchResults: Results.FetchResults;
 }
 
 const initialState: PollState = {
@@ -25,16 +34,26 @@ const initialState: PollState = {
   results: null,
   setResults: () => undefined,
   setPoll: () => undefined,
+  fetchResults: () => undefined,
 };
 
 const Context = createContext<PollState>(initialState);
 export const usePoll = (): PollState => useContext(Context);
 
 export const PollContext = (props: Props): JSX.Element => {
-  const { children, value, submit } = props;
+  const { children, value, submit, fetchResults: resultsFetcher } = props;
   const [currentScore, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
   const [results, setResults] = useState<Results.NullableResults>(null);
+  const { isClosed } = poll;
+
+  const fetchResults = useCallback(() => {
+    return resultsFetcher().then((results) => setResults(results));
+  }, [resultsFetcher, setResults]);
+
+  useEffect(() => {
+    isClosed && fetchResults();
+  }, [isClosed, fetchResults]);
 
   return (
     <Context.Provider
@@ -46,6 +65,7 @@ export const PollContext = (props: Props): JSX.Element => {
         submit,
         results,
         setResults,
+        fetchResults,
       }}>
       {children}
     </Context.Provider>

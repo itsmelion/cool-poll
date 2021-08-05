@@ -4,23 +4,25 @@ import { memo } from "react";
 import { TheQuiz, PageContainer } from "./components";
 import { PollProvider } from "./services";
 import { theme as defaultTheme } from "./theme/theme";
-import type { Form, Response } from "./types";
+import type { Form, Response, Results } from "./types";
 
 const theme = extendTheme(defaultTheme);
 
 interface PollProps {
   poll: Form;
   wrapper?: boolean;
-  submit?: Response.OnSubmit;
+  submit: Response.OnSubmit;
+  fetchResults: Results.FetchResults;
 }
 
-export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
+export const Quiz = memo(({ poll, wrapper, submit, fetchResults }: PollProps) => {
   if (!poll) return null;
 
   return (
     <ThemeProvider theme={theme}>
       <PageContainer wrapper={wrapper}>
         <PollProvider
+          fetchResults={fetchResults}
           submit={submit}
           value={{
             mode: poll.mode,

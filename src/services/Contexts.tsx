@@ -1,6 +1,6 @@
 import { ReactChild } from "react";
 
-import type { PollState, Response } from "../types";
+import type { PollState, Response, Results } from "../types";
 import { PollActionsContext } from "./usePoll/poll-actions/usePollActions";
 import { PollContext } from "./usePoll/usePoll";
 import { PollResponsesContext } from "./usePoll/usePollResponses";
@@ -8,7 +8,8 @@ import { PollResponsesContext } from "./usePoll/usePollResponses";
 interface Props {
   children: ReactChild;
   value?: Partial<PollState>;
-  submit?: Response.OnSubmit;
+  submit: Response.OnSubmit;
+  fetchResults: Results.FetchResults;
 }
 
 export const PollProvider = (props: Props): JSX.Element => {

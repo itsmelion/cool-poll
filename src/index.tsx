@@ -7,13 +7,15 @@ import results from "./services/usePoll/results.json";
 import type { Form, Results } from "./types";
 
 const submit = () => {
-  alert("WOW!");
+  alert("FORM SUBMITED!");
   return Promise.resolve(results as Results.Results);
 };
 
+const fetchResults = () => Promise.resolve(results as Results.Results);
+
 ReactDOM.render(
   <StrictMode>
-    <Quiz poll={mock as Form} submit={submit} wrapper />
+    <Quiz fetchResults={fetchResults} poll={mock as Form} submit={submit} wrapper />
   </StrictMode>,
   document.getElementById("root"),
 );
