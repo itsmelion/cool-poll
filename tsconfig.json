@@ -6,11 +6,7 @@
     "outDir": "./dist",
     "target": "es5",
     "module": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
     "sourceMap": true,
     "allowJs": true,
@@ -29,12 +25,9 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
-  "include": [
-    "src",
-    "index.ts",
-  ],
+  "include": ["src", "index.ts"],
   "exclude": [
     "node_modules",
     "dist",
@@ -46,6 +39,6 @@
     "**/*.ios.tsx",
     "**/*.ios.ts",
     "**/*.android.tsx",
-    "**/*.android.ts",
+    "**/*.android.ts"
   ]
 }

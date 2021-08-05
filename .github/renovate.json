@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "github>itsmelion/settings"
-  ]
+  "extends": ["github>itsmelion/settings"]
 }

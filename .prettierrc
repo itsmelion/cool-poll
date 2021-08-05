@@ -9,11 +9,6 @@
   "printWidth": 85,
   "jsxBracketSameLine": true,
   "arrowParens": "always",
-  "importOrder": [
-    "^@habtic/(.*)$",
-    "^services(.*)$",
-    "^components(.*)$",
-    "^[./]"
-  ],
+  "importOrder": ["^@habtic/(.*)$", "^services(.*)$", "^components(.*)$", "^[./]"],
   "importOrderSeparation": true
 }

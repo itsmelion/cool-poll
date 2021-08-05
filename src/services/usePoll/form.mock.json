@@ -23,9 +23,7 @@
             }
           }
         ],
-        "fields": [
-          null
-        ],
+        "fields": [null],
         "allow_multiple_selection": true,
         "randomize": true,
         "allow_other_choice": true,
@@ -114,9 +112,7 @@
       }
     }
   ],
-  "hidden": [
-    "string"
-  ],
+  "hidden": ["string"],
   "variables": {
     "score": 0,
     "price": 0
@@ -313,9 +309,7 @@
     "notifications": {
       "self": {
         "enabled": true,
-        "recipients": [
-          "string"
-        ],
+        "recipients": ["string"],
         "reply_to": "reply_to",
         "subject": "You received a response to your typeform {{form:title}}!",
         "message": "message"
@@ -323,9 +317,7 @@
       "respondent": {
         "enabled": true,
         "recipient": "recipient",
-        "reply_to": [
-          "string"
-        ],
+        "reply_to": ["string"],
         "subject": "Thank you for completing the typeform {{form:title}}!",
         "message": "message"
       }
