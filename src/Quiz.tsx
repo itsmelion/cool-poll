@@ -24,6 +24,7 @@ export const Quiz = memo(({ poll, wrapper, submit }: PollProps) => {
           submit={submit}
           value={{
             mode: poll.mode,
+            isClosed: poll.isClosed,
             activeQuestion: poll.fields?.[0].ref,
             currentQuestion: poll.fields?.[0],
             poll,

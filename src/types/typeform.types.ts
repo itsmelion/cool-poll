@@ -312,6 +312,7 @@ export type Font = "Heebo";
 
 export interface Form {
   mode: "survey" | "quiz";
+  isClosed: boolean;
   /**
    * ID of a form.
    */

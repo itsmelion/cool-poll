@@ -1,6 +1,7 @@
 {
   "id": "TipF0y",
   "mode": "survey",
+  "isClosed": true,
   "title": "Trivia Quiz",
   "variables": {
     "score": 0

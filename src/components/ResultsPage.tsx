@@ -4,16 +4,19 @@ import { usePoll } from "../services";
 import { View } from "./AnimatedView";
 import { Center } from "./Card";
 import { Metadata } from "./Metadata";
+import { PollClosed } from "./PollClosed";
 import { MultipleChoice } from "./Response/MultipleChoice";
 
 export function ResultsPage(): JSX.Element | null {
-  const { results } = usePoll();
+  const { isClosed, results } = usePoll();
 
   return (
     <Center>
       <View active onSubmit={() => void 0}>
         {results ? (
           <>
+            {isClosed && <PollClosed />}
+
             <Text fontSize="2xl" mb={6} textAlign="center">
               {results.title}
             </Text>

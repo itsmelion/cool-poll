@@ -11,6 +11,7 @@ interface Props {
 
 const initialState: PollState = {
   mode: "survey",
+  isClosed: false,
   activeQuestion: "",
   score: 0,
   scoreHandlers: null,
