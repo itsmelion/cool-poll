@@ -4,10 +4,11 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import typescriptPlugin from "rollup-plugin-typescript2";
 import typescript from "typescript";
+import cleaner from "rollup-plugin-cleaner";
 
 import pkg from "./package.json";
 
-export default {
+const rollupConfig = {
   input: "./index.ts",
 
   output: [
@@ -32,6 +33,9 @@ export default {
   ],
 
   plugins: [
+    cleaner({
+      targets: ["./dist/"]
+    }),
     nodeResolve(),
     commonjs(),
     image(),
@@ -42,4 +46,6 @@ export default {
     }),
     process.env.NODE_ENV === "production" && terser(),
   ],
-};
+}
+
+export default rollupConfig;
