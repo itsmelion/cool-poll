@@ -15,7 +15,7 @@ export function useFieldResolver(field: Field): JSX.Element | null {
 
     case "multiple_choice": {
       if (field.properties?.allow_multiple_selection) return <Check />;
-      return <Radio field={field} htmlProps={htmlProps} />;
+      return <Radio />;
     }
 
     case "number":
@@ -23,7 +23,7 @@ export function useFieldResolver(field: Field): JSX.Element | null {
 
     case "picture_choice":
     case "rating":
-      return <Radio field={field} htmlProps={htmlProps} />;
+      return <Radio />;
 
     case "short_text":
       return <ShortText field={field} htmlProps={htmlProps} />;
