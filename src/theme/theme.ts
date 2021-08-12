@@ -1,4 +1,4 @@
-import { ThemeConfig, ThemeDirection } from "@chakra-ui/react";
+import { ChakraTheme, ThemeConfig, ThemeDirection } from "@chakra-ui/react";
 
 import { colors } from "./colors";
 import { global } from "./global";
@@ -12,7 +12,7 @@ const config: ThemeConfig = {
   cssVarPrefix: "chakra",
 };
 
-export const theme = {
+export const theme: Partial<ChakraTheme> = {
   direction,
   colors,
   ...typography,

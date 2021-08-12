@@ -36,7 +36,7 @@ export type PollDispatcher = React.Dispatch<PollReducer>;
 export interface PollState {
   mode: Form["mode"];
   isClosed: Form["isClosed"];
-  activeQuestion: string;
+  activeQuestion: "thankyou" | "results" | string;
   score?: number;
   scoreHandlers: ReturnType<typeof useCounter>[1] | null;
   price?: number;

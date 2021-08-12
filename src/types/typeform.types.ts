@@ -88,11 +88,11 @@ export interface Choice {
    * Readable name you can use to reference the answer choice. Available for `multiple_choice` and `picture_choice` types.
    * Not available for dropdown types.
    */
-  ref?: string;
+  id: string;
   /**
    * Text for the answer choice.
    */
-  label?: string;
+  label: string;
   /**
    * Identifies the image to use for the answer choice. Available only for `picture_choice` types.
    */

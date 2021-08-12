@@ -19,7 +19,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
   return (
     <View
       active={activeQuestion === question.ref}
-      key={question.id}
+      key={question.ref}
       onSubmit={onSubmit}>
       <FormControl
         isInvalid={!formState.isValid}

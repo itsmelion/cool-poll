@@ -5,19 +5,19 @@ import { usePoll } from "../../services";
 import { Wrapper, Checkbox } from "./Item.styles.web";
 
 export function Check(): JSX.Element {
-  const { currentQuestion } = usePoll();
+  const { activeQuestion, currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
 
   return (
     <CheckboxGroup>
       <Wrapper alignItems="start" justify="stretch">
-        {properties?.choices?.map(({ ref, label }) => (
+        {properties?.choices?.map(({ id, label }) => (
           <Checkbox
-            key={ref}
-            value={ref}
+            key={id}
+            value={id}
             w="100%"
-            {...register(currentQuestion.ref, {
+            {...register(activeQuestion, {
               required:
                 currentQuestion.validations?.required && "Can't skip this one",
             })}>
