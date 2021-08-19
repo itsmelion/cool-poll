@@ -16,7 +16,7 @@ export const theme: Partial<ChakraTheme> = {
   direction,
   colors,
   ...typography,
-  styles: global,
+  styles: process.env.NODE_ENV === "production" ? {} : global,
   config,
 };
 
