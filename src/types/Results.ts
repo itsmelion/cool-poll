@@ -25,6 +25,7 @@ export interface Metadata {
 }
 
 export interface Results {
+  poll_id: string;
   title: string;
   meta: Metadata;
   questions: Question[];

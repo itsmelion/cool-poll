@@ -14,7 +14,7 @@ export function Check(): JSX.Element {
       <Wrapper alignItems="start" justify="stretch">
         {properties?.choices?.map(({ id, label }) => (
           <Checkbox
-            key={id}
+            key={`${activeQuestion}_${id}`}
             value={id}
             w="100%"
             {...register(activeQuestion, {
