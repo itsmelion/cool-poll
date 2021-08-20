@@ -26,7 +26,7 @@ export const PageContainer = ({ wrapper, ...props }: ComponentType): JSX.Element
 
   return (
     <Backdrop bgColor={bgColor} bgImage={bgImage}>
-      <Main {...props} />
+      <Main className="quiz-main-wrapper" {...props} />
     </Backdrop>
   );
 };
