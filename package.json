@@ -1,6 +1,6 @@
 {
   "name": "@dephion/quiz",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
