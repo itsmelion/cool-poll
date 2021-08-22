@@ -58,6 +58,6 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
  * @param float|int num The number that you want to calculate the percent of.
  * @returns {Number}
  */
-function calculatePercent(percent: number, num: number) {
+function calculatePercent(percent = 0, num = 0) {
   return Math.round((percent / 100) * num);
 }

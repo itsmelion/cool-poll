@@ -7,8 +7,7 @@ import results from "./services/usePoll/results.json";
 import { ThemeProvider } from "./theme/ThemeProvider";
 import type { Form, Results } from "./types";
 
-const submit = () => {
-  alert("FORM SUBMITED!");
+const submit = (responses) => {
   return Promise.resolve(results as Results.Results);
 };
 

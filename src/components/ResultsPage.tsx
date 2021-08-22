@@ -22,7 +22,7 @@ export function ResultsPage(): JSX.Element | null {
             </Text>
 
             <ol>
-              {results.questions.map((question) => (
+              {results.questions?.map((question) => (
                 <MultipleChoice field={question} key={question.ref} />
               ))}
             </ol>

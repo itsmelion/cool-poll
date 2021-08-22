@@ -1,7 +1,7 @@
 import { useCallback } from "react";
+import { useFormContext } from "react-hook-form";
 
 import { usePoll } from "../usePoll";
-import { usePollResponses } from "../usePollResponses";
 
 export function useNextQuestion(): () => void {
   const {
@@ -12,19 +12,20 @@ export function useNextQuestion(): () => void {
     submit: onSubmit,
     setResults,
   } = usePoll();
-  const { responses } = usePollResponses();
+  const { getValues } = useFormContext();
   const { fields } = poll || {};
 
   const submit = useCallback(() => {
     if (!onSubmit) return Promise.resolve(null);
-    const finalScreen = mode === "survey" ? "thankyou" : "results";
+    const responses = getValues();
 
-    setPoll({ type: finalScreen });
+    setPoll({ type: mode === "survey" ? "thankyou" : "results" });
+
     return onSubmit(responses).then((r) => {
       setResults(r);
       return r;
     });
-  }, [onSubmit, responses, setPoll, setResults, mode]);
+  }, [onSubmit, setPoll, getValues, setResults, mode]);
 
   return useCallback(() => {
     if (!fields || !Array.isArray(fields)) return;
