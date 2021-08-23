@@ -72,9 +72,16 @@ export function Metadata({ data }: MetadataProps): JSX.Element {
           )}
 
           <Tr>
-            <Td>response rate:</Td>
-            <Td isNumeric>{data.global.responseRate}%</Td>
+            <Td>total responses:</Td>
+            <Td isNumeric>{data.global.totalSubmissions}</Td>
           </Tr>
+
+          {data.global.responseRate && (
+            <Tr>
+              <Td>response rate:</Td>
+              <Td isNumeric>{data.global.responseRate}%</Td>
+            </Tr>
+          )}
         </Tbody>
       </Table>
     </Box>

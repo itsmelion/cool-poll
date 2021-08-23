@@ -14,7 +14,7 @@ export function SurveyResponse({ field }: { field: Results.Question }): JSX.Elem
       </Text>
 
       <VStack as="ol">
-        {field.choices.map((choice) => (
+        {field.choices?.map((choice) => (
           <Choice
             bgColor={neutralSelectionBg}
             fontSize={choice.isChosen ? "1.1rem" : "0.9rem"}
