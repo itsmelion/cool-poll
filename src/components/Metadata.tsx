@@ -76,7 +76,7 @@ export function Metadata({ data }: MetadataProps): JSX.Element {
             <Td isNumeric>{data.global.totalSubmissions}</Td>
           </Tr>
 
-          {data.global.responseRate && (
+          {!!data.global.responseRate && (
             <Tr>
               <Td>response rate:</Td>
               <Td isNumeric>{data.global.responseRate}%</Td>

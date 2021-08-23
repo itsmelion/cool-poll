@@ -42,22 +42,11 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
             </Text>
 
             <Text fontWeight="bold" mx="0.5em">
-              {`${calculatePercent(choice.chosenCount, field.repliesCount)}%`}
+              {`${choice.chosenCount}%`}
             </Text>
           </Choice>
         ))}
       </VStack>
     </View>
   );
-}
-
-/**
- * Custom function that calculates the percent of a number.
- *
- * @param float percent The percent that you want to get.
- * @param float|int num The number that you want to calculate the percent of.
- * @returns {Number}
- */
-function calculatePercent(percent = 0, num = 0) {
-  return Math.round((percent / 100) * num);
 }
