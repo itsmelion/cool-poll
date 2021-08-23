@@ -25,7 +25,7 @@ export const QuestionStack: React.FC = (props) => {
   return (
     <Center {...props}>
       {poll.fields?.map((question) => (
-        <Question key={question.id} onSubmit={onSubmit} question={question} />
+        <Question key={question.ref} onSubmit={onSubmit} question={question} />
       ))}
     </Center>
   );

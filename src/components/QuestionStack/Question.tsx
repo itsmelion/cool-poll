@@ -17,10 +17,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
   const { formState } = useFormContext();
 
   return (
-    <View
-      active={activeQuestion === question.ref}
-      key={question.ref}
-      onSubmit={onSubmit}>
+    <View active={activeQuestion === question.ref} onSubmit={onSubmit}>
       <FormControl
         isInvalid={!formState.isValid && formState.errors?.[question.ref]}
         isRequired={currentQuestion.validations?.required}>

@@ -5,25 +5,25 @@ import { usePoll } from "../../services";
 import { Wrapper } from "./Item.styles.web";
 
 export function Radio(): JSX.Element {
-  const { currentQuestion } = usePoll();
+  const { activeQuestion, currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
   const borderColor = useColorModeValue("blackAlpha.400", "whiteAlpha.400");
-  const reg = register(currentQuestion.ref, {
-    required: currentQuestion.validations?.required && "Can't skip this one",
-  });
 
   return (
     <RadioGroup>
       <Wrapper>
-        {properties?.choices?.map((o) => (
+        {properties?.choices?.map(({ id, label }) => (
           <RadioItem
             borderColor={borderColor}
-            key={o.id}
-            value={o.id}
+            key={`${activeQuestion}_${id}`}
+            value={id}
             width="full"
-            {...reg}>
-            {o.label}
+            {...register(activeQuestion, {
+              required:
+                currentQuestion.validations?.required && "Can't skip this one",
+            })}>
+            {label}
           </RadioItem>
         ))}
       </Wrapper>
