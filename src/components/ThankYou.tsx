@@ -16,9 +16,12 @@ export function ThankYou(): JSX.Element | null {
         {results ? (
           <>
             {isClosed && <PollClosed />}
-            <Text fontSize="2xl" mb={6} textAlign="center">
-              {results.title}
-            </Text>
+
+            {results.title && (
+              <Text fontSize="2xl" mb={6} textAlign="center">
+                {results.title}
+              </Text>
+            )}
 
             <ol>
               {results.questions.map((question) => (
@@ -29,7 +32,7 @@ export function ThankYou(): JSX.Element | null {
             <Metadata data={results.meta} />
           </>
         ) : (
-          <Spinner size="xl" />
+          <Spinner alignSelf="center" justifySelf="center" size="xl" />
         )}
       </View>
     </Center>
