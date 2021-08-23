@@ -8,8 +8,10 @@ export function Radio(): JSX.Element {
   const { currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
-  const reg = register(currentQuestion.ref);
   const borderColor = useColorModeValue("blackAlpha.400", "whiteAlpha.400");
+  const reg = register(currentQuestion.ref, {
+    required: currentQuestion.validations?.required && "Can't skip this one",
+  });
 
   return (
     <RadioGroup>

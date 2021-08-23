@@ -22,7 +22,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
       key={question.ref}
       onSubmit={onSubmit}>
       <FormControl
-        isInvalid={!formState.isValid}
+        isInvalid={!formState.isValid && formState.errors?.[question.ref]}
         isRequired={currentQuestion.validations?.required}>
         <Heading title={question.title} />
         <Description title={question.properties?.description} />

@@ -1,14 +1,15 @@
 import { Text, Spinner } from "@chakra-ui/react";
 
-import { usePoll } from "../services";
-import { View } from "./AnimatedView";
-import { Center } from "./Card";
-import { Metadata } from "./Metadata";
-import { PollClosed } from "./PollClosed";
-import { SurveyResponse } from "./Response/SurveyResponse";
+import { usePoll } from "../../services";
+import { View } from "../AnimatedView";
+import { Center } from "../Card";
+import { Metadata } from "../Metadata";
+import { PollClosed } from "../PollClosed";
+import { MultipleChoice } from "../Response/MultipleChoice";
 
-export function ThankYou(): JSX.Element | null {
-  const { results, isClosed } = usePoll();
+/** Poll thankyou page */
+export function PollStats(): JSX.Element | null {
+  const { isClosed, results } = usePoll();
 
   return (
     <Center>
@@ -24,8 +25,8 @@ export function ThankYou(): JSX.Element | null {
             )}
 
             <ol>
-              {results.questions.map((question) => (
-                <SurveyResponse field={question} key={question.ref} />
+              {results.questions?.map((question) => (
+                <MultipleChoice field={question} key={question.ref} />
               ))}
             </ol>
 

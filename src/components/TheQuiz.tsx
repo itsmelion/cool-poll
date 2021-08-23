@@ -1,22 +1,22 @@
 import { usePoll } from "../services";
 import { QuestionStack } from "./QuestionStack/QuestionStack";
-import { ResultsPage } from "./ResultsPage";
-import { ThankYou } from "./ThankYou";
+import { PollStats } from "./ThankYou/PollStats";
+import { SurveyThank } from "./ThankYou/SurveyThank";
 
 export function TheQuiz(): JSX.Element {
   const { mode, activeQuestion, isClosed } = usePoll();
 
   if (isClosed) {
-    if (mode === "survey") return <ThankYou />;
-    return <ResultsPage />;
+    if (mode === "survey") return <SurveyThank />;
+    return <PollStats />;
   }
 
   switch (activeQuestion) {
     case "thankyou":
-      return <ThankYou />;
+      return <SurveyThank />;
 
     case "results":
-      return <ResultsPage />;
+      return <PollStats />;
 
     default:
       return <QuestionStack />;
