@@ -7,9 +7,9 @@ import { typography } from "./typography";
 const direction = "ltr" as ThemeDirection;
 
 const config: ThemeConfig = {
-  useSystemColorMode: true,
+  useSystemColorMode: false,
   initialColorMode: "light",
-  cssVarPrefix: "chakra",
+  cssVarPrefix: "quiz",
 };
 
 export const theme: Partial<ChakraTheme> = {
