@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { TheQuiz } from "./components";
+import { QuizComponent } from "./components";
 import { PollProvider } from "./services";
 import type { Form, Response, Results } from "./types";
 
@@ -24,7 +24,7 @@ export const Quiz = memo(({ poll, submit, fetchResults }: PollProps) => {
         currentQuestion: poll.fields?.[0],
         poll,
       }}>
-      <TheQuiz />
+      <QuizComponent />
     </PollProvider>
   );
 });

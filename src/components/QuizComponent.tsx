@@ -3,7 +3,7 @@ import { QuestionStack } from "./QuestionStack/QuestionStack";
 import { PollStats } from "./ThankYou/PollStats";
 import { SurveyThank } from "./ThankYou/SurveyThank";
 
-export function TheQuiz(): JSX.Element {
+export function QuizComponent(): JSX.Element {
   const { mode, activeQuestion, isClosed } = usePoll();
 
   if (isClosed) {

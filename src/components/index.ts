@@ -6,4 +6,4 @@ export { Heading } from "./Heading/Heading";
 export { PageContainer } from "./PageContainer/PageContainer";
 export { QuestionStack } from "./QuestionStack/QuestionStack";
 export { ErrorMessage } from "./ErrorMessage";
-export { TheQuiz } from "./TheQuiz";
+export { QuizComponent } from "./QuizComponent";
