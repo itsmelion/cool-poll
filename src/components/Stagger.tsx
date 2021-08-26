@@ -3,7 +3,7 @@ import {
   ChakraComponent,
   Radio,
   RadioProps,
-  Box,
+  Flex,
 } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ interface PollViewProps {
 }
 
 const MotionCard = motion(Card);
-const MotionBox = motion(Box);
+const MotionBox = motion(Flex);
 
 const cardContainer = {
   initial: { position: "relative", opacity: 0 },
@@ -54,9 +54,9 @@ export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => {
 };
 
 export const StaggerContainer: React.FC = (props) => {
-  return <MotionBox w="100%" {...props} {...optionsContainer} />;
+  return <MotionBox flex={1} w="100%" {...props} {...optionsContainer} />;
 };
 
 export const StaggerItem: ChakraComponent<typeof Radio, RadioProps> = (props) => (
-  <MotionBox w="100%" {...itemAnimation} {...props} />
+  <MotionBox flex={1} w="100%" {...itemAnimation} {...props} />
 );

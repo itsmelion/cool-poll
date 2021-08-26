@@ -12,11 +12,13 @@ export const Checkbox = chakra(ChakraCheckbox, {
     height: "auto",
     backgroundColor: "inherit",
     color: "inherit",
-    border: "0.75pt solid #757575",
+    border: "1pt solid currentColor",
     borderRadius: "0.5em",
     lineHeight: 1.2,
     marginTop: "0.25em",
     marginBottom: "0.25em",
+    fontSize: "1em",
+    width: "100%",
   },
 });
 
@@ -24,6 +26,8 @@ export const Wrapper = chakra(VStack, {
   baseStyle: {
     marginTop: "0.5em",
     marginBottom: "0.5em",
+    flex: 1,
+    alignItems: "start",
   },
 });
 
@@ -33,11 +37,12 @@ export const InputItem = chakra(Input, {
     height: "auto",
     backgroundColor: "inherit",
     color: "inherit",
-    border: "0.75pt solid #757575",
+    border: "1pt solid currentColor",
     borderRadius: "0.5em",
     lineHeight: 1.2,
     marginTop: "0.5em",
     marginBottom: "0.5em",
+    fontSize: "1em",
   },
 });
 
@@ -47,10 +52,11 @@ export const TextArea = chakra(ChakraTextarea, {
     height: "auto",
     backgroundColor: "inherit",
     color: "inherit",
-    border: "0.75pt solid #757575",
+    border: "1pt solid currentColor",
     borderRadius: "0.5em",
     lineHeight: 1.2,
     marginTop: "0.5em",
     marginBottom: "0.5em",
+    fontSize: "1em",
   },
 });

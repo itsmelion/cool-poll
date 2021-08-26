@@ -129,6 +129,43 @@
         "button_text": "Sluuurrp"
       },
       "type": "statement"
+    },
+    {
+      "id": "lgG58TOg2411",
+      "title": "Which famous con artist's life is the film *Catch Me If You Can* based on?",
+      "ref": "the_ref",
+      "properties": {
+        "randomize": true,
+        "allow_multiple_selection": true,
+        "allow_other_choice": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "Uy0xD8sQvO5t",
+            "ref": "6819e178fd767fdf",
+            "label": "Gregor MacGregor"
+          },
+          {
+            "id": "IQwkC2LGGuYw",
+            "ref": "5706355fa94711a8",
+            "label": "Frank Abagnale"
+          },
+          {
+            "id": "VuAJMGbqT4p9",
+            "ref": "bcdb07a9cc9c7fe9",
+            "label": "Bernard Madoff"
+          },
+          {
+            "id": "z8TwSSQ0NZtV",
+            "ref": "1732d77351f7d543",
+            "label": "Charles Ponzi"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
     }
   ],
   "logic": [

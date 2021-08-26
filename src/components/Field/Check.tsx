@@ -1,4 +1,4 @@
-import { CheckboxGroup } from "@chakra-ui/react";
+import { CheckboxGroup, useColorModeValue } from "@chakra-ui/react";
 import { useFormContext } from "react-hook-form";
 
 import { usePoll } from "../../services";
@@ -9,7 +9,7 @@ export function Check(): JSX.Element {
   const { activeQuestion, currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
-
+  const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.400");
   return (
     <CheckboxGroup>
       <StaggerContainer>
@@ -17,8 +17,8 @@ export function Check(): JSX.Element {
           {properties?.choices?.map(({ id, label }) => (
             <StaggerItem key={`${activeQuestion}_${id}`}>
               <Checkbox
+                borderColor={borderColor}
                 value={id}
-                w="100%"
                 {...register(activeQuestion, {
                   required:
                     currentQuestion.validations?.required && "Can't skip this one",
