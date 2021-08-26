@@ -4,9 +4,8 @@ export const Card = chakra("section", {
   baseStyle: {
     padding: "3rem",
     borderRadius: "1.5rem",
-    minHeight: "30%",
-    minW: "40%",
-    position: "absolute",
+    minHeight: "200px",
+    minWw: "200px",
     margin: "auto",
     color: "inherit",
     maxHeight: "100%",

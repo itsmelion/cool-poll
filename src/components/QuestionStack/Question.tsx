@@ -2,9 +2,9 @@ import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
 import { memo } from "react";
 import { useFormContext } from "react-hook-form";
 
+import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
 import type { Field } from "../../types";
-import { View } from "../AnimatedView";
 import { ErrorMessage } from "../ErrorMessage";
 import { useFieldResolver as field } from "../Field/fieldResolver";
 import { Description } from "../Heading/Description";
@@ -17,7 +17,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
   const { formState } = useFormContext();
 
   return (
-    <View active={activeQuestion === question.ref} onSubmit={onSubmit}>
+    <AnimatedCard active={activeQuestion === question.ref} onSubmit={onSubmit}>
       <FormControl
         isInvalid={!formState.isValid && formState.errors?.[question.ref]}
         isRequired={currentQuestion.validations?.required}>
@@ -36,7 +36,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
         <Text>press</Text>
         <Text fontWeight={500}>Enter ↵</Text>
       </ButtonGroup>
-    </View>
+    </AnimatedCard>
   );
 }
 

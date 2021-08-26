@@ -1,7 +1,7 @@
-import { Text, Spinner } from "@chakra-ui/react";
+import { Text, Spinner, Flex } from "@chakra-ui/react";
 
+import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
-import { View } from "../AnimatedView";
 import { Center } from "../Card";
 import { PollClosed } from "../PollClosed";
 
@@ -11,21 +11,23 @@ export function SurveyThank(): JSX.Element | null {
 
   return (
     <Center>
-      <View active onSubmit={() => void 0}>
+      <AnimatedCard active onSubmit={() => void 0}>
         {results ? (
           <>
             {isClosed && <PollClosed />}
 
-            {results.title && (
-              <Text fontSize="2xl" mb={6} textAlign="center">
-                {results.title}
-              </Text>
-            )}
+            <Flex flex={1} my={6}>
+              {results.title && (
+                <Text fontSize="2xl" textAlign="center">
+                  {results.title}
+                </Text>
+              )}
+            </Flex>
           </>
         ) : (
           <Spinner alignSelf="center" justifySelf="center" size="xl" />
         )}
-      </View>
+      </AnimatedCard>
     </Center>
   );
 }

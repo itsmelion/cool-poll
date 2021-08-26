@@ -10,7 +10,10 @@ interface PollViewProps {
 
 const MotionContainer = motion(Card);
 
-export const View: React.FC<PollViewProps> = ({ active, ...props }) => {
+export const CardStackAnimation: React.FC<PollViewProps> = ({
+  active,
+  ...props
+}) => {
   const cardBg = useColorModeValue("gray.50", "gray.800");
 
   return (

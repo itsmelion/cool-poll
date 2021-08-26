@@ -1,7 +1,7 @@
 import { Text, Spinner } from "@chakra-ui/react";
 
+import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
-import { View } from "../AnimatedView";
 import { Center } from "../Card";
 import { Metadata } from "../Metadata";
 import { PollClosed } from "../PollClosed";
@@ -13,7 +13,7 @@ export function PollStats(): JSX.Element | null {
 
   return (
     <Center>
-      <View active onSubmit={() => void 0}>
+      <AnimatedCard active onSubmit={() => void 0}>
         {results ? (
           <>
             {isClosed && <PollClosed />}
@@ -35,7 +35,7 @@ export function PollStats(): JSX.Element | null {
         ) : (
           <Spinner alignSelf="center" justifySelf="center" size="xl" />
         )}
-      </View>
+      </AnimatedCard>
     </Center>
   );
 }
