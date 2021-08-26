@@ -1,6 +1,6 @@
 import { ChakraProvider, ChakraProviderProps, extendTheme } from "@chakra-ui/react";
 
-import { PageContainer } from "../components";
+import { PageContainer } from "../components/PageContainer/PageContainer";
 import { theme as defaultTheme } from "./theme";
 
 export const ThemeProvider: React.FC<ChakraProviderProps & { wrapper?: boolean }> = (

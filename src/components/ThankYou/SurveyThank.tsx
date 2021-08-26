@@ -1,9 +1,9 @@
 import { Text, Spinner, Flex } from "@chakra-ui/react";
 
-import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
 import { Center } from "../Card";
 import { PollClosed } from "../PollClosed";
+import { AnimatedCard } from "../Stagger";
 
 /** Survey thankyou page */
 export function SurveyThank(): JSX.Element | null {

@@ -1,11 +1,11 @@
 import { Text, Spinner } from "@chakra-ui/react";
 
-import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
 import { Center } from "../Card";
 import { Metadata } from "../Metadata";
 import { PollClosed } from "../PollClosed";
 import { MultipleChoice } from "../Response/MultipleChoice";
+import { AnimatedCard } from "../Stagger";
 
 /** Poll thankyou page */
 export function PollStats(): JSX.Element | null {

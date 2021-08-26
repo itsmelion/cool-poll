@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { QuizComponent } from "./components";
+import { QuizComponent } from "./components/QuizComponent";
 import { PollProvider } from "./services";
 import type { Form, Response, Results } from "./types";
 

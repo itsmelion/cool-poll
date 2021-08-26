@@ -1,8 +1,8 @@
 import { CheckboxGroup } from "@chakra-ui/react";
 import { useFormContext } from "react-hook-form";
 
-import { StaggerContainer, StaggerItem } from "../../components";
 import { usePoll } from "../../services";
+import { StaggerContainer, StaggerItem } from "../Stagger";
 import { Wrapper, Checkbox } from "./Item.styles.web";
 
 export function Check(): JSX.Element {

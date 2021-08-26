@@ -1,8 +1,8 @@
 import { Radio as RadioItem, RadioGroup, useColorModeValue } from "@chakra-ui/react";
 import { useFormContext } from "react-hook-form";
 
-import { StaggerItem, StaggerContainer } from "../../components";
 import { usePoll } from "../../services";
+import { StaggerItem, StaggerContainer } from "../Stagger";
 import { Wrapper } from "./Item.styles.web";
 
 export function Radio(): JSX.Element {

@@ -2,13 +2,13 @@ import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
 import { memo } from "react";
 import { useFormContext } from "react-hook-form";
 
-import { AnimatedCard } from "../../components";
 import { usePoll } from "../../services";
 import type { Field } from "../../types";
 import { ErrorMessage } from "../ErrorMessage";
 import { useFieldResolver as field } from "../Field/fieldResolver";
 import { Description } from "../Heading/Description";
 import { Heading } from "../Heading/Heading";
+import { AnimatedCard } from "../Stagger";
 
 type Props = { question: Field; onSubmit: () => void };
 
