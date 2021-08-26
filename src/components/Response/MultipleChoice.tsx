@@ -27,7 +27,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
         {field.choices.map((choice) => (
           <Choice
             bgColor={choiceBgColor(choice)}
-            fontSize={choice.isChosen ? "1.1rem" : "0.9rem"}
+            fontSize={choice.isChosen ? "1.1em" : "0.9em"}
             key={choice.field.ref}>
             {choice.correct && (
               <Box as={FaCheckCircle} color="green.500" mt="-.2em" />

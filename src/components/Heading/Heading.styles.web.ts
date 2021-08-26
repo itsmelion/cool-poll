@@ -4,6 +4,6 @@ export const H1 = chakra(FormLabel, {
   baseStyle: {
     fontSize: "h1",
     fontWeight: 200,
-    marginBottom: "1.5rem",
+    marginBottom: "0.75em",
   },
 });

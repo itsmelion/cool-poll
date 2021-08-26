@@ -2,10 +2,10 @@ import { chakra } from "@chakra-ui/react";
 
 export const Card = chakra("section", {
   baseStyle: {
-    padding: "3rem",
-    borderRadius: "1.5rem",
-    minHeight: "200px",
-    minWw: "200px",
+    padding: "3em",
+    borderRadius: "1.5em",
+    minHeight: "280pt",
+    minWw: "200pt",
     margin: "auto",
     color: "inherit",
     maxHeight: "100%",

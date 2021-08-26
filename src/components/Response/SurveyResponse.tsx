@@ -17,7 +17,7 @@ export function SurveyResponse({ field }: { field: Results.Question }): JSX.Elem
         {field.choices?.map((choice) => (
           <Choice
             bgColor={neutralSelectionBg}
-            fontSize={choice.isChosen ? "1.1rem" : "0.9rem"}
+            fontSize={choice.isChosen ? "1.1em" : "0.9em"}
             key={choice.field.ref}>
             <Text
               fontWeight={choice.correct ? 600 : "normal"}

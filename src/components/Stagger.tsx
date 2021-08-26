@@ -45,7 +45,7 @@ export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => {
   const cardBg = useColorModeValue("gray.50", "gray.800");
 
   return (
-    <AnimatePresence exitBeforeEnter presenceAffectsLayout={false}>
+    <AnimatePresence>
       {active && (
         <MotionCard {...props} {...cardContainer} as="form" bgColor={cardBg} />
       )}
@@ -54,9 +54,9 @@ export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => {
 };
 
 export const StaggerContainer: React.FC = (props) => {
-  return <MotionBox {...props} {...optionsContainer} />;
+  return <MotionBox w="100%" {...props} {...optionsContainer} />;
 };
 
 export const StaggerItem: ChakraComponent<typeof Radio, RadioProps> = (props) => (
-  <MotionBox {...itemAnimation} {...props} />
+  <MotionBox w="100%" {...itemAnimation} {...props} />
 );
