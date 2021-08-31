@@ -6,24 +6,22 @@ export const View = chakra("li", {
     flex: "0 0 auto",
     width: "100%",
     color: "inherit",
-    borderRadius: 12,
     mb: 2,
   },
 });
 
 export const Choice = chakra("li", {
   baseStyle: {
-    padding: "0.5em",
     flex: "0 1 auto",
     width: "100%",
     color: "inherit",
     flexDirection: "row",
+    position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "start",
     flexWrap: "no-wrap",
-    borderRadius: 6,
-    lineHeight: 1,
-    my: "1pt",
+    lineHeight: "1em",
+    height: "1.75em",
   },
 });

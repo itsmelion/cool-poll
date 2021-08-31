@@ -1,12 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-default-export */
+import pkg from "./package.json";
 import commonjs from "@rollup/plugin-commonjs";
 import image from "@rollup/plugin-image";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import cleaner from "rollup-plugin-cleaner";
 import { terser } from "rollup-plugin-terser";
 import typescriptPlugin from "rollup-plugin-typescript2";
 import typescript from "typescript";
-import cleaner from "rollup-plugin-cleaner";
-
-import pkg from "./package.json";
 
 const rollupConfig = {
   input: "./index.ts",
@@ -34,7 +34,7 @@ const rollupConfig = {
 
   plugins: [
     cleaner({
-      targets: ["./dist/"]
+      targets: ["./dist/"],
     }),
     nodeResolve(),
     commonjs(),
@@ -46,6 +46,6 @@ const rollupConfig = {
     }),
     process.env.NODE_ENV === "production" && terser(),
   ],
-}
+};
 
 export default rollupConfig;

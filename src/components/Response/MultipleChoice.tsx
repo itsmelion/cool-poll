@@ -8,7 +8,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
   const correctSelectionBg = useColorModeValue("green.600", "green.300");
   const wrongSelectionBg = useColorModeValue("red.400", "red.700");
   const neutralSelectionBg = useColorModeValue("gray.200", "gray.600");
-  const containerBg = useColorModeValue("gray.100", "gray.700");
+  const containerBg = useColorModeValue("gray.50", "gray.700");
 
   const choiceBgColor = (choice: Results.QuestionChoice): string => {
     if (choice.isChosen) {
@@ -23,7 +23,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
         {field.title}
       </Text>
 
-      <VStack as="ol">
+      <VStack as="ol" spacing="0.25pt">
         {field.choices.map((choice) => (
           <Choice
             bgColor={choiceBgColor(choice)}

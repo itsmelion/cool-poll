@@ -42,7 +42,7 @@ const itemAnimation = {
 };
 
 export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => {
-  const cardBg = useColorModeValue("gray.50", "gray.800");
+  const cardBg = useColorModeValue("gray.100", "gray.800");
 
   return (
     <AnimatePresence>
