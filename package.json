@@ -25,7 +25,7 @@
     "lodash": "4.17.21",
     "react-hook-form": "7.14.2",
     "react-icons": "4.2.0",
-    "react-use": "17.3.0"
+    "react-use": "17.3.1"
   },
   "devDependencies": {
     "@dephion/eslint-config": "0.1.18",
