@@ -10098,10 +10098,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.14.1:
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.14.1.tgz#e52d346d1e436f299cd6d08598b6f2d2edcc7ee9"
-  integrity sha512-NcKsxUokZhvpKBdxjnpIn/9v6IlmML63I3PI5aWlnI75ptswYvQeIaaOK8fMohr9Z2HZeeiYBjYDlv+ooffI4Q==
+react-hook-form@7.14.2:
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.14.2.tgz#e5615ba883588a6dd73bbbbbd7d3bb71b73440e3"
+  integrity sha512-32uvgKkaE/0vOncfnJdwQhfahhocPpcb5c7F4j9Eq7dOnqS2Hg8h70Bmt6KXb6veLSWJultc1+ik9QSfqXFmLA==
 
 react-icons@4.2.0:
   version "4.2.0"
@@ -10222,10 +10222,10 @@ react-universal-interface@^0.6.2:
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.6.2.tgz#5e8d438a01729a4dbbcbeeceb0b86be146fe2b3b"
   integrity sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==
 
-react-use@17.2.4:
-  version "17.2.4"
-  resolved "https://registry.yarnpkg.com/react-use/-/react-use-17.2.4.tgz#1f89be3db0a8237c79253db0a15e12bbe3cfeff1"
-  integrity sha512-vQGpsAM0F5UIlshw5UI8ULGPS4yn5rm7/qvn3T1Gnkrz7YRMEEMh+ynKcmRloOyiIeLvKWiQjMiwRGtdbgs5qQ==
+react-use@17.3.1:
+  version "17.3.1"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-17.3.1.tgz#12b248555775519aa2b900b22f1928d029bf99d1"
+  integrity sha512-hs7+tS4rRm1QLHPfanLCqXIi632tP4V7Sai1ENUP2WTufU6am++tU9uSw9YrNCFqbABiEv0ndKU1XCUcfu2tXA==
   dependencies:
     "@types/js-cookie" "^2.2.6"
     "@xobotyi/scrollbar-width" "^1.9.5"
