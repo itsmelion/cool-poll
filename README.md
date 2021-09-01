@@ -16,3 +16,10 @@ function App() {
   return <Quiz poll={pollData} onSubmit={onSubmit}>
 }
 ```
+
+### Controlling the Quiz from outside
+
+You can invoke its internal methods by instead of `Quiz`,
+you use the `QuizComponent` wrapped with the `PollProvider`.
+The poll provider shall allow you to read poll state, and dispatch actions
+like `usePoll`, `usePollActions`
