@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@chakra-ui/provider": "1.6.8",
-    "@chakra-ui/react": "1.6.8",
+    "@chakra-ui/react": "1.6.9",
     "@chakra-ui/theme-tools": "1.2.1",
     "@habtic/validations": "0.2.22",
     "@hookform/error-message": "2.0.0",
