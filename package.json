@@ -21,7 +21,7 @@
     "@chakra-ui/theme-tools": "1.2.2",
     "@habtic/validations": "0.2.22",
     "@hookform/error-message": "2.0.0",
-    "framer-motion": "4.1.17",
+    "framer-motion": "5.0.0",
     "lodash": "4.17.21",
     "react-hook-form": "7.18.0",
     "react-icons": "4.3.1",
