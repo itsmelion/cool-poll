@@ -10,7 +10,7 @@
     "dist"
   ],
   "resolutions": {
-    "eslint": "^7",
+    "eslint": "^7 || ^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/experimental-utils": "^5",
     "@typescript-eslint/parser": "^5"
