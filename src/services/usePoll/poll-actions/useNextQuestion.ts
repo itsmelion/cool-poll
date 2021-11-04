@@ -1,7 +1,7 @@
-import { useCallback } from "react";
-import { useFormContext } from "react-hook-form";
+import { useCallback } from 'react';
+import { useFormContext } from 'react-hook-form';
 
-import { usePoll } from "../usePoll";
+import { usePoll } from '../usePoll';
 
 export function useNextQuestion(): () => void {
   const {
@@ -19,7 +19,7 @@ export function useNextQuestion(): () => void {
     if (!onSubmit) return Promise.resolve(null);
     const responses = getValues();
 
-    setPoll({ type: mode === "survey" ? "thankyou" : "results" });
+    setPoll({ type: mode === 'survey' ? 'thankyou' : 'results' });
 
     return onSubmit(responses).then((r) => {
       setResults(r);
@@ -33,7 +33,7 @@ export function useNextQuestion(): () => void {
 
     const nextQuestion = fields[currentIndex + 1];
 
-    if (nextQuestion) setPoll({ type: "next", payload: nextQuestion });
+    if (nextQuestion) setPoll({ type: 'next', payload: nextQuestion });
 
     /* TODO: is Final question? submit & thankyoupage */
     if (currentIndex === fields.length - 1) submit();

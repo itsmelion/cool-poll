@@ -1,8 +1,11 @@
-import { createContext, useContext, ReactChild, useCallback } from "react";
+import {
+  createContext, useContext, ReactChild, useCallback,
+} from 'react';
 
-import type { FieldResponse } from "../../../types";
-import { useActionsResolver } from "./useActionsResolver";
-import { useNextQuestion } from "./useNextQuestion";
+import type { FieldResponse } from '../../../types';
+
+import { useActionsResolver } from './useActionsResolver';
+import { useNextQuestion } from './useNextQuestion';
 
 interface PollActions {
   activeQuestion: string;
@@ -17,7 +20,7 @@ interface Props {
 }
 
 const initialState: PollActions = {
-  activeQuestion: "",
+  activeQuestion: '',
   skip: () => undefined,
   previous: () => undefined,
   next: () => undefined,

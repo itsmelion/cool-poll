@@ -1,14 +1,17 @@
-import { Button, ButtonGroup, Text, FormControl } from "@chakra-ui/react";
-import { memo } from "react";
-import { useFormContext } from "react-hook-form";
+import {
+  Button, ButtonGroup, Text, FormControl,
+} from '@chakra-ui/react';
+import { memo } from 'react';
+import { useFormContext } from 'react-hook-form';
 
-import { usePoll } from "../../services";
-import type { Field } from "../../types";
-import { ErrorMessage } from "../ErrorMessage";
-import { useFieldResolver as field } from "../Field/fieldResolver";
-import { Description } from "../Heading/Description";
-import { Heading } from "../Heading/Heading";
-import { AnimatedCard } from "../Stagger";
+import type { Field } from '../../types';
+
+import { usePoll } from '../../services';
+import { ErrorMessage } from '../ErrorMessage';
+import { useFieldResolver as field } from '../Field/fieldResolver';
+import { Description } from '../Heading/Description';
+import { Heading } from '../Heading/Heading';
+import { AnimatedCard } from '../Stagger';
 
 type Props = { question: Field; onSubmit: () => void };
 
@@ -31,7 +34,7 @@ function Q({ question, onSubmit }: Props): JSX.Element {
 
       <ButtonGroup alignItems="center" isDisabled={formState.isSubmitting} mt="8">
         <Button type="submit">
-          {question.properties?.button_text || "Confirm"}
+          {question.properties?.button_text || 'Confirm'}
         </Button>
         <Text>press</Text>
         <Text fontWeight={500}>Enter ↵</Text>

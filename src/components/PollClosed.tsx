@@ -1,4 +1,4 @@
-import { Badge } from "@chakra-ui/react";
+import { Badge } from '@chakra-ui/react';
 
 export function PollClosed(): JSX.Element {
   return (

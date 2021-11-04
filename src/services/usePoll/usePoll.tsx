@@ -6,10 +6,12 @@ import {
   useState,
   useCallback,
   useEffect,
-} from "react";
-import { useCounter } from "react-use";
+} from 'react';
+import { useCounter } from 'react-use';
 
-import type { PollState, PollReducer, Field, Response, Results } from "../../types";
+import type {
+  PollState, PollReducer, Field, Response, Results,
+} from '../../types';
 
 interface Props {
   children: ReactChild;
@@ -19,17 +21,17 @@ interface Props {
 }
 
 const initialState: PollState = {
-  mode: "survey",
+  mode: 'survey',
   isClosed: false,
-  activeQuestion: "",
+  activeQuestion: '',
   score: 0,
   scoreHandlers: null,
   price: 0,
   poll: undefined,
   currentQuestion: {
-    type: "",
-    ref: "",
-    id: "",
+    type: '',
+    ref: '',
+    id: '',
   },
   results: null,
   setResults: () => undefined,
@@ -41,15 +43,15 @@ const Context = createContext<PollState>(initialState);
 export const usePoll = (): PollState => useContext(Context);
 
 export const PollContext = (props: Props): JSX.Element => {
-  const { children, value, submit, fetchResults: resultsFetcher } = props;
+  const {
+    children, value, submit, fetchResults: resultsFetcher,
+  } = props;
   const [currentScore, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
   const [results, setResults] = useState<Results.NullableResults>(null);
   const { isClosed } = poll;
 
-  const fetchResults = useCallback(() => {
-    return resultsFetcher().then((results) => setResults(results));
-  }, [resultsFetcher, setResults]);
+  const fetchResults = useCallback(() => resultsFetcher().then((results) => setResults(results)), [resultsFetcher, setResults]);
 
   useEffect(() => {
     isClosed && fetchResults();
@@ -77,40 +79,40 @@ const reducer = (
   { type: actionType, payload }: PollReducer,
 ): PollState => {
   switch (actionType) {
-    case "next":
-    case "previous":
+    case 'next':
+    case 'previous':
       return {
         ...state,
         activeQuestion: (payload as Field).ref,
         currentQuestion: payload as Field,
       };
 
-    case "data":
+    case 'data':
       return Object.assign(state, payload);
 
-    case "thankyou":
+    case 'thankyou':
       return {
         ...state,
-        activeQuestion: "thankyou",
+        activeQuestion: 'thankyou',
         currentQuestion: {
-          type: "",
-          ref: "",
-          id: "",
+          type: '',
+          ref: '',
+          id: '',
         },
       };
 
-    case "results":
+    case 'results':
       return {
         ...state,
-        activeQuestion: "results",
+        activeQuestion: 'results',
         currentQuestion: {
-          type: "",
-          ref: "",
-          id: "",
+          type: '',
+          ref: '',
+          id: '',
         },
       };
 
-    case "respond":
+    case 'respond':
     default:
       return state;
   }

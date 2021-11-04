@@ -1,6 +1,7 @@
-import { FormErrorMessage } from "@chakra-ui/react";
-import { ErrorMessage as HookFormErrorMessage } from "@hookform/error-message";
-import type { FieldErrors, MultipleFieldErrors, Message } from "react-hook-form";
+import { FormErrorMessage } from '@chakra-ui/react';
+import { ErrorMessage as HookFormErrorMessage } from '@hookform/error-message';
+
+import type { FieldErrors, MultipleFieldErrors, Message } from 'react-hook-form';
 
 type Props = {
   name: string;
@@ -17,19 +18,17 @@ export function ErrorMessage(props: Props): JSX.Element {
   return (
     <HookFormErrorMessage
       {...props}
-      render={({ messages, message }: ErrorObj) =>
-        messages ? (
-          Object.entries(messages).map(([type, m]) => (
-            <FormErrorMessage key={type} mx="0.75em" role="alert">
-              {m}
-            </FormErrorMessage>
-          ))
-        ) : (
-          <FormErrorMessage mx="0.75em" role="alert">
-            {message}
+      render={({ messages, message }: ErrorObj) => (messages ? (
+        Object.entries(messages).map(([type, m]) => (
+          <FormErrorMessage key={type} mx="0.75em" role="alert">
+            {m}
           </FormErrorMessage>
-        )
-      }
+        ))
+      ) : (
+        <FormErrorMessage mx="0.75em" role="alert">
+          {message}
+        </FormErrorMessage>
+      ))}
     />
   );
 }

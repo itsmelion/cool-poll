@@ -1,9 +1,10 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from 'react';
 
-import type { FieldResponse, Action } from "../../../types";
-import { usePoll } from "../usePoll";
-import { jumpToAction, addAction, subtractAction } from "./actions";
-import { isConditionMet } from "./isConditionMet";
+import type { FieldResponse, Action } from '../../../types';
+
+import { usePoll } from '../usePoll';
+import { jumpToAction, addAction, subtractAction } from './actions';
+import { isConditionMet } from './isConditionMet';
 
 export function useActionsResolver(): (r: FieldResponse) => boolean {
   const { activeQuestion, poll, setPoll: dispatch } = usePoll();
@@ -12,11 +13,11 @@ export function useActionsResolver(): (r: FieldResponse) => boolean {
   const resolveAction = useMemo(
     () => (action: Action) => {
       switch (action.action) {
-        case "jump":
+        case 'jump':
           return () => jumpToAction(action, dispatch);
-        case "add":
+        case 'add':
           return () => addAction(action, dispatch);
-        case "subtract":
+        case 'subtract':
           return () => subtractAction(action, dispatch);
         default:
           return () => undefined;
@@ -33,7 +34,7 @@ export function useActionsResolver(): (r: FieldResponse) => boolean {
 
       if (questionLogic) {
         questionLogic.actions?.forEach((action) => {
-          if (action?.action === "jump") isJump = true;
+          if (action?.action === 'jump') isJump = true;
           if (!action?.condition) return;
           if (!isConditionMet(action.condition, r)) return;
           resolveAction(action);

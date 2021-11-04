@@ -5,7 +5,7 @@ export interface Action {
   /**
    * Behavior the Logic Jump will take.
    */
-  action?: "jump" | "add" | "subtract" | "multiply" | "divide";
+  action?: 'jump' | 'add' | 'subtract' | 'multiply' | 'divide';
   /**
    * Properties that further specify how the Logic Jump will behave.
    */
@@ -27,7 +27,7 @@ export interface ActionDetails {
     /**
      * Logic Jump "to" option you are using.
      */
-    type?: "field" | "hidden" | "thankyou";
+    type?: 'field' | 'hidden' | 'thankyou';
     /**
      * The "ref" value for the field, Hidden Field, or thank you screen the Logic Jump leads to.
      */
@@ -40,11 +40,11 @@ export interface ActionDetails {
     /**
      * Specifies that the value is a variable.
      */
-    type?: "variable";
+    type?: 'variable';
     /**
      * Variable value to use in calculation.
      */
-    value?: "score" | "price";
+    value?: 'score' | 'price';
   };
   /**
    * Specifies the numeric value to use in the calculation for the `score` or `price` variable.
@@ -53,7 +53,7 @@ export interface ActionDetails {
     /**
      * Specifies that the numeric value is a constant.
      */
-    type?: "constant";
+    type?: 'constant';
     /**
      * Numeric value to use in calculation.
      */
@@ -68,7 +68,7 @@ export interface Attachment {
   /**
    * Type of attachment.
    */
-  type?: "image" | "video" | string;
+  type?: 'image' | 'video' | string;
   /**
    * URL for the image or video you want to display.
    * Images must already exist in your account---use the image's Typeform URL, such as `"https://images.typeform.com/images/kbn8tc98AHb"`.
@@ -108,25 +108,25 @@ export interface Condition {
    * Operator for the condition.
    */
   op?:
-    | "begins_with"
-    | "ends_with"
-    | "contains"
-    | "not_contains"
-    | "lower_than"
-    | "lower_equal_than"
-    | "greater_than"
-    | "greater_equal_than"
-    | "is"
-    | "is_not"
-    | "equal"
-    | "not_equal"
-    | "always"
-    | "on"
-    | "not_on"
-    | "earlier_than"
-    | "earlier_than_or_on"
-    | "later_than"
-    | "later_than_or_on";
+  | 'begins_with'
+  | 'ends_with'
+  | 'contains'
+  | 'not_contains'
+  | 'lower_than'
+  | 'lower_equal_than'
+  | 'greater_than'
+  | 'greater_equal_than'
+  | 'is'
+  | 'is_not'
+  | 'equal'
+  | 'not_equal'
+  | 'always'
+  | 'on'
+  | 'not_on'
+  | 'earlier_than'
+  | 'earlier_than_or_on'
+  | 'later_than'
+  | 'later_than_or_on';
   /**
    * Object that defines the field type and value to evaluate with the operator.
    */
@@ -134,7 +134,7 @@ export interface Condition {
     /**
      * Type of value the condition object refers to.
      */
-    type?: "field" | "hidden" | "variable" | "constant" | "end";
+    type?: 'field' | 'hidden' | 'variable' | 'constant' | 'end';
     /**
      * Value to check for in the "type" field to evaluate with the operator.
      */
@@ -235,23 +235,23 @@ export interface Field {
      * Shape to display on the scale's steps. Available for `opinion_scale` and `rating` types.
      */
     shape?:
-      | "cat"
-      | "circle"
-      | "cloud"
-      | "crown"
-      | "dog"
-      | "droplet"
-      | "flag"
-      | "heart"
-      | "lightbulb"
-      | "pencil"
-      | "skull"
-      | "star"
-      | "thunderbolt"
-      | "tick"
-      | "trophy"
-      | "up"
-      | "user";
+    | 'cat'
+    | 'circle'
+    | 'cloud'
+    | 'crown'
+    | 'dog'
+    | 'droplet'
+    | 'flag'
+    | 'heart'
+    | 'lightbulb'
+    | 'pencil'
+    | 'skull'
+    | 'star'
+    | 'thunderbolt'
+    | 'tick'
+    | 'trophy'
+    | 'up'
+    | 'user';
     /**
      * Label to help respondents understand the scale's range. Available for `opinion_scale` and `rating` types.
      */
@@ -277,24 +277,24 @@ export interface Field {
      * Default: `"DDMMYYYY"`
      * Format for month, date, and year in answer. Available for `date` types.
      */
-    structure?: "MMDDYYYY" | "DDMMYYYY" | "YYYYMMDD";
+    structure?: 'MMDDYYYY' | 'DDMMYYYY' | 'YYYYMMDD';
     /**
      * Default: `"/"`
      * Character to use between month, day, and year in answer. Available for `date` types.
      */
-    separator?: "/" | "-" | ".";
+    separator?: '/' | '-' | '.';
     currency?:
-      | "AUD"
-      | "BRL"
-      | "CAD"
-      | "CHF"
-      | "DKK"
-      | "EUR"
-      | "GBP"
-      | "MXN"
-      | "NOK"
-      | "SEK"
-      | "USD";
+    | 'AUD'
+    | 'BRL'
+    | 'CAD'
+    | 'CHF'
+    | 'DKK'
+    | 'EUR'
+    | 'GBP'
+    | 'MXN'
+    | 'NOK'
+    | 'SEK'
+    | 'USD';
   };
   /**
    * Validations of a field.
@@ -308,10 +308,10 @@ export interface Field {
 /**
  * Font for the theme.
  */
-export type Font = "Heebo";
+export type Font = 'Heebo';
 
 export interface Form {
-  mode: "survey" | "poll";
+  mode: 'survey' | 'poll';
   isClosed: boolean;
   /**
    * ID of a form.
@@ -351,14 +351,14 @@ export interface Form {
    * Treat as string when creating a form/
    */
   theme?:
-    | {
-        /**
+  | {
+    /**
          * URL of the theme to use for the typeform.
          * If you don't specify a URL for the theme, Typeform applies a new copy of the default theme to the form.
          */
-        href?: string;
-      }
-    | string;
+    href?: string;
+  }
+  | string;
   /**
    * Workspace that contains the form.
    */
@@ -424,7 +424,7 @@ export interface Image {
   /**
    * The MIME type of the image.
    */
-  media_type?: "image/gif" | "image/jpeg" | "image/png";
+  media_type?: 'image/gif' | 'image/jpeg' | 'image/png';
   /**
    * True if image has alpha channel (some degree of transparency). Otherwise, false.
    */
@@ -437,7 +437,7 @@ export interface Image {
 /**
  * Language that Typeform can be in.
  */
-export type Language = "en" | "nl";
+export type Language = 'en' | 'nl';
 
 /**
  * Logic object of a form.
@@ -446,7 +446,7 @@ export interface Logic {
   /**
    * Specifies whether the Logic Jump is based on a question field or Hidden Field.
    */
-  type?: "field" | "hidden";
+  type?: 'field' | 'hidden';
   /**
    * Reference to the field that triggers the the Logic Jump.
    */
@@ -465,232 +465,232 @@ export interface Messages {
    * Default tooltip button message. Maximum 28 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.buttonHint.default"?: string;
+  'label.buttonHint.default'?: string;
   /**
    * Tooltip button message for long text blocks. Maximum 28 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.buttonHint.longtext"?: string;
+  'label.buttonHint.longtext'?: string;
   /**
    * Server connection error message. Maximum 128 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden
    */
-  "label.warning.connection"?: string;
+  'label.warning.connection'?: string;
   /**
    * Default continue button message. Maximum 100 characters.
    */
-  "label.buttonNoAnswer.default"?: string;
+  'label.buttonNoAnswer.default'?: string;
   /**
    * List of errors message. Maximum 128 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.warning.correction"?: string;
+  'label.warning.correction'?: string;
   /**
    * Credit card name message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.payment.cardNameTitle"?: string;
+  'block.payment.cardNameTitle'?: string;
   /**
    * Credit card number message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.payment.cardNumberTitle"?: string;
+  'block.payment.cardNumberTitle'?: string;
   /**
    * Credit card security number message
    */
-  "block.payment.cvcDescription"?: string;
+  'block.payment.cvcDescription'?: string;
   /**
    * Credit card CVC number message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.payment.cvcNumberTitle"?: string;
+  'block.payment.cvcNumberTitle'?: string;
   /**
    * Text input placeholder. Maximum 100 characters.
    */
-  "block.shortText.placeholder"?: string;
+  'block.shortText.placeholder'?: string;
   /**
    * Invalid email error message. Maximum 64 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.emailAddress"?: string;
+  'label.error.emailAddress'?: string;
   /**
    * Credit card expiry month message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.expiryMonthTitle"?: string;
+  'label.error.expiryMonthTitle'?: string;
   /**
    * Credit card expiry year message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.expiryYearTitle"?: string;
+  'label.error.expiryYearTitle'?: string;
   /**
    * Fallback alert message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.warning.fallbackAlert"?: string;
+  'label.warning.fallbackAlert'?: string;
   /**
    * File upload button message. Maximum 34 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "block.fileUpload.choose"?: string;
+  'block.fileUpload.choose'?: string;
   /**
    * File upload dragging action message. Maximum 35 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "block.fileUpload.drag"?: string;
+  'block.fileUpload.drag'?: string;
   /**
    * Still processing file upload message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "block.fileUpload.uploadingProgress"?: string;
+  'block.fileUpload.uploadingProgress'?: string;
   /**
    * File too big error message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.sizeLimit"?: string;
+  'label.error.sizeLimit'?: string;
   /**
    * Private form error message. Accepts variable form:name. Maximum 128 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.warning.formUnavailable"?: string;
+  'label.warning.formUnavailable'?: string;
   /**
    * Incomplete fields error message. Maximum 42 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.incompleteForm"?: string;
+  'label.error.incompleteForm'?: string;
   /**
    * Key letter hint message. Maximum 100 characters.
    */
-  "label.hint.key"?: string;
+  'label.hint.key'?: string;
   /**
    * Legal field deny message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.legal.reject"?: string;
+  'block.legal.reject'?: string;
   /**
    * Legal field accept message. You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.legal.accept"?: string;
+  'block.legal.accept'?: string;
   /**
    * Number maximum value tooltip message. Accepts variable `field:max`. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.maxValue"?: string;
+  'label.error.maxValue'?: string;
   /**
    * Text fields maximum length tooltip message. Accepts variable `field:max_length`. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.maxLength"?: string;
+  'label.error.maxLength'?: string;
   /**
    * Number minimum value tooltip message. Accepts variable `field:min`. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.minValue"?: string;
+  'label.error.minValue'?: string;
   /**
    * Number minimum and maximum range value tooltip message. Accepts variables `field:min` and `field:max`. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.range"?: string;
+  'label.error.range'?: string;
   /**
    * Choose as many as you like message for multiple choice fields. Maximum 45 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.multipleChoice.hint"?: string;
+  'block.multipleChoice.hint'?: string;
   /**
    * Required value error message. Maximum 64 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.mustEnter"?: string;
+  'label.error.mustEnter'?: string;
   /**
    * Required selection error message. Maximum 64 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.mustSelect"?: string;
+  'label.error.mustSelect'?: string;
   /**
    * Keyboard shortcut for the "No" option. Maximum 1 character.
    */
-  "label.no.shortcut"?: string;
+  'label.no.shortcut'?: string;
   /**
    * Representation for the word "No." You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.no.default"?: string;
+  'label.no.default'?: string;
   /**
    * Not suggestions found for dropdown fields error message. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "block.dropdown.hint"?: string;
+  'block.dropdown.hint'?: string;
   /**
    * Other answer message. Maximum 100 characters.
    */
-  "block.multipleChoice.other"?: string;
+  'block.multipleChoice.other'?: string;
   /**
    * Completion percentage message. Accepts variable `progress:percent`. Maximum 100 characters.
    */
-  "label.progress.percent"?: string;
+  'label.progress.percent'?: string;
   /**
    * Completion proportion message. Accepts variables `progress:step` and `progress:total`. Maximum 100 characters.
    */
-  "label.progress.proportion"?: string;
+  'label.progress.proportion'?: string;
   /**
    * Required field error message. Maximum 64 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.required"?: string;
+  'label.error.required'?: string;
   /**
    * Review fields error message. Accepts variable `form:unanswered_fields`. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.preview"?: string;
+  'label.preview'?: string;
   /**
    * Review button message. Maximum 100 characters.
    */
-  "label.button.review"?: string;
+  'label.button.review'?: string;
   /**
    * Server error message. Maximum 128 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.server"?: string;
+  'label.error.server'?: string;
   /**
    * Share text message. Maximum 100 characters.
    */
-  "label.action.share"?: string;
+  'label.action.share'?: string;
   /**
    * Submit button message. Maximum 100 characters.
    */
-  "label.button.submit"?: string;
+  'label.button.submit'?: string;
   /**
    * Successful submit message. Maximum 128 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.warning.success"?: string;
+  'label.warning.success'?: string;
   /**
    * Answer confirm. Maximum 100 characters.
    */
-  "label.button.ok"?: string;
+  'label.button.ok'?: string;
   /**
    * Legal field terms and conditions message. Maximum 64 characters.
    * You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.error.mustAccept"?: string;
+  'label.error.mustAccept'?: string;
   /**
    * Long text field tooltip message. Maximum 128 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "block.longtext.hint"?: string;
+  'block.longtext.hint'?: string;
   /**
    * Placeholder message with instructions for dropdown fields. Maximum 100 characters.
    */
-  "block.dropdown.placeholder"?: string;
+  'block.dropdown.placeholder'?: string;
   /**
    * Placeholder message with instructions for dropdown fields on touch devices. Maximum 100 characters.
    */
-  "block.dropdown.placeholderTouch"?: string;
+  'block.dropdown.placeholderTouch'?: string;
   /**
    * Invalid URL error message. Maximum 64 characters. You can format messages with bold (`*bold*`) and italic (`_italic_`) text.
    * HTML tags are forbidden.
    */
-  "label.error.url"?: string;
+  'label.error.url'?: string;
   /**
    * Keyboard shortcut for the "Yes" option. Maximum 1 character.
    */
-  "label.yes.shortcut"?: string;
+  'label.yes.shortcut'?: string;
   /**
    * Representation for the word "Yes". You can format messages with bold (`*bold*`) and italic (`_italic_`) text. HTML tags are forbidden.
    */
-  "label.yes.default"?: string;
+  'label.yes.default'?: string;
 }
 /**
  * Notification object.
@@ -774,7 +774,7 @@ export interface Settings {
    * Basis for the progress bar displayed on the screen. Choose "proportion" to show the number of questions answered so far.
    * Choose "percentage" to show the percentage of questions answered so far.
    */
-  progress_bar?: "percentage" | "proportion";
+  progress_bar?: 'percentage' | 'proportion';
   /**
    * Default: `""`
    * true to display progress bar on the typeform. Otherwise, false.
@@ -858,7 +858,7 @@ export interface Theme {
    * Specifies whether the theme is `public` (one of Typeform's built-in themes that are available in all accounts) or `private`
    * (a theme you created). You can only change `private` themes. You can't change Typeform's public themes.
    */
-  visibility?: "public" | "private";
+  visibility?: 'public' | 'private';
 }
 /**
  * Settings for a theme's background.
@@ -872,7 +872,7 @@ export interface ThemeBackground {
    * Default: `"fullscreen"`
    * Layout for the background.
    */
-  layout?: "fullscreen" | "repeat" | "no-repeat";
+  layout?: 'fullscreen' | 'repeat' | 'no-repeat';
   /**
    * Brightness for the background. -1 is least bright (minimum) and 1 is most bright (maximum).
    */
@@ -926,7 +926,7 @@ export interface ThankYouScreen {
     /**
      * Specify whether the form should reload or redirect to another URL when respondents click the 'Submit' button. PRO+ feature.
      */
-    button_mode?: "reload" | "redirect";
+    button_mode?: 'reload' | 'redirect';
     /**
      * URL where the typeform should redirect after submission, if you specified "redirect" for `button_mode`.
      */
@@ -948,24 +948,24 @@ export interface ThankYouScreen {
  * The type of field.
  */
 type Type =
-  | "date"
-  | "dropdown"
-  | "email"
-  | "file_upload"
-  | "group"
-  | "legal"
-  | "long_text"
-  | "multiple_choice"
-  | "number"
-  | "opinion_scale"
-  | "payment"
-  | "picture_choice"
-  | "rating"
-  | "short_text"
-  | "statement"
-  | "website"
-  | "yes_no"
-  | "phone_number"
+  | 'date'
+  | 'dropdown'
+  | 'email'
+  | 'file_upload'
+  | 'group'
+  | 'legal'
+  | 'long_text'
+  | 'multiple_choice'
+  | 'number'
+  | 'opinion_scale'
+  | 'payment'
+  | 'picture_choice'
+  | 'rating'
+  | 'short_text'
+  | 'statement'
+  | 'website'
+  | 'yes_no'
+  | 'phone_number'
   | string;
 /**
  * Validations of a field.
@@ -1070,6 +1070,6 @@ export interface Workspace {
   members: {
     name: string;
     email: string;
-    role: "owner" | "member";
+    role: 'owner' | 'member';
   }[];
 }

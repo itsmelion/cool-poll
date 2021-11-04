@@ -1,5 +1,8 @@
 module.exports = {
   extends: ["@dephion", "react-app"],
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
   rules: {
     "import/no-extraneous-dependencies": [
       "error",

@@ -1,15 +1,15 @@
-import { CheckboxGroup, useColorModeValue } from "@chakra-ui/react";
-import { useFormContext } from "react-hook-form";
+import { CheckboxGroup, useColorModeValue } from '@chakra-ui/react';
+import { useFormContext } from 'react-hook-form';
 
-import { usePoll } from "../../services";
-import { StaggerContainer, StaggerItem } from "../Stagger";
-import { Wrapper, Checkbox } from "./Item.styles.web";
+import { usePoll } from '../../services';
+import { StaggerContainer, StaggerItem } from '../Stagger';
+import { Wrapper, Checkbox } from './Item.styles.web';
 
 export function Check(): JSX.Element {
   const { activeQuestion, currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
-  const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.400");
+  const borderColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.400');
   return (
     <CheckboxGroup>
       <StaggerContainer>

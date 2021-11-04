@@ -1,5 +1,6 @@
-import { InputItem } from "./Item.styles.web";
-import type { QuestionFieldProps } from "./QuestionField.types";
+import type { QuestionFieldProps } from './QuestionField.types';
+
+import { InputItem } from './Item.styles.web';
 
 export function NumericField({
   htmlProps,

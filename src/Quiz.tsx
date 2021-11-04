@@ -1,8 +1,9 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { QuizComponent } from "./components/QuizComponent";
-import { PollProvider } from "./services";
-import type { Form, Response, Results } from "./types";
+import type { Form, Response, Results } from './types';
+
+import { QuizComponent } from './components/QuizComponent';
+import { PollProvider } from './services';
 
 interface PollProps {
   poll: Form;
@@ -29,4 +30,4 @@ export const Quiz = memo(({ poll, submit, fetchResults }: PollProps) => {
   );
 });
 
-Quiz.displayName = "Quiz";
+Quiz.displayName = 'Quiz';

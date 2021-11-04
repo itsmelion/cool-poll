@@ -1,5 +1,5 @@
-import type { fieldType } from "./field.types";
-import type { Form } from "./typeform.types";
+import type { fieldType } from './field.types';
+import type { Form } from './typeform.types';
 
 export type FetchResults = () => Promise<Results>;
 
@@ -36,7 +36,7 @@ export interface Question {
   type: fieldType;
   title: string;
   repliesCount: number;
-  variables: Form["variables"];
+  variables: Form['variables'];
   choices: QuestionChoice[];
 }
 

@@ -1,5 +1,5 @@
-import type { FieldResponse } from "./PollState";
-import type { NullableResults } from "./Results";
+import type { FieldResponse } from './PollState';
+import type { NullableResults } from './Results';
 
 export type Responses = Record<string, FieldResponse> | Record<string, never>;
 

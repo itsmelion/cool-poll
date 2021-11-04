@@ -1,7 +1,8 @@
-import { TextareaProps } from "@chakra-ui/react";
+import { TextareaProps } from '@chakra-ui/react';
 
-import { TextArea } from "./Item.styles.web";
-import type { QuestionFieldProps } from "./QuestionField.types";
+import type { QuestionFieldProps } from './QuestionField.types';
+
+import { TextArea } from './Item.styles.web';
 
 export function LongText({
   htmlProps,

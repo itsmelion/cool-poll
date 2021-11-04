@@ -1,6 +1,8 @@
-import { Box, Table, Thead, Tr, Th, Tbody, Td } from "@chakra-ui/react";
+import {
+  Box, Table, Thead, Tr, Th, Tbody, Td,
+} from '@chakra-ui/react';
 
-import type { Results } from "../types";
+import type { Results } from '../types';
 
 interface MetadataProps {
   data: Results.Metadata;
@@ -79,7 +81,10 @@ export function Metadata({ data }: MetadataProps): JSX.Element {
           {!!data.global.responseRate && (
             <Tr>
               <Td>response rate:</Td>
-              <Td isNumeric>{data.global.responseRate}%</Td>
+              <Td isNumeric>
+                {data.global.responseRate}
+                %
+              </Td>
             </Tr>
           )}
         </Tbody>

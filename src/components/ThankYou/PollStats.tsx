@@ -1,11 +1,11 @@
-import { Text, Spinner } from "@chakra-ui/react";
+import { Text, Spinner } from '@chakra-ui/react';
 
-import { usePoll } from "../../services";
-import { Center } from "../Card";
-import { Metadata } from "../Metadata";
-import { PollClosed } from "../PollClosed";
-import { SurveyResponse } from "../Response/SurveyResponse";
-import { AnimatedCard } from "../Stagger";
+import { usePoll } from '../../services';
+import { Center } from '../Card';
+import { Metadata } from '../Metadata';
+import { PollClosed } from '../PollClosed';
+import { SurveyResponse } from '../Response/SurveyResponse';
+import { AnimatedCard } from '../Stagger';
 
 /** Poll thankyou page */
 export function PollStats(): JSX.Element | null {
@@ -26,7 +26,7 @@ export function PollStats(): JSX.Element | null {
 
             <ol>
               {results.questions?.map((question) => (
-                <SurveyResponse field={question} key={question.ref} />
+                <SurveyResponse key={question.ref} field={question} />
               ))}
             </ol>
 

@@ -1,5 +1,5 @@
-export * from "./typeform.types";
-export type { fieldType } from "./field.types";
+export * from './typeform.types';
+export type { fieldType } from './field.types';
 export type {
   PollState,
   CurrentQuestion,
@@ -7,7 +7,7 @@ export type {
   stateActions,
   PollDispatcher,
   FieldResponse,
-} from "./PollState";
+} from './PollState';
 
-export * as Results from "./Results";
-export * as Response from "./Responses";
+export * as Results from './Results';
+export * as Response from './Responses';

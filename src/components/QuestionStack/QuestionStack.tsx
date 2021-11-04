@@ -1,9 +1,9 @@
-import { useFormContext } from "react-hook-form";
-import { useKeyPressEvent } from "react-use";
+import { useFormContext } from 'react-hook-form';
+import { useKeyPressEvent } from 'react-use';
 
-import { usePoll, usePollActions } from "../../services";
-import { Center } from "../Card";
-import { Question } from "./Question";
+import { usePoll, usePollActions } from '../../services';
+import { Center } from '../Card';
+import { Question } from './Question';
 
 export const QuestionStack: React.FC = (props) => {
   const { poll, activeQuestion } = usePoll();
@@ -15,7 +15,7 @@ export const QuestionStack: React.FC = (props) => {
     next(data[activeQuestion]);
   });
 
-  useKeyPressEvent("Enter", (e) => {
+  useKeyPressEvent('Enter', (e) => {
     e.stopPropagation();
     onSubmit();
   });
