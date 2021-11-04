@@ -28,7 +28,7 @@
     "react-use": "17.3.1"
   },
   "devDependencies": {
-    "@dephion/eslint-config": "0.1.18",
+    "@dephion/eslint-config": "next",
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
     "@rollup/plugin-commonjs": "21.0.1",
