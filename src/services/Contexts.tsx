@@ -25,3 +25,24 @@ export const PollProvider = (props: Props): JSX.Element => {
     </PollContext>
   );
 };
+
+PollProvider.defaultProps = {
+  value: {
+    mode: 'survey',
+    isClosed: false,
+    activeQuestion: '',
+    score: 0,
+    scoreHandlers: null,
+    price: 0,
+    poll: undefined,
+    currentQuestion: {
+      type: '',
+      ref: '',
+      id: '',
+    },
+    results: null,
+    setResults: () => undefined,
+    setPoll: () => undefined,
+    fetchResults: () => undefined,
+  },
+};

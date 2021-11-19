@@ -51,7 +51,10 @@ export const PollContext = (props: Props): JSX.Element => {
   const [results, setResults] = useState<Results.NullableResults>(null);
   const { isClosed } = poll;
 
-  const fetchResults = useCallback(() => resultsFetcher().then((results) => setResults(results)), [resultsFetcher, setResults]);
+  const fetchResults = useCallback(
+    () => resultsFetcher().then((r) => setResults(r)),
+    [resultsFetcher, setResults],
+  );
 
   useEffect(() => {
     isClosed && fetchResults();
@@ -116,4 +119,8 @@ const reducer = (
     default:
       return state;
   }
+};
+
+PollContext.defaultProps = {
+  value: initialState,
 };
