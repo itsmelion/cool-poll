@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Card = styled.section({
+export const Card = styled.section(({ colorMode }) => ({
   padding: '3em',
   borderRadius: '1.5em',
   minHeight: '280pt',
@@ -10,8 +10,8 @@ export const Card = styled.section({
   maxHeight: '100%',
   overflowY: 'auto',
   width: '100%',
-  backgroundColor: '#F7FAFC',
-});
+  backgroundColor: colorMode === 'dark' ? '#1A202C' : '#F7FAFC',
+}));
 
 export const Center = styled.section({
   display: 'flex',
