@@ -27,6 +27,11 @@
     "downlevelIteration": true,
     "isolatedModules": true
   },
+  "typeRoots": [
+    "src/declarations.d.ts",
+    "node_modules/@types",
+    "src/react-app-env.d.ts"
+  ],
   "include": ["src", "index.ts"],
   "exclude": [
     "node_modules",
