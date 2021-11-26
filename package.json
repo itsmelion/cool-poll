@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@dephion/eslint-config": "next",
-    "@emotion/react": "11.6.0",
+    "@emotion/react": "11.7.0",
     "@emotion/styled": "11.6.0",
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-image": "2.1.1",
