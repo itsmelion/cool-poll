@@ -15,7 +15,7 @@ export const CardStackAnimation: React.FC<PollViewProps> = ({
 }) => (
   <AnimatePresence>
     {active && (
-    <MotionContainer {...props} {...animations} as="form" />
+      <MotionContainer {...props} {...animations} as="form" />
     )}
   </AnimatePresence>
 );

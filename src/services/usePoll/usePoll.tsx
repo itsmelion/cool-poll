@@ -6,6 +6,7 @@ import {
   useState,
   useCallback,
   useEffect,
+  useMemo,
 } from 'react';
 import { useCounter } from 'react-use';
 
@@ -60,18 +61,19 @@ export const PollContext = (props: Props): JSX.Element => {
     isClosed && fetchResults();
   }, [isClosed, fetchResults]);
 
+  const context = useMemo(() => ({
+    ...poll,
+    score: currentScore,
+    scoreHandlers: scoreHandlers,
+    setPoll: setPoll,
+    submit: submit,
+    results: results,
+    setResults: setResults,
+    fetchResults: fetchResults,
+  }), [poll, currentScore, scoreHandlers, submit, results, setResults, fetchResults]);
+
   return (
-    <Context.Provider
-      value={{
-        ...poll,
-        score: currentScore,
-        scoreHandlers,
-        setPoll,
-        submit,
-        results,
-        setResults,
-        fetchResults,
-      }}>
+    <Context.Provider value={context}>
       {children}
     </Context.Provider>
   );
@@ -79,7 +81,7 @@ export const PollContext = (props: Props): JSX.Element => {
 
 const reducer = (
   state = initialState,
-  { type: actionType, payload }: PollReducer,
+  { type: actionType, payload }: PollReducer = {} as PollReducer,
 ): PollState => {
   switch (actionType) {
     case 'next':

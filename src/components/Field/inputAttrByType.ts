@@ -1,21 +1,19 @@
-import { InputProps, TextareaProps } from '@chakra-ui/react';
-
 import { preventNonNumericValues } from '@habtic/validations';
 
 import type { fieldType } from '../../types';
 
-const short_text: InputProps = {
+const ShortText: React.HTMLProps<HTMLInputElement> = {
   type: 'text',
   maxLength: 255,
   autoFocus: true,
 };
 
-const long_text: TextareaProps = {
+const LongText: React.HTMLProps<HTMLTextAreaElement> = {
   maxLength: 9999,
   autoFocus: true,
 };
 
-const numeric: InputProps = {
+const numeric: React.HTMLProps<HTMLInputElement> = {
   type: 'number',
   autoFocus: true,
   onKeyDown: preventNonNumericValues,
@@ -26,24 +24,24 @@ type R = Record<string, unknown>;
 export function inputAttrByType(type: fieldType): Record<string, unknown> {
   switch (type) {
     case 'short_text':
-      return short_text as R;
+      return ShortText as R;
 
     case 'long_text':
-      return long_text as R;
+      return LongText as R;
 
     case 'picture_choice':
-      return short_text as R;
+      return ShortText as R;
 
     case 'multiple_choice':
-      return short_text as R;
+      return ShortText as R;
 
     case 'statement':
-      return short_text as R;
+      return ShortText as R;
 
     case 'number':
       return numeric as R;
 
     default:
-      return short_text as R;
+      return ShortText as R;
   }
 }

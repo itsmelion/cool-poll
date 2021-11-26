@@ -13,7 +13,7 @@ export function PollStats(): JSX.Element | null {
 
   return (
     <Center>
-      <AnimatedCard active onSubmit={() => void 0}>
+      <AnimatedCard active onSubmit={() => undefined}>
         {results ? (
           <>
             {isClosed && <PollClosed />}

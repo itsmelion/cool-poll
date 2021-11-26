@@ -4,6 +4,6 @@ type Props = {
   title?: string;
 };
 
-export function Heading(props: Props): JSX.Element {
-  return <H1>{props.title ?? ''}</H1>;
+export function Heading({ title }: Props): JSX.Element {
+  return <H1>{title ?? ''}</H1>;
 }
