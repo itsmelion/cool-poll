@@ -49,7 +49,7 @@
     "rollup-plugin-cleaner": "1.0.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "0.31.1",
-    "typescript": "4.5.2"
+    "typescript": "4.5.3"
   },
   "optionalDependencies": {
     "@babel/core": "7.16.0"
