@@ -1,4 +1,5 @@
-import { Radio as RadioItem, RadioGroup, useColorModeValue } from '@chakra-ui/react';
+import { Radio as RadioItem, RadioGroup } from '@chakra-ui/react';
+import { ColorMode } from '@habtic/system';
 import { useFormContext } from 'react-hook-form';
 
 import { usePoll } from '../../services';
@@ -9,7 +10,7 @@ export function Radio(): JSX.Element {
   const { activeQuestion, currentQuestion } = usePoll();
   const { properties } = currentQuestion;
   const { register } = useFormContext();
-  const borderColor = useColorModeValue('blackAlpha.300', 'whiteAlpha.400');
+  const borderColor = ColorMode.useDarkValue('rgba(0, 0, 0, 0.16)', 'rgba(255, 255, 255, 0.24)');
 
   return (
     <RadioGroup>

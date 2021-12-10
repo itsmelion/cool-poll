@@ -1,5 +1,5 @@
 import {
-  createContext, useContext, ReactChild, useCallback,
+  createContext, useContext, ReactChild, useCallback, useMemo,
 } from 'react';
 
 import type { FieldResponse } from '../../../types';
@@ -16,7 +16,6 @@ interface PollActions {
 
 interface Props {
   children: ReactChild;
-  value?: Partial<PollActions>;
 }
 
 const initialState: PollActions = {
@@ -34,20 +33,18 @@ export const PollActionsContext = (props: Props): JSX.Element => {
   const resolveActions = useActionsResolver();
   const nextQuestion = useNextQuestion();
 
-  const next = useCallback(
-    (r: FieldResponse) => {
-      const isJump = resolveActions(r);
-      if (!isJump) nextQuestion();
-    },
-    [resolveActions, nextQuestion],
-  );
+  const next = useCallback((r: FieldResponse) => {
+    const isJump = resolveActions(r);
+    if (!isJump) nextQuestion();
+  }, [resolveActions, nextQuestion]);
+
+  const context = useMemo(() => ({
+    ...initialState,
+    next,
+  }), [next]);
 
   return (
-    <Context.Provider
-      value={{
-        ...initialState,
-        next,
-      }}>
+    <Context.Provider value={context}>
       {children}
     </Context.Provider>
   );

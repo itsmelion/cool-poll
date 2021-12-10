@@ -3,6 +3,7 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
+  ignorePatterns: ["node_modules", 'src/index.tsx'],
   rules: {
     "import/no-extraneous-dependencies": [
       "error",

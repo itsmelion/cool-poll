@@ -1,4 +1,6 @@
-import { Text, Spinner, Flex } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import { Flex } from '@habtic/layout';
+import { Spinner } from '@habtic/spinner';
 
 import { usePoll } from '../../services';
 import { Center } from '../Card';
@@ -11,7 +13,7 @@ export function SurveyThank(): JSX.Element | null {
 
   return (
     <Center>
-      <AnimatedCard active onSubmit={() => void 0}>
+      <AnimatedCard active onSubmit={() => undefined}>
         {results ? (
           <>
             {isClosed && <PollClosed />}

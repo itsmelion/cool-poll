@@ -1,11 +1,7 @@
-import {
-  useColorModeValue,
-  ChakraComponent,
-  Radio,
-  RadioProps,
-  Flex,
-} from '@chakra-ui/react';
+import { Flex } from '@habtic/layout';
 import { AnimatePresence, motion } from 'framer-motion';
+
+import type { HabticProps } from '@habtic/styled';
 
 import { Card } from './Card';
 
@@ -14,15 +10,16 @@ interface PollViewProps {
   onSubmit: () => void;
 }
 
-const MotionCard = motion(Card);
-const MotionBox = motion(Flex);
+type HabticComp = Omit<HabticProps, 'transition'>;
+const MotionCard = motion<HabticComp>(Card);
+const MotionBox = motion<HabticComp>(Flex);
 
 const cardContainer = {
   initial: { position: 'relative', opacity: 0 },
   animate: { opacity: 1 },
   exit: { position: 'absolute', opacity: 0 },
   transition: { duration: 0.3 },
-};
+} as const;
 
 const optionsContainer = {
   initial: 'hidden',
@@ -32,29 +29,30 @@ const optionsContainer = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   },
-};
+} as const;
 
 const itemAnimation = {
   variants: {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
   },
-};
+} as const;
 
-export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => {
-  const cardBg = useColorModeValue('gray.100', 'gray.800');
+export const AnimatedCard: React.FC<PollViewProps> = ({ active, ...props }) => (
+  <AnimatePresence>
+    {active && <MotionCard {...props} {...cardContainer} as="form" />}
+  </AnimatePresence>
+);
 
-  return (
-    <AnimatePresence>
-      {active && (
-        <MotionCard {...props} {...cardContainer} as="form" bgColor={cardBg} />
-      )}
-    </AnimatePresence>
-  );
-};
+export const StaggerContainer: React.FC = (props) => (
+  <MotionBox
+    flex={1}
+    w="100%"
+    {...props}
+    {...optionsContainer}
+  />
+);
 
-export const StaggerContainer: React.FC = (props) => <MotionBox flex={1} w="100%" {...props} {...optionsContainer} />;
-
-export const StaggerItem: ChakraComponent<typeof Radio, RadioProps> = (props) => (
+export const StaggerItem: React.FC = (props) => (
   <MotionBox flex={1} w="100%" {...itemAnimation} {...props} />
 );

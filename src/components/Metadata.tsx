@@ -1,6 +1,8 @@
 import {
-  Box, Table, Thead, Tr, Th, Tbody, Td,
+  Table, Thead, Tr, Th, Tbody, Td,
 } from '@chakra-ui/react';
+
+import { habtic } from '@habtic/styled';
 
 import type { Results } from '../types';
 
@@ -10,7 +12,7 @@ interface MetadataProps {
 
 export function Metadata({ data }: MetadataProps): JSX.Element {
   return (
-    <Box my={6}>
+    <habtic.div my={6}>
       {!!data.user.total && (
         <Table size="sm">
           <Thead>
@@ -89,6 +91,6 @@ export function Metadata({ data }: MetadataProps): JSX.Element {
           )}
         </Tbody>
       </Table>
-    </Box>
+    </habtic.div>
   );
 }

@@ -6,6 +6,7 @@ import {
   useState,
   useCallback,
   useEffect,
+  useMemo,
 } from 'react';
 import { useCounter } from 'react-use';
 
@@ -46,29 +47,33 @@ export const PollContext = (props: Props): JSX.Element => {
   const {
     children, value, submit, fetchResults: resultsFetcher,
   } = props;
-  const [currentScore, scoreHandlers] = useCounter(initialState.score);
+  const [score, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
   const [results, setResults] = useState<Results.NullableResults>(null);
   const { isClosed } = poll;
 
-  const fetchResults = useCallback(() => resultsFetcher().then((results) => setResults(results)), [resultsFetcher, setResults]);
+  const fetchResults = useCallback(
+    () => resultsFetcher().then((r) => setResults(r)),
+    [resultsFetcher, setResults],
+  );
 
   useEffect(() => {
     isClosed && fetchResults();
   }, [isClosed, fetchResults]);
 
+  const context = useMemo(() => ({
+    ...poll,
+    score,
+    scoreHandlers,
+    setPoll,
+    submit,
+    results,
+    setResults,
+    fetchResults,
+  }), [poll, score, scoreHandlers, submit, results, setResults, fetchResults]);
+
   return (
-    <Context.Provider
-      value={{
-        ...poll,
-        score: currentScore,
-        scoreHandlers,
-        setPoll,
-        submit,
-        results,
-        setResults,
-        fetchResults,
-      }}>
+    <Context.Provider value={context}>
       {children}
     </Context.Provider>
   );
@@ -76,7 +81,7 @@ export const PollContext = (props: Props): JSX.Element => {
 
 const reducer = (
   state = initialState,
-  { type: actionType, payload }: PollReducer,
+  { type: actionType, payload }: PollReducer = {} as PollReducer,
 ): PollState => {
   switch (actionType) {
     case 'next':
@@ -116,4 +121,8 @@ const reducer = (
     default:
       return state;
   }
+};
+
+PollContext.defaultProps = {
+  value: initialState,
 };

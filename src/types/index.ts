@@ -4,7 +4,7 @@ export type {
   PollState,
   CurrentQuestion,
   PollReducer,
-  stateActions,
+  StateActions,
   PollDispatcher,
   FieldResponse,
 } from './PollState';

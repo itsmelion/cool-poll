@@ -1,4 +1,5 @@
-import { Text, Spinner } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import { Spinner } from '@habtic/spinner';
 
 import { usePoll } from '../../services';
 import { Center } from '../Card';
@@ -13,7 +14,7 @@ export function PollStats(): JSX.Element | null {
 
   return (
     <Center>
-      <AnimatedCard active onSubmit={() => void 0}>
+      <AnimatedCard active onSubmit={() => undefined}>
         {results ? (
           <>
             {isClosed && <PollClosed />}

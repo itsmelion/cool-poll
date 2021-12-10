@@ -15,7 +15,7 @@ export type CurrentQuestion = Field & {
   response?: FieldResponse;
 };
 
-export type stateActions =
+export type StateActions =
   | 'next'
   | 'previous'
   | 'data'

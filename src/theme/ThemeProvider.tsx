@@ -1,20 +1,13 @@
-import { ChakraProvider, ChakraProviderProps } from '@chakra-ui/provider';
-import { extendTheme } from '@chakra-ui/react';
+import { ThemeProvider as AgnosticProvider } from '@habtic/themes';
 
 import { PageContainer } from '../components/PageContainer/PageContainer';
-import { theme as defaultTheme } from './theme';
 
-export const ThemeProvider: React.FC<ChakraProviderProps & { wrapper?: boolean }> = (
-  p,
-) => {
-  const {
-    theme = defaultTheme, resetCSS = true, wrapper, children, ...props
-  } = p;
-  const extendedTheme = extendTheme(theme, defaultTheme);
+export const ThemeProvider: React.FC<{ wrapper?: boolean }> = (p) => {
+  const { wrapper, children, ...props } = p;
 
   return (
-    <ChakraProvider resetCSS={resetCSS} theme={extendedTheme} {...props}>
+    <AgnosticProvider {...props}>
       <PageContainer wrapper={wrapper}>{children}</PageContainer>
-    </ChakraProvider>
+    </AgnosticProvider>
   );
 };

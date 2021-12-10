@@ -1,6 +1,6 @@
-import { chakra } from '@chakra-ui/react';
+import { habtic } from '@habtic/styled';
 
-export const View = chakra('li', {
+export const View = habtic('li', {
   baseStyle: {
     padding: '0.5em 0.75em',
     flex: '0 0 auto',
@@ -10,7 +10,7 @@ export const View = chakra('li', {
   },
 });
 
-export const Choice = chakra('li', {
+export const Choice = habtic('li', {
   baseStyle: {
     flex: '0 1 auto',
     width: '100%',
