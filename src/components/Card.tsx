@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { habtic } from '@habtic/styled';
 
-export const Card = styled.section(({ theme }) => ({
+export const Card = styled(habtic.section)(({ theme }) => ({
   padding: '3em',
   borderRadius: '1.5em',
   minHeight: '280pt',
@@ -13,7 +14,7 @@ export const Card = styled.section(({ theme }) => ({
   backgroundColor: theme.colorMode === 'dark' ? '#1A202C' : '#F7FAFC',
 }));
 
-export const Center = styled.section({
+export const Center = styled(habtic.section)({
   display: 'flex',
   flexDirection: 'column',
   flex: '1 1 100%',

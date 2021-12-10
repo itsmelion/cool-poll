@@ -1,6 +1,6 @@
-import { chakra } from '@chakra-ui/react';
+import { habtic } from '@habtic/styled';
 
-export const Main = chakra('main', {
+export const Main = habtic('main', {
   baseStyle: {
     position: 'relative',
     maxWidth: '986pt',
@@ -11,7 +11,7 @@ export const Main = chakra('main', {
   },
 });
 
-export const Backdrop = chakra('div', {
+export const Backdrop = habtic('div', {
   baseStyle: {
     backgroundSize: 'cover',
     backgroundPosition: 'center',

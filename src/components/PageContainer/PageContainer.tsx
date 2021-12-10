@@ -1,4 +1,4 @@
-import { useColorModeValue } from '@chakra-ui/react';
+import { ColorMode } from '@habtic/system';
 import { useEffect, useState } from 'react';
 
 import bgDark from './backdrop-dark.jpg';
@@ -10,8 +10,8 @@ interface ComponentType extends React.ComponentPropsWithoutRef<'main'> {
 }
 
 export const PageContainer = ({ wrapper, ...props }: ComponentType): JSX.Element => {
-  const bgColor = useColorModeValue('#ef9aff', '#220552');
-  const src = useColorModeValue(bgLight, bgDark);
+  const bgColor = ColorMode.useDarkValue('#ef9aff', '#220552');
+  const src = ColorMode.useDarkValue(bgLight, bgDark);
   const [bgImage, setBgReady] = useState<string>();
 
   /* delayed/async load BG image */

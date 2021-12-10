@@ -1,4 +1,5 @@
-import { Text, Spinner } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import { Spinner } from '@habtic/spinner';
 
 import { usePoll } from '../../services';
 import { Center } from '../Card';

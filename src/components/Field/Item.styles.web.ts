@@ -1,12 +1,9 @@
-import {
-  chakra,
-  VStack,
-  Input,
-  Checkbox as ChakraCheckbox,
-  Textarea as ChakraTextarea,
-} from '@chakra-ui/react';
+import { Checkbox as ChakraCheckbox } from '@chakra-ui/react';
+import { TextAreaField } from '@habtic/input';
+import { VStack } from '@habtic/layout';
+import { habtic } from '@habtic/styled';
 
-export const Checkbox = chakra(ChakraCheckbox, {
+export const Checkbox = habtic(ChakraCheckbox, {
   baseStyle: {
     padding: '0.75em 1.25em',
     height: 'auto',
@@ -22,7 +19,7 @@ export const Checkbox = chakra(ChakraCheckbox, {
   },
 });
 
-export const Wrapper = chakra(VStack, {
+export const Wrapper = habtic(VStack, {
   baseStyle: {
     marginTop: '0.5em',
     marginBottom: '0.5em',
@@ -31,7 +28,7 @@ export const Wrapper = chakra(VStack, {
   },
 });
 
-export const InputItem = chakra(Input, {
+export const InputItem = habtic(habtic.input, {
   baseStyle: {
     padding: '0.75em 1.25em',
     height: 'auto',
@@ -46,7 +43,7 @@ export const InputItem = chakra(Input, {
   },
 });
 
-export const TextArea = chakra(ChakraTextarea, {
+export const TextArea = habtic(TextAreaField, {
   baseStyle: {
     padding: '0.75em 1.25em',
     height: 'auto',

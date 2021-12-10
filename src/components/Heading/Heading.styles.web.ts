@@ -1,6 +1,7 @@
-import { chakra, FormLabel } from '@chakra-ui/react';
+import { FormLabel } from '@chakra-ui/react';
+import { habtic } from '@habtic/styled';
 
-export const H1 = chakra(FormLabel, {
+export const H1 = habtic(FormLabel, {
   baseStyle: {
     fontSize: 'h1',
     fontWeight: 200,

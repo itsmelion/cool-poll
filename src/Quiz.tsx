@@ -23,7 +23,7 @@ export const Quiz = memo(({ poll, submit, fetchResults }: PollProps) => {
         isClosed: poll.isClosed,
         activeQuestion: poll.fields?.[0].ref,
         currentQuestion: poll.fields?.[0],
-        poll: poll,
+        poll,
       }}>
       <QuizComponent />
     </PollProvider>

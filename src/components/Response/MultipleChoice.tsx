@@ -1,17 +1,21 @@
-import {
-  Box, VStack, Text, useColorModeValue,
-} from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+
+import { VStack } from '@habtic/layout';
+import { habtic } from '@habtic/styled';
+import { ColorMode } from '@habtic/system';
 import { FaCheckCircle } from 'react-icons/fa';
 
 import type { Results } from '../../types';
 
 import { Choice, View } from './Result.styles';
 
+const { useDarkValue } = ColorMode;
+
 export function MultipleChoice({ field }: { field: Results.Question }): JSX.Element {
-  const correctSelectionBg = useColorModeValue('green.600', 'green.300');
-  const wrongSelectionBg = useColorModeValue('red.400', 'red.700');
-  const neutralSelectionBg = useColorModeValue('gray.200', 'gray.600');
-  const containerBg = useColorModeValue('gray.50', 'gray.700');
+  const correctSelectionBg = useDarkValue('#2F855A', '#68D391');
+  const wrongSelectionBg = useDarkValue('#F56565', '#9B2C2C');
+  const neutralSelectionBg = useDarkValue('#E2E8F0', '#4A5568');
+  const containerBg = useDarkValue('#F7FAFC', '#2D3748');
 
   const choiceBgColor = (choice: Results.QuestionChoice): string => {
     if (choice.isChosen) {
@@ -33,7 +37,7 @@ export function MultipleChoice({ field }: { field: Results.Question }): JSX.Elem
             bgColor={choiceBgColor(choice)}
             fontSize={choice.isChosen ? '1.1em' : '0.9em'}>
             {choice.correct && (
-              <Box as={FaCheckCircle} color="green.500" mt="-.2em" />
+              <habtic.div as={FaCheckCircle} color="green.500" mt="-.2em" />
             )}
 
             <Text

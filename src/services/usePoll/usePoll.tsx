@@ -47,7 +47,7 @@ export const PollContext = (props: Props): JSX.Element => {
   const {
     children, value, submit, fetchResults: resultsFetcher,
   } = props;
-  const [currentScore, scoreHandlers] = useCounter(initialState.score);
+  const [score, scoreHandlers] = useCounter(initialState.score);
   const [poll, setPoll] = useReducer(reducer, { ...initialState, ...value });
   const [results, setResults] = useState<Results.NullableResults>(null);
   const { isClosed } = poll;
@@ -63,14 +63,14 @@ export const PollContext = (props: Props): JSX.Element => {
 
   const context = useMemo(() => ({
     ...poll,
-    score: currentScore,
-    scoreHandlers: scoreHandlers,
-    setPoll: setPoll,
-    submit: submit,
-    results: results,
-    setResults: setResults,
-    fetchResults: fetchResults,
-  }), [poll, currentScore, scoreHandlers, submit, results, setResults, fetchResults]);
+    score,
+    scoreHandlers,
+    setPoll,
+    submit,
+    results,
+    setResults,
+    fetchResults,
+  }), [poll, score, scoreHandlers, submit, results, setResults, fetchResults]);
 
   return (
     <Context.Provider value={context}>

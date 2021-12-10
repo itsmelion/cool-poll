@@ -1,6 +1,7 @@
-import {
-  VStack, HStack, Box, Text, useColorModeValue,
-} from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import { VStack, HStack } from '@habtic/layout';
+import { habtic } from '@habtic/styled';
+import { ColorMode } from '@habtic/system';
 
 import type { Results } from '../../types';
 
@@ -11,8 +12,8 @@ export function SurveyResponse({
 }: {
   field: Results.Question;
 }): JSX.Element {
-  const gray = useColorModeValue('gray.300', 'gray.600');
-  const grey = useColorModeValue('gray.400', 'teal.600');
+  const gray = ColorMode.useDarkValue('#CBD5E0', '#4A5568');
+  const grey = ColorMode.useDarkValue('#A0AEC0', '#2F855A');
 
   return (
     <View>
@@ -25,7 +26,7 @@ export function SurveyResponse({
           <Choice
             key={choice.field.ref}
             fontSize={choice.isChosen ? '1em' : '0.9em'}>
-            <Box
+            <habtic.div
               backgroundColor={choice.isChosen ? grey : gray}
               borderRadius={6}
               height="100%"
