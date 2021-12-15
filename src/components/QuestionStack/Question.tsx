@@ -1,6 +1,6 @@
-import { ButtonGroup, Text, FormControl } from '@chakra-ui/react';
+import { ButtonGroup, Text } from '@chakra-ui/react';
 import { Button } from '@habtic/button';
-import { ErrorMessage } from '@habtic/input';
+import { FormControl, ErrorMessage } from '@habtic/input';
 import { memo } from 'react';
 import { useFormContext } from 'react-hook-form';
 

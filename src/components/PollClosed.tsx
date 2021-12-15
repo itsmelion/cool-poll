@@ -1,8 +1,8 @@
-import { Badge } from '@chakra-ui/react';
+import { Badge } from '@habtic/layout';
 
 export function PollClosed(): JSX.Element {
   return (
-    <Badge colorScheme="red" fontSize="1.25em">
+    <Badge bgColor="#E53E3E" fontSize="1.25em">
       Poll closed
     </Badge>
   );

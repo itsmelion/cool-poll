@@ -1,5 +1,6 @@
+import type { TextareaProps } from '@habtic/input';
+
 import type { QuestionFieldProps } from './QuestionField.types';
-import type { TextareaProps } from '@chakra-ui/react';
 
 import { TextArea } from './Item.styles.web';
 

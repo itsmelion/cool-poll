@@ -1,4 +1,4 @@
-import { FormLabel } from '@chakra-ui/react';
+import { FormLabel } from '@habtic/input';
 import { habtic } from '@habtic/styled';
 
 export const H1 = habtic(FormLabel, {
