@@ -63,7 +63,7 @@
     "typescript": "4.5.5"
   },
   "optionalDependencies": {
-    "@babel/core": "7.16.10"
+    "@babel/core": "7.16.12"
   },
   "scripts": {
     "start": "react-scripts start",
