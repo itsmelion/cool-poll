@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "@dephion/eslint-config": "^2.0.0-next.16",
-    "@emotion/react": "11.7.1",
-    "@emotion/styled": "11.6.0",
+    "@emotion/react": "11.8.0",
+    "@emotion/styled": "11.8.0",
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-image": "2.1.1",
     "@rollup/plugin-node-resolve": "13.1.3",
