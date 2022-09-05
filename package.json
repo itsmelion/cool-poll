@@ -11,9 +11,9 @@
   ],
   "resolutions": {
     "eslint": "^7",
-    "@typescript-eslint/eslint-plugin": "5.36.1",
-    "@typescript-eslint/experimental-utils": "5.36.1",
-    "@typescript-eslint/parser": "5.36.1"
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/experimental-utils": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
@@ -48,9 +48,9 @@
     "@types/node": "16.11.57",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
-    "@typescript-eslint/eslint-plugin": "5.36.1",
-    "@typescript-eslint/experimental-utils": "5.36.1",
-    "@typescript-eslint/parser": "5.36.1",
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/experimental-utils": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.3.0",
