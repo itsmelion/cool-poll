@@ -22,7 +22,7 @@
     "react-dom": ">=17"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.3.1",
+    "@chakra-ui/react": "2.3.2",
     "@habtic/button": "^0.2.22-alpha.44",
     "@habtic/input": "^0.2.22-alpha.44",
     "@habtic/layout": "^0.2.22-alpha.44",
