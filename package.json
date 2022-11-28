@@ -32,7 +32,7 @@
     "@habtic/themes": "^0.2.22-alpha.44",
     "@habtic/validations": "0.2.22-alpha.44",
     "@hookform/error-message": "2.0.1",
-    "framer-motion": "7.6.12",
+    "framer-motion": "7.6.15",
     "lodash": "4.17.21",
     "react-hook-form": "7.39.6",
     "react-icons": "4.6.0",
