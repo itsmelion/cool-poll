@@ -34,7 +34,7 @@
     "@hookform/error-message": "2.0.1",
     "framer-motion": "7.10.3",
     "lodash": "4.17.21",
-    "react-hook-form": "7.40.0",
+    "react-hook-form": "7.41.3",
     "react-icons": "4.7.1",
     "react-use": "17.4.0"
   },
